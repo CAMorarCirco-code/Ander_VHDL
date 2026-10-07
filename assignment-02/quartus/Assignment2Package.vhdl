@@ -58,17 +58,51 @@ entity genericClockDelay is
 	
 end entity;
 
-architecture behaviour of genericClockDelay is 	 
--- Verwijder deze assert bij bewerking code / Remove this message when editing the code.
-assert false
-report "œBeste student, Dit deel van de hardware ontbreekt/This part of thehardware is missing."
-severity failure;
-begin								  
+architecture behaviour of genericClockDelay is
+	-- Number of input clock periods per output clock period.
+	constant divisor : natural := inClockFreq/desiredClock;
+	-- The output is low for the first (divisor/2) input periods and high
+	-- for the remaining ones, so an odd divisor still gives the exact
+	-- output frequency (only the duty cycle is then slightly off 50%).
+	constant lowCount : natural := divisor/2;
+	
+	signal count : natural range 0 to divisor-1 := 0;
+	signal clockOut : std_logic := '0';
+begin
 
--- Verwijder deze assert bij bewerking code / Remove this message when editing the code.
-assert false
-report "œBeste student, Dit deel van de hardware ontbreekt/This part of thehardware is missing."
-severity failure;
+	-- Elaboration-time checks of the generics.
+	assert desiredClock > 0 and inClockFreq >= 2*desiredClock
+	report "genericClockDelay: desiredClock must be > 0 and at most inClockFreq/2"
+	severity failure;
+	
+	assert inClockFreq mod desiredClock = 0
+	report "genericClockDelay: inClockFreq is not a multiple of desiredClock, output frequency is approximate"
+	severity warning;
+	
+	process (clk, rst)
+		variable nextCount : natural range 0 to divisor-1;
+	begin
+		if rst = '1' then
+			count <= 0;
+			clockOut <= '0';
+		elsif rising_edge(clk) then
+			if count = divisor-1 then
+				nextCount := 0;
+			else
+				nextCount := count+1;
+			end if;
+			count <= nextCount;
+			
+			-- Registered output: no combinational glitches on the derived clock.
+			if nextCount < lowCount then
+				clockOut <= '0';
+			else
+				clockOut <= '1';
+			end if;
+		end if;
+	end process;
+	
+	outClock <= clockOut;
 	
 end architecture;
 
