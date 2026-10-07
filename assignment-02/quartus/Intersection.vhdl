@@ -61,6 +61,31 @@ architecture Intersection_behav of Intersection is
   -- There are two traffic lights.
   signal vk1,vk2 : std_logic_vector(2 downto 0);
   
+  -- std_logic versions of stdby/test for the tlc ports.
+  signal stbyLogic, testLogic : std_logic;
+  -- freeze request, sampled on the falling edge of the 60 Hz clock
+  signal stopSync : std_logic := '0';
+  -- reset line of the clock delays
+  signal reset : std_logic;
+  -- orange segments enabled (flashes at 1 Hz in standby)
+  signal orangeEnable : std_logic;
+  
+  -- Convert one traffic light (indexed by green/orange/red) to an
+  -- active-low DE10-Lite SSD pattern:
+  --   top segment (a, bit 0)    = red
+  --   middle segment (g, bit 6) = orange
+  --   lower segment (d, bit 3)  = green
+  -- all other segments and the decimal point are off.
+  function lightToSSD(light : std_logic_vector(2 downto 0);
+                      orangeOn : std_logic) return std_logic_vector is
+    variable segments : std_logic_vector(7 downto 0) := (others => '1');
+  begin
+    segments(0) := not light(red);
+    segments(6) := not (light(orange) and orangeOn);
+    segments(3) := not light(green);
+    return segments;
+  end function;
+  
   --- Clock Delay component  (Generic+PLL clock delay)
   component combinedClockDelay is
 
@@ -106,10 +131,62 @@ begin
   -- Use the regular LEDs to visualize slow clocks.
   -- Turn off the unused LEDs and 7S elements.
 	
--- Verwijder deze assert bij bewerking code / Remove this message when editing the code.
-assert false
-report "Beste student, Dit deel van de hardware ontbreekt/This part of thehardware is missing."ù
-severity failure;
+  -- The assignment defines no reset button: the clock delays are never reset.
+  reset <= '0';
+  
+  -- Switches and button.
+  stdby <= SW(0) = '1';           -- SW0: standby
+  test  <= SW(1) = '1';           -- SW1: test mode
+  stop  <= not KEY(0);            -- KEY0 (active-low) held down: freeze
+  
+  stbyLogic <= '1' when stdby else '0';
+  testLogic <= '1' when test else '0';
+  
+  -- Clock delays:
+  -- 10 MHz --(pllKlok)--> 12 kHz --(genericClockDelay)--> 60 Hz
+  trafficDelay : combinedClockDelay
+    generic map (desiredClock => 60)
+    port map (clk => ADC_CLK_10, rst => reset, pllClock => trafficPLLClock);
+  
+  -- 60 Hz --> 1 Hz (time progression, normal mode / standby flashing)
+  secondsDelay : genericClockDelay
+    generic map (desiredClock => 1, inClockFreq => 60)
+    port map (clk => trafficPLLClock, rst => reset, outClock => secondsClock);
+  
+  -- 60 Hz --> 5 Hz (time progression, test mode)
+  fiveHzDelay : genericClockDelay
+    generic map (desiredClock => 5, inClockFreq => 60)
+    port map (clk => trafficPLLClock, rst => reset, outClock => fiveHzClock);
+  
+  -- Freeze: stop the clock of the traffic light controller. The request is
+  -- sampled while the clock is low, so gating cannot create a short pulse.
+  process (trafficPLLClock)
+  begin
+    if falling_edge(trafficPLLClock) then
+      stopSync <= stop;
+    end if;
+  end process;
+  
+  trafficClock <= trafficPLLClock and not stopSync;
+  
+  -- Traffic light controller (Pedroni).
+  controller : tlc
+    port map (clk => trafficClock, stby => stbyLogic, test => testLogic,
+              r1 => vk1(red), y1 => vk1(orange), g1 => vk1(green),
+              r2 => vk2(red), y2 => vk2(orange), g2 => vk2(green));
+  
+  -- Orange flashes in standby, otherwise it follows the controller.
+  orangeEnable <= secondsClock when stdby else '1';
+  
+  HEX0 <= lightToSSD(vk1, orangeEnable);
+  HEX1 <= lightToSSD(vk2, orangeEnable);
+  
+  -- LEDs.
+  LEDR(0) <= stbyLogic;
+  LEDR(1) <= testLogic;
+  LEDR(2) <= stop;
+  LEDR(8 downto 3) <= (others => '0');
+  LEDR(9) <= fiveHzClock when test else secondsClock;
   
 end architecture;
 
