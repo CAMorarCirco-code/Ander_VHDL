@@ -61,15 +61,20 @@ The entity, the generic names, types and defaults
 (`desiredClock : integer := 10`, `inClockFreq : natural := 100`) and the
 package component declaration are unchanged.
 
-- `divisor = inClockFreq / desiredClock`. A counter runs from 0 to
-  `divisor-1`.
-- The output is registered. It is low for `divisor/2` input periods and
-  high for the remaining periods, so the output period is exactly `divisor`
-  input periods for every integer divisor. An odd divisor only skews the
-  duty cycle. For example, 12 000/60 gives a divisor of 200: 100 periods low
-  and 100 high.
-- `rst` is asynchronous and active-high. It clears both the counter and the
-  output.
+- One output period is `N = inClockFreq / desiredClock` input periods,
+  split into a low phase of `N/2` periods (rounded down) followed by a high
+  phase with the rest. The output frequency is therefore exact for every
+  integer `N`; an odd `N` only skews the duty cycle. For example,
+  12 000/60 gives 200 periods: 100 low and 100 high.
+- The divider is a **phase timer**. A down-counter (`remaining`) holds the
+  input periods left in the current phase. When it reaches 1, the output
+  flip-flop (`level`) toggles and the counter is loaded with the length of
+  the next phase. The counter only has to reach half a period (0..100
+  for 12 kHz → 60 Hz).
+- The output comes straight from a flip-flop, so the derived clock has no
+  glitches.
+- `rst` is asynchronous and active-high. It sets the output low and starts
+  a new low phase.
 - Elaboration-time `assert` statements check the generics:
   - **failure** if `desiredClock <= 0` or `inClockFreq < 2*desiredClock`;
   - **warning** if `inClockFreq` is not a multiple of `desiredClock`, which
@@ -78,23 +83,21 @@ package component declaration are unchanged.
 ### `Intersection`
 
 The entity, the `SimulationMode` generic, and the existing signals,
-constants and component declarations are unchanged. Additions are
-`stbyLogic`, `testLogic`, `stopSync`, `reset`, `orangeEnable` and a small
-`lightToSSD` function.
+constants and component declarations from the template are unchanged.
 
 | Function | Implementation |
 |---|---|
-| Standby | `SW(0)` → `stdby` → `tlc.stby`; `LEDR(0)` |
-| Test mode | `SW(1)` → `test` → `tlc.test`; `LEDR(1)` |
+| Standby | `SW(0)` → `stdby` → `stbyBit` → `tlc.stby`; `LEDR(0)` |
+| Test mode | `SW(1)` → `test` → `testBit` → `tlc.test`; `LEDR(1)` |
 | Freeze | `KEY(0)` held down (active-low) → `stop`; `LEDR(2)` |
-| 60 Hz | `combinedClockDelay(desiredClock => 60)` on `ADC_CLK_10` → `trafficPLLClock` |
-| 1 Hz / 5 Hz | `genericClockDelay(1, 60)` and `genericClockDelay(5, 60)` on `trafficPLLClock` → `secondsClock` / `fiveHzClock` |
-| tlc clock | `trafficClock = trafficPLLClock and not stopSync`, with `stopSync` sampled on the falling edge of `trafficPLLClock` |
-| Lights | `tlc` → `vk1` (r1/y1/g1) and `vk2` (r2/y2/g2), indexed by the existing `red`/`orange`/`green` constants |
-| HEX0 / HEX1 | light 1 / light 2. Active-low: bit 0 (a, top) = red, bit 6 (g, middle) = orange, bit 3 (d, bottom) = green. The other segments and the decimal point are off |
-| Standby flashing | `orangeEnable = secondsClock` in standby, otherwise `'1'`: orange 0.5 s on, 0.5 s off |
-| LED9 | `fiveHzClock` in test mode, otherwise `secondsClock` |
-| Unused | `LEDR(8 downto 3) = 0`; unused segments and the decimal points are off |
+| 60 Hz | `clock60Hz`: `combinedClockDelay(desiredClock => 60)` on `ADC_CLK_10` → `trafficPLLClock` |
+| 1 Hz / 5 Hz | `clock1Hz` / `clock5Hz`: `genericClockDelay(1, 60)` and `genericClockDelay(5, 60)` on `trafficPLLClock` → `secondsClock` / `fiveHzClock` |
+| tlc clock | `frozen` is sampled from `stop` on the falling edge of `trafficPLLClock`; `trafficClock` is held at `'0'` while `frozen = '1'`, otherwise it follows `trafficPLLClock` |
+| Lights | `tlc` → `vk1` (r1/y1/g1) and `vk2` (r2/y2/g2), indexed by the template's `red`/`orange`/`green` constants |
+| Standby flashing | `lightMask`, a per-colour enable: in standby its orange bit follows `secondsClock` (orange 0.5 s on, 0.5 s off), otherwise all bits are `'1'` |
+| HEX0 / HEX1 | The `displays` process starts from all segments off and, for each colour, drives the segment given by the `segmentOf` table (red → bit 0/top, orange → bit 6/middle, green → bit 3/bottom, active-low) from `light and lightMask`. HEX0 = light 1, HEX1 = light 2 |
+| LED9 | `timeTick` = `fiveHzClock` in test mode, otherwise `secondsClock` |
+| LEDs | one aggregate: `LEDR = (0 => SW(0), 1 => SW(1), 2 => stop, 9 => timeTick, others => '0')` |
 
 Resulting patterns: red = `FE`, orange = `BF`, green = `F7`, dark = `FF`.
 
@@ -114,14 +117,14 @@ are easy to change.
    always overrides freeze, because `tlc.stby` is asynchronous.
 3. **Freeze is implemented by gating the `tlc` clock**, because `tlc` has no
    enable input and must not be modified. The request is sampled on the
-   falling clock edge and ANDed with the clock, so a press cannot produce a
-   short clock pulse.
+   falling clock edge, so the clock is only blocked or released while it
+   is low and a press cannot produce a short clock pulse.
 4. **Light 1 is shown on HEX0 and light 2 on HEX1.** The supplied port
    comments label HEX0 "linker licht" (left light) and HEX1 "rechter licht"
    (right light). On the board, HEX0 is the rightmost display.
-5. **No reset button** is defined. The clock delays' `rst` (and the PLL
-   `areset`) are tied to `'0'`, and the counters start from their power-up
-   initial values.
+5. **No reset button** is defined. The clock delays' `rst` inputs (and so
+   the PLL `areset`) are tied to `'0'`, and the counters start from their
+   power-up initial values.
 6. **`SimulationMode` is not used.** Its intended purpose is not documented
    in the supplied material.
 
@@ -234,6 +237,28 @@ and each was run against the testbenches. **All 13 were detected:**
 - `ghdl --synth` on `Intersection` succeeds with no warnings and no
   latches. For this run the PLL was a pass-through black box. This is
   GHDL's synthesis front-end, **not** a Quartus compilation.
+
+### Equivalence with the previous implementation
+
+`genericClockDelay` and `Intersection` were restructured after the first
+working version (commit `6130151`). The new structure is the phase-timer
+divider, the table-driven display process, the light mask for flashing and
+the single LED aggregate.
+
+To confirm the restructured version behaves identically, both versions
+were simulated side by side in GHDL, with the old entities renamed. These
+comparison benches were temporary and are not part of the repository.
+
+- **Divider:** 46 ratios, all N from 2 to 41 plus 12000/60, 60/1, 60/5,
+  100/10, 21/3 and the non-whole 100/7. There were 400 random asynchronous
+  resets, and the outputs were compared at every change: 79 166 comparisons,
+  **0 mismatches**.
+- **Top level:** identical random stimulus on all 10 switches and both
+  keys, with HEX0, HEX1 and LEDR compared at every change. Two seeds:
+  900 s with 111 input changes, and 400 s with 145 changes. **0
+  mismatches.**
+- **The comparison can detect differences:** a freeze sampled one clock
+  tick later produced 7 mismatches.
 
 ### How to run
 

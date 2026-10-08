@@ -59,50 +59,49 @@ entity genericClockDelay is
 end entity;
 
 architecture behaviour of genericClockDelay is
-	-- Number of input clock periods per output clock period.
-	constant divisor : natural := inClockFreq/desiredClock;
-	-- The output is low for the first (divisor/2) input periods and high
-	-- for the remaining ones, so an odd divisor still gives the exact
-	-- output frequency (only the duty cycle is then slightly off 50%).
-	constant lowCount : natural := divisor/2;
+	-- One output period spans inClockFreq/desiredClock input periods. It is
+	-- split into a low phase (half, rounded down) followed by a high phase
+	-- (the rest), so an odd ratio still gives the right output frequency.
+	constant periodLength : natural := inClockFreq/desiredClock;
+	constant lowLength    : natural := periodLength/2;
+	constant highLength   : natural := periodLength - lowLength;
 	
-	signal count : natural range 0 to divisor-1 := 0;
-	signal clockOut : std_logic := '0';
+	-- Input periods left in the current phase, and the current output level.
+	signal remaining : natural range 0 to highLength := lowLength;
+	signal level     : std_logic := '0';
 begin
 
-	-- Elaboration-time checks of the generics.
 	assert desiredClock > 0 and inClockFreq >= 2*desiredClock
-	report "genericClockDelay: desiredClock must be > 0 and at most inClockFreq/2"
+	report "genericClockDelay: desiredClock must be positive and no more than half of inClockFreq"
 	severity failure;
 	
 	assert inClockFreq mod desiredClock = 0
-	report "genericClockDelay: inClockFreq is not a multiple of desiredClock, output frequency is approximate"
+	report "genericClockDelay: inClockFreq/desiredClock is not a whole number, the output frequency is rounded"
 	severity warning;
 	
-	process (clk, rst)
-		variable nextCount : natural range 0 to divisor-1;
+	-- Phase timer: count down the current phase; on its last input period
+	-- flip the output and load the length of the next phase.
+	phaseTimer : process (clk, rst)
 	begin
 		if rst = '1' then
-			count <= 0;
-			clockOut <= '0';
+			level     <= '0';
+			remaining <= lowLength;
 		elsif rising_edge(clk) then
-			if count = divisor-1 then
-				nextCount := 0;
+			if remaining = 1 then
+				level <= not level;
+				if level = '0' then
+					remaining <= highLength;
+				else
+					remaining <= lowLength;
+				end if;
 			else
-				nextCount := count+1;
-			end if;
-			count <= nextCount;
-			
-			-- Registered output: no combinational glitches on the derived clock.
-			if nextCount < lowCount then
-				clockOut <= '0';
-			else
-				clockOut <= '1';
+				remaining <= remaining - 1;
 			end if;
 		end if;
 	end process;
 	
-	outClock <= clockOut;
+	-- The output comes straight from a flip-flop, so the derived clock is glitch-free.
+	outClock <= level;
 	
 end architecture;
 
