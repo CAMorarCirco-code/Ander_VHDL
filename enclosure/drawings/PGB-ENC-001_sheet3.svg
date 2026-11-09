@@ -63,7 +63,7 @@
 <text x='252.000' y='272.000' font-size='1.7' font-family='Arial, Helvetica, sans-serif' text-anchor='start' fill='#555' font-weight='normal'>UNITS / SCALE</text>
 <text x='252.000' y='276.500' font-size='2.6' font-family='Arial, Helvetica, sans-serif' text-anchor='start' fill='#111' font-weight='normal'>mm   1:1 @ A3</text>
 <text x='312.000' y='272.000' font-size='1.7' font-family='Arial, Helvetica, sans-serif' text-anchor='start' fill='#555' font-weight='normal'>REV</text>
-<text x='312.000' y='276.500' font-size='2.6' font-family='Arial, Helvetica, sans-serif' text-anchor='start' fill='#111' font-weight='normal'>C - PRELIM.</text>
+<text x='312.000' y='276.500' font-size='2.6' font-family='Arial, Helvetica, sans-serif' text-anchor='start' fill='#111' font-weight='normal'>D - PRELIM.</text>
 <text x='352.000' y='272.000' font-size='1.7' font-family='Arial, Helvetica, sans-serif' text-anchor='start' fill='#555' font-weight='normal'>DATE</text>
 <text x='352.000' y='276.500' font-size='2.6' font-family='Arial, Helvetica, sans-serif' text-anchor='start' fill='#111' font-weight='normal'>2026-11-09</text>
 <text x='382.000' y='272.000' font-size='1.7' font-family='Arial, Helvetica, sans-serif' text-anchor='start' fill='#555' font-weight='normal'>PROJECTION</text>
@@ -82,9 +82,10 @@
 <line x1='165.000' y1='258.000' x2='250.000' y2='258.000' stroke='#111' stroke-width='0.3' stroke-linecap='round'/>
 <text x='167.000' y='262.000' font-size='2.2' font-family='Arial, Helvetica, sans-serif' text-anchor='start' fill='#111' font-weight='normal'>A  2026-11-09  First issue from spec (9 Nov 2026).</text>
 <text x='167.000' y='265.500' font-size='2.2' font-family='Arial, Helvetica, sans-serif' text-anchor='start' fill='#111' font-weight='normal'>B  2026-11-09  SW1 to layout-v6 position.</text>
-<text x='167.000' y='269.000' font-size='2.2' font-family='Arial, Helvetica, sans-serif' text-anchor='start' fill='#111' font-weight='normal'>C  2026-11-09  Uno + 9 V plug per photo. * = assumed.</text>
-<text x='167.000' y='276.000' font-size='2.2' font-family='Arial, Helvetica, sans-serif' text-anchor='start' fill='#111' font-weight='normal'>Drawn: Claude Code     Checked: ________</text>
-<text x='167.000' y='280.500' font-size='2.2' font-family='Arial, Helvetica, sans-serif' text-anchor='start' fill='#111' font-weight='normal'>Approved: ________</text>
+<text x='167.000' y='269.000' font-size='2.2' font-family='Arial, Helvetica, sans-serif' text-anchor='start' fill='#111' font-weight='normal'>C  2026-11-09  Uno + 9 V plug per photo.</text>
+<text x='167.000' y='272.500' font-size='2.2' font-family='Arial, Helvetica, sans-serif' text-anchor='start' fill='#111' font-weight='normal'>D  2026-11-09  Holder long side L-R (photo). * = assumed.</text>
+<text x='167.000' y='278.500' font-size='2.2' font-family='Arial, Helvetica, sans-serif' text-anchor='start' fill='#111' font-weight='normal'>Drawn: Claude Code     Checked: ________</text>
+<text x='167.000' y='283.000' font-size='2.2' font-family='Arial, Helvetica, sans-serif' text-anchor='start' fill='#111' font-weight='normal'>Approved: ________</text>
 <text x='18.000' y='22.000' font-size='3.0' font-family='Arial, Helvetica, sans-serif' text-anchor='start' fill='#111' font-weight='bold'>GENERAL NOTES</text>
 <text x='18.000' y='27.500' font-size='2.35' font-family='Arial, Helvetica, sans-serif' text-anchor='start' fill='#111' font-weight='normal'>1.  All dimensions in mm. Third-angle projection. Model origin: external front-left-bottom corner (X right, Y back, Z up).</text>
 <text x='18.000' y='31.700' font-size='2.35' font-family='Arial, Helvetica, sans-serif' text-anchor='start' fill='#111' font-weight='normal'>2.  Two printed parts: BASE (tub with floor, walls, rib, bosses, pillars, standoffs) and LID (control panel). Print lid face-down.</text>
@@ -97,12 +98,12 @@
 <text x='18.000' y='61.100' font-size='2.35' font-family='Arial, Helvetica, sans-serif' text-anchor='start' fill='#111' font-weight='normal'>9.  Uno R3 on 4 standoffs Ø6 x 6.0 (Ø2.5 pilot for M3 self-tap / nylon M3). USB/DC jack face LEFT (photo).</text>
 <text x='18.000' y='65.300' font-size='2.35' font-family='Arial, Helvetica, sans-serif' text-anchor='start' fill='#111' font-weight='normal'>10. Battery service: remove 4 lid screws, fold lid over to the LEFT on a 150 mm wire service loop; holder is directly</text>
 <text x='18.000' y='69.500' font-size='2.35' font-family='Arial, Helvetica, sans-serif' text-anchor='start' fill='#111' font-weight='normal'>     accessible. The protoboard / Uno stack is NOT disturbed (spec §6).</text>
-<text x='18.000' y='73.700' font-size='2.35' font-family='Arial, Helvetica, sans-serif' text-anchor='start' fill='#111' font-weight='normal'>11. Wiring: the 9 V lead exits the bay through the 8 x 8 rib notch (Y 48-56), turns along the plug zone floor (tie anchors</text>
-<text x='18.000' y='77.900' font-size='2.35' font-family='Arial, Helvetica, sans-serif' text-anchor='start' fill='#111' font-weight='normal'>     at Y 25 / 79) and enters the plug, which goes straight into the Uno DC jack at Y 33.13. Deburr all edges.</text>
-<text x='18.000' y='82.100' font-size='2.35' font-family='Arial, Helvetica, sans-serif' text-anchor='start' fill='#111' font-weight='normal'>12. Power per photo: 9 V holder lead ends in a DC barrel plug in the Uno jack. Keep the 38 mm zone left of the jack</text>
+<text x='18.000' y='73.700' font-size='2.35' font-family='Arial, Helvetica, sans-serif' text-anchor='start' fill='#111' font-weight='normal'>11. Wiring: the 9 V lead leaves the holder, passes over the 6 mm locating rib, runs along the floor in front of the bay</text>
+<text x='18.000' y='77.900' font-size='2.35' font-family='Arial, Helvetica, sans-serif' text-anchor='start' fill='#111' font-weight='normal'>     (2 tie anchors at Y 46) into the DC plug, which goes straight into the Uno DC jack at Y 33.13.</text>
+<text x='18.000' y='82.100' font-size='2.35' font-family='Arial, Helvetica, sans-serif' text-anchor='start' fill='#111' font-weight='normal'>12. Power per photo: 9 V holder lead ends in a DC barrel plug in the Uno jack. Keep the zone X 37.2-75.2, Y 2.5-52</text>
 <text x='18.000' y='86.300' font-size='2.35' font-family='Arial, Helvetica, sans-serif' text-anchor='start' fill='#111' font-weight='normal'>     free for the plug and its cable bend. No USB opening (spec §1). Fit the plug before mounting the protoboard.</text>
-<text x='18.000' y='90.500' font-size='2.35' font-family='Arial, Helvetica, sans-serif' text-anchor='start' fill='#111' font-weight='normal'>13. Protoboard keep-outs: LED column (X 130-144, Y 20-84) parts &lt;= 3; SW1 (X 88.5-111.5, Y 28-51) parts &lt;= 5.</text>
-<text x='18.000' y='94.700' font-size='2.35' font-family='Arial, Helvetica, sans-serif' text-anchor='start' fill='#111' font-weight='normal'>14. Add 4x Ø10 x 1.0 deep recesses on the underside at (12,12) (148,12) (12,92) (148,92) for rubber feet.</text>
+<text x='18.000' y='90.500' font-size='2.35' font-family='Arial, Helvetica, sans-serif' text-anchor='start' fill='#111' font-weight='normal'>13. Protoboard keep-outs: LED column (X 128-142, Y 20-84) parts &lt;= 3; SW1 (X 86.5-109.5, Y 28-51) parts &lt;= 5.</text>
+<text x='18.000' y='94.700' font-size='2.35' font-family='Arial, Helvetica, sans-serif' text-anchor='start' fill='#111' font-weight='normal'>14. Add 4x Ø10 x 1.0 deep recesses on the underside at (12,12) (146,12) (12,92) (146,92) for rubber feet.</text>
 <text x='18.000' y='98.900' font-size='2.35' font-family='Arial, Helvetica, sans-serif' text-anchor='start' fill='#111' font-weight='normal'>15. SW1 position follows the top layout of draft v6 (position only; no v6 dimensions used): right of centre, midway</text>
 <text x='18.000' y='103.100' font-size='2.35' font-family='Arial, Helvetica, sans-serif' text-anchor='start' fill='#111' font-weight='normal'>     between the L2 and L3 rows. Mount the toggle so the lever throws along Y (back = towards L2, front = towards L3).</text>
 <text x='222.000' y='22.000' font-size='3.0' font-family='Arial, Helvetica, sans-serif' text-anchor='start' fill='#111' font-weight='bold'>TABLE 3 - CLEARANCE CHECKS (computed from model)</text>
@@ -132,125 +133,135 @@
 <text x='341.000' y='47.000' font-size='2.15' font-family='Arial, Helvetica, sans-serif' text-anchor='start' fill='#111' font-weight='normal'>5</text>
 <text x='369.000' y='47.000' font-size='2.15' font-family='Arial, Helvetica, sans-serif' text-anchor='start' fill='#1b7a33' font-weight='bold'>OK</text>
 <line x1='222.000' y1='48.200' x2='405.000' y2='48.200' stroke='#111' stroke-width='0.12' stroke-linecap='round'/>
-<text x='223.000' y='51.600' font-size='2.15' font-family='Arial, Helvetica, sans-serif' text-anchor='start' fill='#111' font-weight='normal'>DC plug end -&gt; rib (cable bend) (X)</text>
-<text x='313.000' y='51.600' font-size='2.15' font-family='Arial, Helvetica, sans-serif' text-anchor='start' fill='#111' font-weight='normal'>8</text>
-<text x='341.000' y='51.600' font-size='2.15' font-family='Arial, Helvetica, sans-serif' text-anchor='start' fill='#111' font-weight='normal'>8</text>
+<text x='223.000' y='51.600' font-size='2.15' font-family='Arial, Helvetica, sans-serif' text-anchor='start' fill='#111' font-weight='normal'>DC plug -&gt; battery bay rib (Y)</text>
+<text x='313.000' y='51.600' font-size='2.15' font-family='Arial, Helvetica, sans-serif' text-anchor='start' fill='#111' font-weight='normal'>13.87</text>
+<text x='341.000' y='51.600' font-size='2.15' font-family='Arial, Helvetica, sans-serif' text-anchor='start' fill='#111' font-weight='normal'>5</text>
 <text x='369.000' y='51.600' font-size='2.15' font-family='Arial, Helvetica, sans-serif' text-anchor='start' fill='#1b7a33' font-weight='bold'>OK</text>
 <line x1='222.000' y1='52.800' x2='405.000' y2='52.800' stroke='#111' stroke-width='0.12' stroke-linecap='round'/>
-<text x='223.000' y='56.200' font-size='2.15' font-family='Arial, Helvetica, sans-serif' text-anchor='start' fill='#111' font-weight='normal'>DC plug top -&gt; protoboard (Z)</text>
-<text x='313.000' y='56.200' font-size='2.15' font-family='Arial, Helvetica, sans-serif' text-anchor='start' fill='#111' font-weight='normal'>3.4</text>
-<text x='341.000' y='56.200' font-size='2.15' font-family='Arial, Helvetica, sans-serif' text-anchor='start' fill='#111' font-weight='normal'>2.5</text>
+<text x='223.000' y='56.200' font-size='2.15' font-family='Arial, Helvetica, sans-serif' text-anchor='start' fill='#111' font-weight='normal'>Uno USB tip -&gt; battery bay rib (X)</text>
+<text x='313.000' y='56.200' font-size='2.15' font-family='Arial, Helvetica, sans-serif' text-anchor='start' fill='#111' font-weight='normal'>1.15</text>
+<text x='341.000' y='56.200' font-size='2.15' font-family='Arial, Helvetica, sans-serif' text-anchor='start' fill='#111' font-weight='normal'>1</text>
 <text x='369.000' y='56.200' font-size='2.15' font-family='Arial, Helvetica, sans-serif' text-anchor='start' fill='#1b7a33' font-weight='bold'>OK</text>
 <line x1='222.000' y1='57.400' x2='405.000' y2='57.400' stroke='#111' stroke-width='0.12' stroke-linecap='round'/>
-<text x='223.000' y='60.800' font-size='2.15' font-family='Arial, Helvetica, sans-serif' text-anchor='start' fill='#111' font-weight='normal'>Protoboard edge -&gt; front/back wall (Y)</text>
-<text x='313.000' y='60.800' font-size='2.15' font-family='Arial, Helvetica, sans-serif' text-anchor='start' fill='#111' font-weight='normal'>6.32</text>
+<text x='223.000' y='60.800' font-size='2.15' font-family='Arial, Helvetica, sans-serif' text-anchor='start' fill='#111' font-weight='normal'>Protoboard edge -&gt; holder (X)</text>
+<text x='313.000' y='60.800' font-size='2.15' font-family='Arial, Helvetica, sans-serif' text-anchor='start' fill='#111' font-weight='normal'>8.26</text>
 <text x='341.000' y='60.800' font-size='2.15' font-family='Arial, Helvetica, sans-serif' text-anchor='start' fill='#111' font-weight='normal'>5</text>
 <text x='369.000' y='60.800' font-size='2.15' font-family='Arial, Helvetica, sans-serif' text-anchor='start' fill='#1b7a33' font-weight='bold'>OK</text>
 <line x1='222.000' y1='62.000' x2='405.000' y2='62.000' stroke='#111' stroke-width='0.12' stroke-linecap='round'/>
-<text x='223.000' y='65.400' font-size='2.15' font-family='Arial, Helvetica, sans-serif' text-anchor='start' fill='#111' font-weight='normal'>Uno edge -&gt; right wall (X)</text>
-<text x='313.000' y='65.400' font-size='2.15' font-family='Arial, Helvetica, sans-serif' text-anchor='start' fill='#111' font-weight='normal'>3.62</text>
-<text x='341.000' y='65.400' font-size='2.15' font-family='Arial, Helvetica, sans-serif' text-anchor='start' fill='#111' font-weight='normal'>3</text>
+<text x='223.000' y='65.400' font-size='2.15' font-family='Arial, Helvetica, sans-serif' text-anchor='start' fill='#111' font-weight='normal'>DC plug top -&gt; protoboard (Z)</text>
+<text x='313.000' y='65.400' font-size='2.15' font-family='Arial, Helvetica, sans-serif' text-anchor='start' fill='#111' font-weight='normal'>3.4</text>
+<text x='341.000' y='65.400' font-size='2.15' font-family='Arial, Helvetica, sans-serif' text-anchor='start' fill='#111' font-weight='normal'>2.5</text>
 <text x='369.000' y='65.400' font-size='2.15' font-family='Arial, Helvetica, sans-serif' text-anchor='start' fill='#1b7a33' font-weight='bold'>OK</text>
 <line x1='222.000' y1='66.600' x2='405.000' y2='66.600' stroke='#111' stroke-width='0.12' stroke-linecap='round'/>
-<text x='223.000' y='70.000' font-size='2.15' font-family='Arial, Helvetica, sans-serif' text-anchor='start' fill='#111' font-weight='normal'>Selector rear -&gt; protoboard parts (Z)</text>
-<text x='313.000' y='70.000' font-size='2.15' font-family='Arial, Helvetica, sans-serif' text-anchor='start' fill='#111' font-weight='normal'>5.4</text>
+<text x='223.000' y='70.000' font-size='2.15' font-family='Arial, Helvetica, sans-serif' text-anchor='start' fill='#111' font-weight='normal'>Protoboard edge -&gt; front/back wall (Y)</text>
+<text x='313.000' y='70.000' font-size='2.15' font-family='Arial, Helvetica, sans-serif' text-anchor='start' fill='#111' font-weight='normal'>6.32</text>
 <text x='341.000' y='70.000' font-size='2.15' font-family='Arial, Helvetica, sans-serif' text-anchor='start' fill='#111' font-weight='normal'>5</text>
 <text x='369.000' y='70.000' font-size='2.15' font-family='Arial, Helvetica, sans-serif' text-anchor='start' fill='#1b7a33' font-weight='bold'>OK</text>
 <line x1='222.000' y1='71.200' x2='405.000' y2='71.200' stroke='#111' stroke-width='0.12' stroke-linecap='round'/>
-<text x='223.000' y='74.600' font-size='2.15' font-family='Arial, Helvetica, sans-serif' text-anchor='start' fill='#111' font-weight='normal'>Button bezel -&gt; bezel (Y)</text>
-<text x='313.000' y='74.600' font-size='2.15' font-family='Arial, Helvetica, sans-serif' text-anchor='start' fill='#111' font-weight='normal'>7</text>
-<text x='341.000' y='74.600' font-size='2.15' font-family='Arial, Helvetica, sans-serif' text-anchor='start' fill='#111' font-weight='normal'>5</text>
+<text x='223.000' y='74.600' font-size='2.15' font-family='Arial, Helvetica, sans-serif' text-anchor='start' fill='#111' font-weight='normal'>Uno edge -&gt; right wall (X)</text>
+<text x='313.000' y='74.600' font-size='2.15' font-family='Arial, Helvetica, sans-serif' text-anchor='start' fill='#111' font-weight='normal'>9.92</text>
+<text x='341.000' y='74.600' font-size='2.15' font-family='Arial, Helvetica, sans-serif' text-anchor='start' fill='#111' font-weight='normal'>3</text>
 <text x='369.000' y='74.600' font-size='2.15' font-family='Arial, Helvetica, sans-serif' text-anchor='start' fill='#1b7a33' font-weight='bold'>OK</text>
 <line x1='222.000' y1='75.800' x2='405.000' y2='75.800' stroke='#111' stroke-width='0.12' stroke-linecap='round'/>
-<text x='223.000' y='79.200' font-size='2.15' font-family='Arial, Helvetica, sans-serif' text-anchor='start' fill='#111' font-weight='normal'>Corner boss -&gt; protoboard corner</text>
-<text x='313.000' y='79.200' font-size='2.15' font-family='Arial, Helvetica, sans-serif' text-anchor='start' fill='#111' font-weight='normal'>0.97</text>
-<text x='341.000' y='79.200' font-size='2.15' font-family='Arial, Helvetica, sans-serif' text-anchor='start' fill='#111' font-weight='normal'>0.5</text>
+<text x='223.000' y='79.200' font-size='2.15' font-family='Arial, Helvetica, sans-serif' text-anchor='start' fill='#111' font-weight='normal'>Selector rear -&gt; protoboard parts (Z)</text>
+<text x='313.000' y='79.200' font-size='2.15' font-family='Arial, Helvetica, sans-serif' text-anchor='start' fill='#111' font-weight='normal'>5.4</text>
+<text x='341.000' y='79.200' font-size='2.15' font-family='Arial, Helvetica, sans-serif' text-anchor='start' fill='#111' font-weight='normal'>5</text>
 <text x='369.000' y='79.200' font-size='2.15' font-family='Arial, Helvetica, sans-serif' text-anchor='start' fill='#1b7a33' font-weight='bold'>OK</text>
 <line x1='222.000' y1='80.400' x2='405.000' y2='80.400' stroke='#111' stroke-width='0.12' stroke-linecap='round'/>
-<line x1='312.000' y1='25.000' x2='312.000' y2='80.400' stroke='#111' stroke-width='0.15' stroke-linecap='round'/>
-<line x1='340.000' y1='25.000' x2='340.000' y2='80.400' stroke='#111' stroke-width='0.15' stroke-linecap='round'/>
-<line x1='368.000' y1='25.000' x2='368.000' y2='80.400' stroke='#111' stroke-width='0.15' stroke-linecap='round'/>
-<text x='18.000' y='122.000' font-size='3.0' font-family='Arial, Helvetica, sans-serif' text-anchor='start' fill='#111' font-weight='bold'>TABLE 4 - ASSUMPTIONS REGISTER  (* values: the spec lists these as TBC/approx. - measure with calipers and update the parameters)</text>
-<line x1='18.000' y1='125.000' x2='405.000' y2='125.000' stroke='#111' stroke-width='0.35' stroke-linecap='round'/>
-<text x='19.000' y='128.500' font-size='2.3' font-family='Arial, Helvetica, sans-serif' text-anchor='start' fill='#111' font-weight='bold'>ITEM</text>
-<text x='63.000' y='128.500' font-size='2.3' font-family='Arial, Helvetica, sans-serif' text-anchor='start' fill='#111' font-weight='bold'>VALUE USED</text>
-<text x='113.000' y='128.500' font-size='2.3' font-family='Arial, Helvetica, sans-serif' text-anchor='start' fill='#111' font-weight='bold'>BASIS / SOURCE</text>
-<text x='301.000' y='128.500' font-size='2.3' font-family='Arial, Helvetica, sans-serif' text-anchor='start' fill='#111' font-weight='bold'>ACTION</text>
-<line x1='18.000' y1='129.800' x2='405.000' y2='129.800' stroke='#111' stroke-width='0.25' stroke-linecap='round'/>
-<text x='19.000' y='133.200' font-size='2.15' font-family='Arial, Helvetica, sans-serif' text-anchor='start' fill='#111' font-weight='normal'>Protoboard outline</text>
-<text x='63.000' y='133.200' font-size='2.15' font-family='Arial, Helvetica, sans-serif' text-anchor='start' fill='#111' font-weight='normal'>78.74 x 86.36 x 1.6</text>
-<text x='113.000' y='133.200' font-size='2.15' font-family='Arial, Helvetica, sans-serif' text-anchor='start' fill='#111' font-weight='normal'>Hole span 73.66 x 81.28 (spec §4) + 2.54 edge margin each side</text>
-<text x='301.000' y='133.200' font-size='2.15' font-family='Arial, Helvetica, sans-serif' text-anchor='start' fill='#111' font-weight='normal'>Measure edge-to-edge</text>
-<line x1='18.000' y1='134.400' x2='405.000' y2='134.400' stroke='#111' stroke-width='0.12' stroke-linecap='round'/>
-<text x='19.000' y='137.800' font-size='2.15' font-family='Arial, Helvetica, sans-serif' text-anchor='start' fill='#111' font-weight='normal'>Protoboard part height</text>
-<text x='63.000' y='137.800' font-size='2.15' font-family='Arial, Helvetica, sans-serif' text-anchor='start' fill='#111' font-weight='normal'>12 max above board</text>
-<text x='113.000' y='137.800' font-size='2.15' font-family='Arial, Helvetica, sans-serif' text-anchor='start' fill='#111' font-weight='normal'>Typical radial electrolytic / terminal block</text>
-<text x='301.000' y='137.800' font-size='2.15' font-family='Arial, Helvetica, sans-serif' text-anchor='start' fill='#111' font-weight='normal'>Measure tallest part</text>
-<line x1='18.000' y1='139.000' x2='405.000' y2='139.000' stroke='#111' stroke-width='0.12' stroke-linecap='round'/>
-<text x='19.000' y='142.400' font-size='2.15' font-family='Arial, Helvetica, sans-serif' text-anchor='start' fill='#111' font-weight='normal'>Arduino Uno R3</text>
-<text x='63.000' y='142.400' font-size='2.15' font-family='Arial, Helvetica, sans-serif' text-anchor='start' fill='#111' font-weight='normal'>68.58 x 53.34 x 1.6</text>
-<text x='113.000' y='142.400' font-size='2.15' font-family='Arial, Helvetica, sans-serif' text-anchor='start' fill='#111' font-weight='normal'>Arduino reference design; holes (13.97,2.54) (15.24,50.80) (66.04,7.62) (66.04,35.56)</text>
-<text x='301.000' y='142.400' font-size='2.15' font-family='Arial, Helvetica, sans-serif' text-anchor='start' fill='#111' font-weight='normal'>Verify on board</text>
-<line x1='18.000' y1='143.600' x2='405.000' y2='143.600' stroke='#111' stroke-width='0.12' stroke-linecap='round'/>
-<text x='19.000' y='147.000' font-size='2.15' font-family='Arial, Helvetica, sans-serif' text-anchor='start' fill='#111' font-weight='normal'>Uno part height</text>
-<text x='63.000' y='147.000' font-size='2.15' font-family='Arial, Helvetica, sans-serif' text-anchor='start' fill='#111' font-weight='normal'>10.9 (USB-B / DC jack)</text>
-<text x='113.000' y='147.000' font-size='2.15' font-family='Arial, Helvetica, sans-serif' text-anchor='start' fill='#111' font-weight='normal'>Reference design; headers 8.5</text>
-<text x='301.000' y='147.000' font-size='2.15' font-family='Arial, Helvetica, sans-serif' text-anchor='start' fill='#111' font-weight='normal'>Verify</text>
-<line x1='18.000' y1='148.200' x2='405.000' y2='148.200' stroke='#111' stroke-width='0.12' stroke-linecap='round'/>
-<text x='19.000' y='151.600' font-size='2.15' font-family='Arial, Helvetica, sans-serif' text-anchor='start' fill='#111' font-weight='normal'>9 V battery holder</text>
-<text x='63.000' y='151.600' font-size='2.15' font-family='Arial, Helvetica, sans-serif' text-anchor='start' fill='#111' font-weight='normal'>31 x 55 x 21</text>
-<text x='113.000' y='151.600' font-size='2.15' font-family='Arial, Helvetica, sans-serif' text-anchor='start' fill='#111' font-weight='normal'>Spec §4 'approx. 55 x 31 x 21' - not verified</text>
-<text x='301.000' y='151.600' font-size='2.15' font-family='Arial, Helvetica, sans-serif' text-anchor='start' fill='#111' font-weight='normal'>Measure + wire exit</text>
-<line x1='18.000' y1='152.800' x2='405.000' y2='152.800' stroke='#111' stroke-width='0.12' stroke-linecap='round'/>
-<text x='19.000' y='156.200' font-size='2.15' font-family='Arial, Helvetica, sans-serif' text-anchor='start' fill='#111' font-weight='normal'>Battery bay reserve</text>
-<text x='63.000' y='156.200' font-size='2.15' font-family='Arial, Helvetica, sans-serif' text-anchor='start' fill='#111' font-weight='normal'>41 x 65</text>
-<text x='113.000' y='156.200' font-size='2.15' font-family='Arial, Helvetica, sans-serif' text-anchor='start' fill='#111' font-weight='normal'>Spec §4 provisional planning reserve</text>
-<text x='301.000' y='156.200' font-size='2.15' font-family='Arial, Helvetica, sans-serif' text-anchor='start' fill='#111' font-weight='normal'>Re-check after holder</text>
-<line x1='18.000' y1='157.400' x2='405.000' y2='157.400' stroke='#111' stroke-width='0.12' stroke-linecap='round'/>
-<text x='19.000' y='160.800' font-size='2.15' font-family='Arial, Helvetica, sans-serif' text-anchor='start' fill='#111' font-weight='normal'>Adafruit 1439 button</text>
-<text x='63.000' y='160.800' font-size='2.15' font-family='Arial, Helvetica, sans-serif' text-anchor='start' fill='#111' font-weight='normal'>Ø16 mount, Ø18 bezel, 30 below panel</text>
-<text x='113.000' y='160.800' font-size='2.15' font-family='Arial, Helvetica, sans-serif' text-anchor='start' fill='#111' font-weight='normal'>16 mm nominal (spec); depth incl. 2.8 mm QC terminal + wire bend ASSUMED</text>
-<text x='301.000' y='160.800' font-size='2.15' font-family='Arial, Helvetica, sans-serif' text-anchor='start' fill='#b00020' font-weight='bold'>CRITICAL: sets height</text>
-<line x1='18.000' y1='162.000' x2='405.000' y2='162.000' stroke='#111' stroke-width='0.12' stroke-linecap='round'/>
-<text x='19.000' y='165.400' font-size='2.15' font-family='Arial, Helvetica, sans-serif' text-anchor='start' fill='#111' font-weight='normal'>Miyama MS-500E</text>
-<text x='63.000' y='165.400' font-size='2.15' font-family='Arial, Helvetica, sans-serif' text-anchor='start' fill='#111' font-weight='normal'>Ø6.2 bore, body 7.8 x 13, 22 below panel</text>
-<text x='113.000' y='165.400' font-size='2.15' font-family='Arial, Helvetica, sans-serif' text-anchor='start' fill='#111' font-weight='normal'>Spec §4 listing; depth below panel ASSUMED</text>
-<text x='301.000' y='165.400' font-size='2.15' font-family='Arial, Helvetica, sans-serif' text-anchor='start' fill='#111' font-weight='normal'>Check mfr. drawing</text>
-<line x1='18.000' y1='166.600' x2='405.000' y2='166.600' stroke='#111' stroke-width='0.12' stroke-linecap='round'/>
-<text x='19.000' y='170.000' font-size='2.15' font-family='Arial, Helvetica, sans-serif' text-anchor='start' fill='#111' font-weight='normal'>LED indicator</text>
-<text x='63.000' y='170.000' font-size='2.15' font-family='Arial, Helvetica, sans-serif' text-anchor='start' fill='#111' font-weight='normal'>Ø8.2 cut-out, 12 rear depth</text>
-<text x='113.000' y='170.000' font-size='2.15' font-family='Arial, Helvetica, sans-serif' text-anchor='start' fill='#111' font-weight='normal'>Generic 5 mm LED in 8 mm panel holder - model not chosen</text>
-<text x='301.000' y='170.000' font-size='2.15' font-family='Arial, Helvetica, sans-serif' text-anchor='start' fill='#111' font-weight='normal'>Select model</text>
-<line x1='18.000' y1='171.200' x2='405.000' y2='171.200' stroke='#111' stroke-width='0.12' stroke-linecap='round'/>
-<text x='19.000' y='174.600' font-size='2.15' font-family='Arial, Helvetica, sans-serif' text-anchor='start' fill='#111' font-weight='normal'>Panel thickness</text>
-<text x='63.000' y='174.600' font-size='2.15' font-family='Arial, Helvetica, sans-serif' text-anchor='start' fill='#111' font-weight='normal'>3.0 lid</text>
-<text x='113.000' y='174.600' font-size='2.15' font-family='Arial, Helvetica, sans-serif' text-anchor='start' fill='#111' font-weight='normal'>Within typical max panel thickness for M6 bushing / 16 mm button</text>
-<text x='301.000' y='174.600' font-size='2.15' font-family='Arial, Helvetica, sans-serif' text-anchor='start' fill='#111' font-weight='normal'>Check both parts</text>
-<line x1='18.000' y1='175.800' x2='405.000' y2='175.800' stroke='#111' stroke-width='0.12' stroke-linecap='round'/>
-<text x='19.000' y='179.200' font-size='2.15' font-family='Arial, Helvetica, sans-serif' text-anchor='start' fill='#111' font-weight='normal'>DC plug (9 V lead)</text>
-<text x='63.000' y='179.200' font-size='2.15' font-family='Arial, Helvetica, sans-serif' text-anchor='start' fill='#111' font-weight='normal'>30 long, Ø10, +8 bend</text>
-<text x='113.000' y='179.200' font-size='2.15' font-family='Arial, Helvetica, sans-serif' text-anchor='start' fill='#111' font-weight='normal'>Arrangement from user photo; size estimated - photo not used as a measurement</text>
-<text x='301.000' y='179.200' font-size='2.15' font-family='Arial, Helvetica, sans-serif' text-anchor='start' fill='#111' font-weight='normal'>Measure plug + boot</text>
-<line x1='18.000' y1='180.400' x2='405.000' y2='180.400' stroke='#111' stroke-width='0.12' stroke-linecap='round'/>
-<text x='19.000' y='183.800' font-size='2.15' font-family='Arial, Helvetica, sans-serif' text-anchor='start' fill='#111' font-weight='normal'>Clearance allowance</text>
-<text x='63.000' y='183.800' font-size='2.15' font-family='Arial, Helvetica, sans-serif' text-anchor='start' fill='#111' font-weight='normal'>&gt;= 5 (6 at electronics bay)</text>
-<text x='113.000' y='183.800' font-size='2.15' font-family='Arial, Helvetica, sans-serif' text-anchor='start' fill='#111' font-weight='normal'>Spec §6 preliminary allowance; 6 used so corner bosses clear the board</text>
-<text x='301.000' y='183.800' font-size='2.15' font-family='Arial, Helvetica, sans-serif' text-anchor='start' fill='#111' font-weight='normal'>-</text>
-<line x1='18.000' y1='185.000' x2='405.000' y2='185.000' stroke='#111' stroke-width='0.12' stroke-linecap='round'/>
-<line x1='62.000' y1='125.000' x2='62.000' y2='185.000' stroke='#111' stroke-width='0.15' stroke-linecap='round'/>
-<line x1='112.000' y1='125.000' x2='112.000' y2='185.000' stroke='#111' stroke-width='0.15' stroke-linecap='round'/>
-<line x1='300.000' y1='125.000' x2='300.000' y2='185.000' stroke='#111' stroke-width='0.15' stroke-linecap='round'/>
-<text x='18.000' y='195.000' font-size='3.0' font-family='Arial, Helvetica, sans-serif' text-anchor='start' fill='#111' font-weight='bold'>HOW TO UPDATE AFTER MEASURING</text>
-<text x='18.000' y='200.500' font-size='2.35' font-family='Arial, Helvetica, sans-serif' text-anchor='start' fill='#111' font-weight='normal'>a) Edit the parameter block at the top of cad/power_grid_box_enclosure.scad (and tools/gen_drawing.py for this drawing set).</text>
-<text x='18.000' y='204.600' font-size='2.35' font-family='Arial, Helvetica, sans-serif' text-anchor='start' fill='#111' font-weight='normal'>b) Overall size follows automatically: width = wall + battery bay + rib + DC plug zone (plug + bend) + Uno + 3 + wall;</text>
-<text x='18.000' y='208.700' font-size='2.35' font-family='Arial, Helvetica, sans-serif' text-anchor='start' fill='#111' font-weight='normal'>    depth = walls + 2 x 6 + protoboard depth; height = floor + holder + 5 + button depth + lid (re-check Table 3).</text>
-<text x='18.000' y='212.800' font-size='2.35' font-family='Arial, Helvetica, sans-serif' text-anchor='start' fill='#111' font-weight='normal'>c) Re-run tools/gen_drawing.py - the clearance table (Table 3) and the asserts fail if any check drops below its minimum.</text>
-<text x='18.000' y='216.900' font-size='2.35' font-family='Arial, Helvetica, sans-serif' text-anchor='start' fill='#111' font-weight='normal'>d) Before the full print: print the lid only (approx. 1.5 h) and trial-fit PB1-3, SW1 and L1-3.</text>
-<text x='222.000' y='87.000' font-size='3.0' font-family='Arial, Helvetica, sans-serif' text-anchor='start' fill='#111' font-weight='bold'>OPEN ITEMS (spec §1, §7)</text>
-<text x='222.000' y='92.500' font-size='2.35' font-family='Arial, Helvetica, sans-serif' text-anchor='start' fill='#111' font-weight='normal'>- External DC input: OPEN, not modelled. No USB opening.</text>
-<text x='222.000' y='96.600' font-size='2.35' font-family='Arial, Helvetica, sans-serif' text-anchor='start' fill='#111' font-weight='normal'>- Confirm button quantity (3) and LED model / quantity (3).</text>
-<text x='222.000' y='100.700' font-size='2.35' font-family='Arial, Helvetica, sans-serif' text-anchor='start' fill='#111' font-weight='normal'>- Confirm 2.8 x 0.5 QC receptacle fit on button blades.</text>
-<text x='222.000' y='104.800' font-size='2.35' font-family='Arial, Helvetica, sans-serif' text-anchor='start' fill='#111' font-weight='normal'>- Verify SW1 terminal arrangement with continuity meter.</text>
-<text x='222.000' y='108.900' font-size='2.35' font-family='Arial, Helvetica, sans-serif' text-anchor='start' fill='#111' font-weight='normal'>- Spec §5 says snap connector; photo shows a DC barrel plug. Drawn per photo.</text>
-<text x='222.000' y='113.000' font-size='2.35' font-family='Arial, Helvetica, sans-serif' text-anchor='start' fill='#111' font-weight='normal'>  A right-angle DC plug would cut about 20 mm from the width.</text>
+<text x='223.000' y='83.800' font-size='2.15' font-family='Arial, Helvetica, sans-serif' text-anchor='start' fill='#111' font-weight='normal'>Button bezel -&gt; bezel (Y)</text>
+<text x='313.000' y='83.800' font-size='2.15' font-family='Arial, Helvetica, sans-serif' text-anchor='start' fill='#111' font-weight='normal'>7</text>
+<text x='341.000' y='83.800' font-size='2.15' font-family='Arial, Helvetica, sans-serif' text-anchor='start' fill='#111' font-weight='normal'>5</text>
+<text x='369.000' y='83.800' font-size='2.15' font-family='Arial, Helvetica, sans-serif' text-anchor='start' fill='#1b7a33' font-weight='bold'>OK</text>
+<line x1='222.000' y1='85.000' x2='405.000' y2='85.000' stroke='#111' stroke-width='0.12' stroke-linecap='round'/>
+<text x='223.000' y='88.400' font-size='2.15' font-family='Arial, Helvetica, sans-serif' text-anchor='start' fill='#111' font-weight='normal'>Corner boss -&gt; protoboard corner</text>
+<text x='313.000' y='88.400' font-size='2.15' font-family='Arial, Helvetica, sans-serif' text-anchor='start' fill='#111' font-weight='normal'>0.97</text>
+<text x='341.000' y='88.400' font-size='2.15' font-family='Arial, Helvetica, sans-serif' text-anchor='start' fill='#111' font-weight='normal'>0.5</text>
+<text x='369.000' y='88.400' font-size='2.15' font-family='Arial, Helvetica, sans-serif' text-anchor='start' fill='#1b7a33' font-weight='bold'>OK</text>
+<line x1='222.000' y1='89.600' x2='405.000' y2='89.600' stroke='#111' stroke-width='0.12' stroke-linecap='round'/>
+<line x1='312.000' y1='25.000' x2='312.000' y2='89.600' stroke='#111' stroke-width='0.15' stroke-linecap='round'/>
+<line x1='340.000' y1='25.000' x2='340.000' y2='89.600' stroke='#111' stroke-width='0.15' stroke-linecap='round'/>
+<line x1='368.000' y1='25.000' x2='368.000' y2='89.600' stroke='#111' stroke-width='0.15' stroke-linecap='round'/>
+<text x='18.000' y='134.000' font-size='3.0' font-family='Arial, Helvetica, sans-serif' text-anchor='start' fill='#111' font-weight='bold'>TABLE 4 - ASSUMPTIONS REGISTER  (* values: the spec lists these as TBC/approx. - measure with calipers and update the parameters)</text>
+<line x1='18.000' y1='137.000' x2='405.000' y2='137.000' stroke='#111' stroke-width='0.35' stroke-linecap='round'/>
+<text x='19.000' y='140.500' font-size='2.3' font-family='Arial, Helvetica, sans-serif' text-anchor='start' fill='#111' font-weight='bold'>ITEM</text>
+<text x='63.000' y='140.500' font-size='2.3' font-family='Arial, Helvetica, sans-serif' text-anchor='start' fill='#111' font-weight='bold'>VALUE USED</text>
+<text x='113.000' y='140.500' font-size='2.3' font-family='Arial, Helvetica, sans-serif' text-anchor='start' fill='#111' font-weight='bold'>BASIS / SOURCE</text>
+<text x='301.000' y='140.500' font-size='2.3' font-family='Arial, Helvetica, sans-serif' text-anchor='start' fill='#111' font-weight='bold'>ACTION</text>
+<line x1='18.000' y1='141.800' x2='405.000' y2='141.800' stroke='#111' stroke-width='0.25' stroke-linecap='round'/>
+<text x='19.000' y='145.200' font-size='2.15' font-family='Arial, Helvetica, sans-serif' text-anchor='start' fill='#111' font-weight='normal'>Protoboard outline</text>
+<text x='63.000' y='145.200' font-size='2.15' font-family='Arial, Helvetica, sans-serif' text-anchor='start' fill='#111' font-weight='normal'>78.74 x 86.36 x 1.6</text>
+<text x='113.000' y='145.200' font-size='2.15' font-family='Arial, Helvetica, sans-serif' text-anchor='start' fill='#111' font-weight='normal'>Hole span 73.66 x 81.28 (spec §4) + 2.54 edge margin each side</text>
+<text x='301.000' y='145.200' font-size='2.15' font-family='Arial, Helvetica, sans-serif' text-anchor='start' fill='#111' font-weight='normal'>Measure edge-to-edge</text>
+<line x1='18.000' y1='146.400' x2='405.000' y2='146.400' stroke='#111' stroke-width='0.12' stroke-linecap='round'/>
+<text x='19.000' y='149.800' font-size='2.15' font-family='Arial, Helvetica, sans-serif' text-anchor='start' fill='#111' font-weight='normal'>Protoboard part height</text>
+<text x='63.000' y='149.800' font-size='2.15' font-family='Arial, Helvetica, sans-serif' text-anchor='start' fill='#111' font-weight='normal'>12 max above board</text>
+<text x='113.000' y='149.800' font-size='2.15' font-family='Arial, Helvetica, sans-serif' text-anchor='start' fill='#111' font-weight='normal'>Typical radial electrolytic / terminal block</text>
+<text x='301.000' y='149.800' font-size='2.15' font-family='Arial, Helvetica, sans-serif' text-anchor='start' fill='#111' font-weight='normal'>Measure tallest part</text>
+<line x1='18.000' y1='151.000' x2='405.000' y2='151.000' stroke='#111' stroke-width='0.12' stroke-linecap='round'/>
+<text x='19.000' y='154.400' font-size='2.15' font-family='Arial, Helvetica, sans-serif' text-anchor='start' fill='#111' font-weight='normal'>Arduino Uno R3</text>
+<text x='63.000' y='154.400' font-size='2.15' font-family='Arial, Helvetica, sans-serif' text-anchor='start' fill='#111' font-weight='normal'>68.58 x 53.34 x 1.6</text>
+<text x='113.000' y='154.400' font-size='2.15' font-family='Arial, Helvetica, sans-serif' text-anchor='start' fill='#111' font-weight='normal'>Arduino reference design; holes (13.97,2.54) (15.24,50.80) (66.04,7.62) (66.04,35.56)</text>
+<text x='301.000' y='154.400' font-size='2.15' font-family='Arial, Helvetica, sans-serif' text-anchor='start' fill='#111' font-weight='normal'>Verify on board</text>
+<line x1='18.000' y1='155.600' x2='405.000' y2='155.600' stroke='#111' stroke-width='0.12' stroke-linecap='round'/>
+<text x='19.000' y='159.000' font-size='2.15' font-family='Arial, Helvetica, sans-serif' text-anchor='start' fill='#111' font-weight='normal'>Uno part height</text>
+<text x='63.000' y='159.000' font-size='2.15' font-family='Arial, Helvetica, sans-serif' text-anchor='start' fill='#111' font-weight='normal'>10.9 (USB-B / DC jack)</text>
+<text x='113.000' y='159.000' font-size='2.15' font-family='Arial, Helvetica, sans-serif' text-anchor='start' fill='#111' font-weight='normal'>Reference design; headers 8.5</text>
+<text x='301.000' y='159.000' font-size='2.15' font-family='Arial, Helvetica, sans-serif' text-anchor='start' fill='#111' font-weight='normal'>Verify</text>
+<line x1='18.000' y1='160.200' x2='405.000' y2='160.200' stroke='#111' stroke-width='0.12' stroke-linecap='round'/>
+<text x='19.000' y='163.600' font-size='2.15' font-family='Arial, Helvetica, sans-serif' text-anchor='start' fill='#111' font-weight='normal'>9 V battery holder</text>
+<text x='63.000' y='163.600' font-size='2.15' font-family='Arial, Helvetica, sans-serif' text-anchor='start' fill='#111' font-weight='normal'>55 x 31 x 21, flat, long side L-R</text>
+<text x='113.000' y='163.600' font-size='2.15' font-family='Arial, Helvetica, sans-serif' text-anchor='start' fill='#111' font-weight='normal'>Spec §4 'approx. 55 x 31 x 21' - not verified</text>
+<text x='301.000' y='163.600' font-size='2.15' font-family='Arial, Helvetica, sans-serif' text-anchor='start' fill='#111' font-weight='normal'>Measure + wire exit</text>
+<line x1='18.000' y1='164.800' x2='405.000' y2='164.800' stroke='#111' stroke-width='0.12' stroke-linecap='round'/>
+<text x='19.000' y='168.200' font-size='2.15' font-family='Arial, Helvetica, sans-serif' text-anchor='start' fill='#111' font-weight='normal'>Battery bay reserve</text>
+<text x='63.000' y='168.200' font-size='2.15' font-family='Arial, Helvetica, sans-serif' text-anchor='start' fill='#111' font-weight='normal'>65 (X) x 41 (Y)</text>
+<text x='113.000' y='168.200' font-size='2.15' font-family='Arial, Helvetica, sans-serif' text-anchor='start' fill='#111' font-weight='normal'>Spec §4 provisional planning reserve</text>
+<text x='301.000' y='168.200' font-size='2.15' font-family='Arial, Helvetica, sans-serif' text-anchor='start' fill='#111' font-weight='normal'>Re-check after holder</text>
+<line x1='18.000' y1='169.400' x2='405.000' y2='169.400' stroke='#111' stroke-width='0.12' stroke-linecap='round'/>
+<text x='19.000' y='172.800' font-size='2.15' font-family='Arial, Helvetica, sans-serif' text-anchor='start' fill='#111' font-weight='normal'>Adafruit 1439 button</text>
+<text x='63.000' y='172.800' font-size='2.15' font-family='Arial, Helvetica, sans-serif' text-anchor='start' fill='#111' font-weight='normal'>Ø16 mount, Ø18 bezel, 30 below panel</text>
+<text x='113.000' y='172.800' font-size='2.15' font-family='Arial, Helvetica, sans-serif' text-anchor='start' fill='#111' font-weight='normal'>16 mm nominal (spec); depth incl. 2.8 mm QC terminal + wire bend ASSUMED</text>
+<text x='301.000' y='172.800' font-size='2.15' font-family='Arial, Helvetica, sans-serif' text-anchor='start' fill='#b00020' font-weight='bold'>CRITICAL: sets height</text>
+<line x1='18.000' y1='174.000' x2='405.000' y2='174.000' stroke='#111' stroke-width='0.12' stroke-linecap='round'/>
+<text x='19.000' y='177.400' font-size='2.15' font-family='Arial, Helvetica, sans-serif' text-anchor='start' fill='#111' font-weight='normal'>Miyama MS-500E</text>
+<text x='63.000' y='177.400' font-size='2.15' font-family='Arial, Helvetica, sans-serif' text-anchor='start' fill='#111' font-weight='normal'>Ø6.2 bore, body 7.8 x 13, 22 below panel</text>
+<text x='113.000' y='177.400' font-size='2.15' font-family='Arial, Helvetica, sans-serif' text-anchor='start' fill='#111' font-weight='normal'>Spec §4 listing; depth below panel ASSUMED</text>
+<text x='301.000' y='177.400' font-size='2.15' font-family='Arial, Helvetica, sans-serif' text-anchor='start' fill='#111' font-weight='normal'>Check mfr. drawing</text>
+<line x1='18.000' y1='178.600' x2='405.000' y2='178.600' stroke='#111' stroke-width='0.12' stroke-linecap='round'/>
+<text x='19.000' y='182.000' font-size='2.15' font-family='Arial, Helvetica, sans-serif' text-anchor='start' fill='#111' font-weight='normal'>LED indicator</text>
+<text x='63.000' y='182.000' font-size='2.15' font-family='Arial, Helvetica, sans-serif' text-anchor='start' fill='#111' font-weight='normal'>Ø8.2 cut-out, 12 rear depth</text>
+<text x='113.000' y='182.000' font-size='2.15' font-family='Arial, Helvetica, sans-serif' text-anchor='start' fill='#111' font-weight='normal'>Generic 5 mm LED in 8 mm panel holder - model not chosen</text>
+<text x='301.000' y='182.000' font-size='2.15' font-family='Arial, Helvetica, sans-serif' text-anchor='start' fill='#111' font-weight='normal'>Select model</text>
+<line x1='18.000' y1='183.200' x2='405.000' y2='183.200' stroke='#111' stroke-width='0.12' stroke-linecap='round'/>
+<text x='19.000' y='186.600' font-size='2.15' font-family='Arial, Helvetica, sans-serif' text-anchor='start' fill='#111' font-weight='normal'>Panel thickness</text>
+<text x='63.000' y='186.600' font-size='2.15' font-family='Arial, Helvetica, sans-serif' text-anchor='start' fill='#111' font-weight='normal'>3.0 lid</text>
+<text x='113.000' y='186.600' font-size='2.15' font-family='Arial, Helvetica, sans-serif' text-anchor='start' fill='#111' font-weight='normal'>Within typical max panel thickness for M6 bushing / 16 mm button</text>
+<text x='301.000' y='186.600' font-size='2.15' font-family='Arial, Helvetica, sans-serif' text-anchor='start' fill='#111' font-weight='normal'>Check both parts</text>
+<line x1='18.000' y1='187.800' x2='405.000' y2='187.800' stroke='#111' stroke-width='0.12' stroke-linecap='round'/>
+<text x='19.000' y='191.200' font-size='2.15' font-family='Arial, Helvetica, sans-serif' text-anchor='start' fill='#111' font-weight='normal'>DC plug (9 V lead)</text>
+<text x='63.000' y='191.200' font-size='2.15' font-family='Arial, Helvetica, sans-serif' text-anchor='start' fill='#111' font-weight='normal'>30 long, Ø10, +8 bend</text>
+<text x='113.000' y='191.200' font-size='2.15' font-family='Arial, Helvetica, sans-serif' text-anchor='start' fill='#111' font-weight='normal'>Arrangement from user photo; size estimated - photo not used as a measurement</text>
+<text x='301.000' y='191.200' font-size='2.15' font-family='Arial, Helvetica, sans-serif' text-anchor='start' fill='#111' font-weight='normal'>Measure plug + boot</text>
+<line x1='18.000' y1='192.400' x2='405.000' y2='192.400' stroke='#111' stroke-width='0.12' stroke-linecap='round'/>
+<text x='19.000' y='195.800' font-size='2.15' font-family='Arial, Helvetica, sans-serif' text-anchor='start' fill='#111' font-weight='normal'>Clearance allowance</text>
+<text x='63.000' y='195.800' font-size='2.15' font-family='Arial, Helvetica, sans-serif' text-anchor='start' fill='#111' font-weight='normal'>&gt;= 5 (6 at electronics bay)</text>
+<text x='113.000' y='195.800' font-size='2.15' font-family='Arial, Helvetica, sans-serif' text-anchor='start' fill='#111' font-weight='normal'>Spec §6 preliminary allowance; 6 used so corner bosses clear the board</text>
+<text x='301.000' y='195.800' font-size='2.15' font-family='Arial, Helvetica, sans-serif' text-anchor='start' fill='#111' font-weight='normal'>-</text>
+<line x1='18.000' y1='197.000' x2='405.000' y2='197.000' stroke='#111' stroke-width='0.12' stroke-linecap='round'/>
+<line x1='62.000' y1='137.000' x2='62.000' y2='197.000' stroke='#111' stroke-width='0.15' stroke-linecap='round'/>
+<line x1='112.000' y1='137.000' x2='112.000' y2='197.000' stroke='#111' stroke-width='0.15' stroke-linecap='round'/>
+<line x1='300.000' y1='137.000' x2='300.000' y2='197.000' stroke='#111' stroke-width='0.15' stroke-linecap='round'/>
+<text x='18.000' y='207.000' font-size='3.0' font-family='Arial, Helvetica, sans-serif' text-anchor='start' fill='#111' font-weight='bold'>HOW TO UPDATE AFTER MEASURING</text>
+<text x='18.000' y='212.500' font-size='2.35' font-family='Arial, Helvetica, sans-serif' text-anchor='start' fill='#111' font-weight='normal'>a) Edit the parameter block at the top of tools/gen_drawing.py with the measured values.</text>
+<text x='18.000' y='216.600' font-size='2.35' font-family='Arial, Helvetica, sans-serif' text-anchor='start' fill='#111' font-weight='normal'>b) Overall size follows automatically: width = wall + battery bay (65) + rib + protoboard + 6 + wall;</text>
+<text x='18.000' y='220.700' font-size='2.35' font-family='Arial, Helvetica, sans-serif' text-anchor='start' fill='#111' font-weight='normal'>    depth = walls + 2 x 6 + protoboard depth; height = floor + holder + 5 + button depth + lid (re-check Table 3).</text>
+<text x='18.000' y='224.800' font-size='2.35' font-family='Arial, Helvetica, sans-serif' text-anchor='start' fill='#111' font-weight='normal'>c) Re-run tools/gen_drawing.py - the clearance table (Table 3) and the asserts fail if any check drops below its minimum.</text>
+<text x='18.000' y='228.900' font-size='2.35' font-family='Arial, Helvetica, sans-serif' text-anchor='start' fill='#111' font-weight='normal'>d) Before the full print: print the lid only (approx. 1.5 h) and trial-fit PB1-3, SW1 and L1-3.</text>
+<text x='222.000' y='98.000' font-size='3.0' font-family='Arial, Helvetica, sans-serif' text-anchor='start' fill='#111' font-weight='bold'>OPEN ITEMS (spec §1, §7)</text>
+<text x='222.000' y='103.500' font-size='2.35' font-family='Arial, Helvetica, sans-serif' text-anchor='start' fill='#111' font-weight='normal'>- External DC input: OPEN, not modelled. No USB opening.</text>
+<text x='222.000' y='107.600' font-size='2.35' font-family='Arial, Helvetica, sans-serif' text-anchor='start' fill='#111' font-weight='normal'>- Confirm button quantity (3) and LED model / quantity (3).</text>
+<text x='222.000' y='111.700' font-size='2.35' font-family='Arial, Helvetica, sans-serif' text-anchor='start' fill='#111' font-weight='normal'>- Confirm 2.8 x 0.5 QC receptacle fit on button blades.</text>
+<text x='222.000' y='115.800' font-size='2.35' font-family='Arial, Helvetica, sans-serif' text-anchor='start' fill='#111' font-weight='normal'>- Verify SW1 terminal arrangement with continuity meter.</text>
+<text x='222.000' y='119.900' font-size='2.35' font-family='Arial, Helvetica, sans-serif' text-anchor='start' fill='#111' font-weight='normal'>- Spec §5 says snap connector; photo shows a DC barrel plug. Drawn per photo.</text>
+<text x='222.000' y='124.000' font-size='2.35' font-family='Arial, Helvetica, sans-serif' text-anchor='start' fill='#111' font-weight='normal'>  A right-angle DC plug would cut about 20 mm from the width.</text>
 </svg>
