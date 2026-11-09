@@ -1,0 +1,242 @@
+<svg xmlns='http://www.w3.org/2000/svg' width='420mm' height='297mm' viewBox='0 0 420 297'>
+<defs><pattern id='hatch' patternUnits='userSpaceOnUse' width='1.6' height='1.6' patternTransform='rotate(45)'><line x1='0' y1='0' x2='0' y2='1.6' stroke='#111' stroke-width='0.22'/></pattern><pattern id='hatch2' patternUnits='userSpaceOnUse' width='1.6' height='1.6' patternTransform='rotate(-45)'><line x1='0' y1='0' x2='0' y2='1.6' stroke='#555' stroke-width='0.2'/></pattern></defs>
+<rect x='0' y='0' width='420' height='297' fill='#fff'/>
+<rect x='10.000' y='10.000' width='400.000' height='277.000' rx='0' fill='none' stroke='#111' stroke-width='0.7'/>
+<text x='35.000' y='8.600' font-size='2.4' font-family='Arial, Helvetica, sans-serif' text-anchor='middle' fill='#111' font-weight='normal'>1</text>
+<text x='35.000' y='291.200' font-size='2.4' font-family='Arial, Helvetica, sans-serif' text-anchor='middle' fill='#111' font-weight='normal'>1</text>
+<text x='85.000' y='8.600' font-size='2.4' font-family='Arial, Helvetica, sans-serif' text-anchor='middle' fill='#111' font-weight='normal'>2</text>
+<text x='85.000' y='291.200' font-size='2.4' font-family='Arial, Helvetica, sans-serif' text-anchor='middle' fill='#111' font-weight='normal'>2</text>
+<line x1='60.000' y1='10.000' x2='60.000' y2='7.000' stroke='#111' stroke-width='0.25' stroke-linecap='round'/>
+<line x1='60.000' y1='287.000' x2='60.000' y2='290.000' stroke='#111' stroke-width='0.25' stroke-linecap='round'/>
+<text x='135.000' y='8.600' font-size='2.4' font-family='Arial, Helvetica, sans-serif' text-anchor='middle' fill='#111' font-weight='normal'>3</text>
+<text x='135.000' y='291.200' font-size='2.4' font-family='Arial, Helvetica, sans-serif' text-anchor='middle' fill='#111' font-weight='normal'>3</text>
+<line x1='110.000' y1='10.000' x2='110.000' y2='7.000' stroke='#111' stroke-width='0.25' stroke-linecap='round'/>
+<line x1='110.000' y1='287.000' x2='110.000' y2='290.000' stroke='#111' stroke-width='0.25' stroke-linecap='round'/>
+<text x='185.000' y='8.600' font-size='2.4' font-family='Arial, Helvetica, sans-serif' text-anchor='middle' fill='#111' font-weight='normal'>4</text>
+<text x='185.000' y='291.200' font-size='2.4' font-family='Arial, Helvetica, sans-serif' text-anchor='middle' fill='#111' font-weight='normal'>4</text>
+<line x1='160.000' y1='10.000' x2='160.000' y2='7.000' stroke='#111' stroke-width='0.25' stroke-linecap='round'/>
+<line x1='160.000' y1='287.000' x2='160.000' y2='290.000' stroke='#111' stroke-width='0.25' stroke-linecap='round'/>
+<text x='235.000' y='8.600' font-size='2.4' font-family='Arial, Helvetica, sans-serif' text-anchor='middle' fill='#111' font-weight='normal'>5</text>
+<text x='235.000' y='291.200' font-size='2.4' font-family='Arial, Helvetica, sans-serif' text-anchor='middle' fill='#111' font-weight='normal'>5</text>
+<line x1='210.000' y1='10.000' x2='210.000' y2='7.000' stroke='#111' stroke-width='0.25' stroke-linecap='round'/>
+<line x1='210.000' y1='287.000' x2='210.000' y2='290.000' stroke='#111' stroke-width='0.25' stroke-linecap='round'/>
+<text x='285.000' y='8.600' font-size='2.4' font-family='Arial, Helvetica, sans-serif' text-anchor='middle' fill='#111' font-weight='normal'>6</text>
+<text x='285.000' y='291.200' font-size='2.4' font-family='Arial, Helvetica, sans-serif' text-anchor='middle' fill='#111' font-weight='normal'>6</text>
+<line x1='260.000' y1='10.000' x2='260.000' y2='7.000' stroke='#111' stroke-width='0.25' stroke-linecap='round'/>
+<line x1='260.000' y1='287.000' x2='260.000' y2='290.000' stroke='#111' stroke-width='0.25' stroke-linecap='round'/>
+<text x='335.000' y='8.600' font-size='2.4' font-family='Arial, Helvetica, sans-serif' text-anchor='middle' fill='#111' font-weight='normal'>7</text>
+<text x='335.000' y='291.200' font-size='2.4' font-family='Arial, Helvetica, sans-serif' text-anchor='middle' fill='#111' font-weight='normal'>7</text>
+<line x1='310.000' y1='10.000' x2='310.000' y2='7.000' stroke='#111' stroke-width='0.25' stroke-linecap='round'/>
+<line x1='310.000' y1='287.000' x2='310.000' y2='290.000' stroke='#111' stroke-width='0.25' stroke-linecap='round'/>
+<text x='385.000' y='8.600' font-size='2.4' font-family='Arial, Helvetica, sans-serif' text-anchor='middle' fill='#111' font-weight='normal'>8</text>
+<text x='385.000' y='291.200' font-size='2.4' font-family='Arial, Helvetica, sans-serif' text-anchor='middle' fill='#111' font-weight='normal'>8</text>
+<line x1='360.000' y1='10.000' x2='360.000' y2='7.000' stroke='#111' stroke-width='0.25' stroke-linecap='round'/>
+<line x1='360.000' y1='287.000' x2='360.000' y2='290.000' stroke='#111' stroke-width='0.25' stroke-linecap='round'/>
+<text x='5.000' y='34.083' font-size='2.4' font-family='Arial, Helvetica, sans-serif' text-anchor='middle' fill='#111' font-weight='normal'>A</text>
+<text x='415.000' y='34.083' font-size='2.4' font-family='Arial, Helvetica, sans-serif' text-anchor='middle' fill='#111' font-weight='normal'>A</text>
+<text x='5.000' y='80.250' font-size='2.4' font-family='Arial, Helvetica, sans-serif' text-anchor='middle' fill='#111' font-weight='normal'>B</text>
+<text x='415.000' y='80.250' font-size='2.4' font-family='Arial, Helvetica, sans-serif' text-anchor='middle' fill='#111' font-weight='normal'>B</text>
+<text x='5.000' y='126.417' font-size='2.4' font-family='Arial, Helvetica, sans-serif' text-anchor='middle' fill='#111' font-weight='normal'>C</text>
+<text x='415.000' y='126.417' font-size='2.4' font-family='Arial, Helvetica, sans-serif' text-anchor='middle' fill='#111' font-weight='normal'>C</text>
+<text x='5.000' y='172.583' font-size='2.4' font-family='Arial, Helvetica, sans-serif' text-anchor='middle' fill='#111' font-weight='normal'>D</text>
+<text x='415.000' y='172.583' font-size='2.4' font-family='Arial, Helvetica, sans-serif' text-anchor='middle' fill='#111' font-weight='normal'>D</text>
+<text x='5.000' y='218.750' font-size='2.4' font-family='Arial, Helvetica, sans-serif' text-anchor='middle' fill='#111' font-weight='normal'>E</text>
+<text x='415.000' y='218.750' font-size='2.4' font-family='Arial, Helvetica, sans-serif' text-anchor='middle' fill='#111' font-weight='normal'>E</text>
+<text x='5.000' y='264.917' font-size='2.4' font-family='Arial, Helvetica, sans-serif' text-anchor='middle' fill='#111' font-weight='normal'>F</text>
+<text x='415.000' y='264.917' font-size='2.4' font-family='Arial, Helvetica, sans-serif' text-anchor='middle' fill='#111' font-weight='normal'>F</text>
+<rect x='250.000' y='252.000' width='160.000' height='35.000' rx='0' fill='none' stroke='#111' stroke-width='0.6'/>
+<line x1='250.000' y1='260.000' x2='410.000' y2='260.000' stroke='#111' stroke-width='0.3' stroke-linecap='round'/>
+<line x1='250.000' y1='269.000' x2='410.000' y2='269.000' stroke='#111' stroke-width='0.3' stroke-linecap='round'/>
+<line x1='250.000' y1='278.000' x2='410.000' y2='278.000' stroke='#111' stroke-width='0.3' stroke-linecap='round'/>
+<line x1='310.000' y1='269.000' x2='310.000' y2='287.000' stroke='#111' stroke-width='0.3' stroke-linecap='round'/>
+<line x1='350.000' y1='269.000' x2='350.000' y2='287.000' stroke='#111' stroke-width='0.3' stroke-linecap='round'/>
+<line x1='380.000' y1='269.000' x2='380.000' y2='278.000' stroke='#111' stroke-width='0.3' stroke-linecap='round'/>
+<line x1='360.000' y1='252.000' x2='360.000' y2='269.000' stroke='#111' stroke-width='0.3' stroke-linecap='round'/>
+<text x='252.000' y='255.000' font-size='1.7' font-family='Arial, Helvetica, sans-serif' text-anchor='start' fill='#555' font-weight='normal'>PROJECT</text>
+<text x='252.000' y='259.000' font-size='3.0' font-family='Arial, Helvetica, sans-serif' text-anchor='start' fill='#111' font-weight='bold'>POWER GRID BOX - 3D PRINTED ENCLOSURE</text>
+<text x='362.000' y='255.000' font-size='1.7' font-family='Arial, Helvetica, sans-serif' text-anchor='start' fill='#555' font-weight='normal'>DRAWING No.</text>
+<text x='362.000' y='259.200' font-size='3.4' font-family='Arial, Helvetica, sans-serif' text-anchor='start' fill='#111' font-weight='bold'>PGB-ENC-001</text>
+<text x='252.000' y='263.000' font-size='1.7' font-family='Arial, Helvetica, sans-serif' text-anchor='start' fill='#555' font-weight='normal'>TITLE</text>
+<text x='252.000' y='267.500' font-size='3.0' font-family='Arial, Helvetica, sans-serif' text-anchor='start' fill='#111' font-weight='bold'>NOTES, ASSUMPTIONS REGISTER, VERIFICATION</text>
+<text x='362.000' y='263.000' font-size='1.7' font-family='Arial, Helvetica, sans-serif' text-anchor='start' fill='#555' font-weight='normal'>SHEET</text>
+<text x='362.000' y='267.500' font-size='3.0' font-family='Arial, Helvetica, sans-serif' text-anchor='start' fill='#111' font-weight='bold'>3 OF 3</text>
+<text x='252.000' y='272.000' font-size='1.7' font-family='Arial, Helvetica, sans-serif' text-anchor='start' fill='#555' font-weight='normal'>UNITS / SCALE</text>
+<text x='252.000' y='276.500' font-size='2.6' font-family='Arial, Helvetica, sans-serif' text-anchor='start' fill='#111' font-weight='normal'>mm   1:1 @ A3</text>
+<text x='312.000' y='272.000' font-size='1.7' font-family='Arial, Helvetica, sans-serif' text-anchor='start' fill='#555' font-weight='normal'>REV</text>
+<text x='312.000' y='276.500' font-size='2.6' font-family='Arial, Helvetica, sans-serif' text-anchor='start' fill='#111' font-weight='normal'>A - PRELIM.</text>
+<text x='352.000' y='272.000' font-size='1.7' font-family='Arial, Helvetica, sans-serif' text-anchor='start' fill='#555' font-weight='normal'>DATE</text>
+<text x='352.000' y='276.500' font-size='2.6' font-family='Arial, Helvetica, sans-serif' text-anchor='start' fill='#111' font-weight='normal'>2026-11-09</text>
+<text x='382.000' y='272.000' font-size='1.7' font-family='Arial, Helvetica, sans-serif' text-anchor='start' fill='#555' font-weight='normal'>PROJECTION</text>
+<text x='382.000' y='276.500' font-size='2.6' font-family='Arial, Helvetica, sans-serif' text-anchor='start' fill='#111' font-weight='normal'></text>
+<polygon points='393.000,273.200 397.000,272.000 397.000,277.200 393.000,276.000' fill='none' stroke='#111' stroke-width='0.3' stroke-linejoin='round'/>
+<circle cx='402.000' cy='274.600' r='2.600' fill='none' stroke='#111' stroke-width='0.3'/>
+<circle cx='402.000' cy='274.600' r='1.200' fill='none' stroke='#111' stroke-width='0.3'/>
+<text x='252.000' y='281.000' font-size='1.7' font-family='Arial, Helvetica, sans-serif' text-anchor='start' fill='#555' font-weight='normal'>MATERIAL / PROCESS</text>
+<text x='252.000' y='285.400' font-size='2.4' font-family='Arial, Helvetica, sans-serif' text-anchor='start' fill='#111' font-weight='normal'>PETG, FDM, 0.2 mm layers</text>
+<text x='312.000' y='281.000' font-size='1.7' font-family='Arial, Helvetica, sans-serif' text-anchor='start' fill='#555' font-weight='normal'>GENERAL TOL.</text>
+<text x='312.000' y='285.400' font-size='2.4' font-family='Arial, Helvetica, sans-serif' text-anchor='start' fill='#111' font-weight='normal'>+/-0.3 unless stated</text>
+<text x='352.000' y='281.000' font-size='1.7' font-family='Arial, Helvetica, sans-serif' text-anchor='start' fill='#555' font-weight='normal'>STATUS</text>
+<text x='352.000' y='285.400' font-size='2.4' font-family='Arial, Helvetica, sans-serif' text-anchor='start' fill='#b00020' font-weight='bold'>DESIGN BRIEF - NOT FOR PRODUCTION</text>
+<rect x='165.000' y='252.000' width='85.000' height='35.000' rx='0' fill='none' stroke='#111' stroke-width='0.6'/>
+<text x='167.000' y='256.000' font-size='1.9' font-family='Arial, Helvetica, sans-serif' text-anchor='start' fill='#555' font-weight='bold'>REVISION HISTORY</text>
+<line x1='165.000' y1='258.000' x2='250.000' y2='258.000' stroke='#111' stroke-width='0.3' stroke-linecap='round'/>
+<text x='167.000' y='262.000' font-size='2.2' font-family='Arial, Helvetica, sans-serif' text-anchor='start' fill='#111' font-weight='normal'>A   2026-11-09   First issue from consolidated</text>
+<text x='167.000' y='265.500' font-size='2.2' font-family='Arial, Helvetica, sans-serif' text-anchor='start' fill='#111' font-weight='normal'>    spec (9 Nov 2026). Values marked * are</text>
+<text x='167.000' y='269.000' font-size='2.2' font-family='Arial, Helvetica, sans-serif' text-anchor='start' fill='#111' font-weight='normal'>    nominal/assumed - verify before printing.</text>
+<text x='167.000' y='276.000' font-size='2.2' font-family='Arial, Helvetica, sans-serif' text-anchor='start' fill='#111' font-weight='normal'>Drawn: Claude Code     Checked: ________</text>
+<text x='167.000' y='280.500' font-size='2.2' font-family='Arial, Helvetica, sans-serif' text-anchor='start' fill='#111' font-weight='normal'>Approved: ________</text>
+<text x='18.000' y='22.000' font-size='3.0' font-family='Arial, Helvetica, sans-serif' text-anchor='start' fill='#111' font-weight='bold'>GENERAL NOTES</text>
+<text x='18.000' y='27.500' font-size='2.35' font-family='Arial, Helvetica, sans-serif' text-anchor='start' fill='#111' font-weight='normal'>1.  All dimensions in mm. Third-angle projection. Model origin: external front-left-bottom corner (X right, Y back, Z up).</text>
+<text x='18.000' y='31.700' font-size='2.35' font-family='Arial, Helvetica, sans-serif' text-anchor='start' fill='#111' font-weight='normal'>2.  Two printed parts: BASE (tub with floor, walls, rib, bosses, pillars, standoffs) and LID (control panel). Print lid face-down.</text>
+<text x='18.000' y='35.900' font-size='2.35' font-family='Arial, Helvetica, sans-serif' text-anchor='start' fill='#111' font-weight='normal'>3.  Walls 2.5, floor 2.5, lid 3.0. External corners R3 (vertical edges) optional; internal fillets R1 at wall/floor joints.</text>
+<text x='18.000' y='40.100' font-size='2.35' font-family='Arial, Helvetica, sans-serif' text-anchor='start' fill='#111' font-weight='normal'>4.  Lid fixing: 4x M3 x 10 countersunk screws into M3 x 5.7 heat-set inserts (Ø4.0 pilot, 6 deep) in corner bosses Ø7.</text>
+<text x='18.000' y='44.300' font-size='2.35' font-family='Arial, Helvetica, sans-serif' text-anchor='start' fill='#111' font-weight='normal'>5.  Lid lip 1.5 wide x 3.0 deep, 0.3 clearance per side to inner wall; notch lip 8 x 8 around each corner boss.</text>
+<text x='18.000' y='48.500' font-size='2.35' font-family='Arial, Helvetica, sans-serif' text-anchor='start' fill='#111' font-weight='normal'>6.  Panel holes are printed at +0.2 over nominal (Ø16.2 / Ø6.2 / Ø8.2). Ream to fit after a test print of a 30 x 30 coupon.</text>
+<text x='18.000' y='52.700' font-size='2.35' font-family='Arial, Helvetica, sans-serif' text-anchor='start' fill='#111' font-weight='normal'>7.  SW1 anti-rotation: add a Ø2.5 x 1.5 deep key hole at 8 mm from SW1 centre once the switch's tab washer is confirmed.</text>
+<text x='18.000' y='56.900' font-size='2.35' font-family='Arial, Helvetica, sans-serif' text-anchor='start' fill='#111' font-weight='normal'>8.  Protoboard on 4 floor pillars (Ø7 x 21.5) at its corner hole positions, drilled to Ø3.2; M3 self-tapping or insert.</text>
+<text x='18.000' y='61.100' font-size='2.35' font-family='Arial, Helvetica, sans-serif' text-anchor='start' fill='#111' font-weight='normal'>9.  Uno R3 on 4 standoffs Ø6 x 6.0 (Ø2.5 pilot for M3 self-tap / nylon M3). Jacks face the right wall (+X).</text>
+<text x='18.000' y='65.300' font-size='2.35' font-family='Arial, Helvetica, sans-serif' text-anchor='start' fill='#111' font-weight='normal'>10. Battery service: remove 4 lid screws, fold lid over to the LEFT on a 150 mm wire service loop; holder is directly</text>
+<text x='18.000' y='69.500' font-size='2.35' font-family='Arial, Helvetica, sans-serif' text-anchor='start' fill='#111' font-weight='normal'>     accessible. The protoboard / Uno stack is NOT disturbed (spec §6).</text>
+<text x='18.000' y='73.700' font-size='2.35' font-family='Arial, Helvetica, sans-serif' text-anchor='start' fill='#111' font-weight='normal'>11. Wiring: battery snap leads exit the bay through the 8 x 8 rib notch (Y 48-56), run in the 12 mm channel, enter the</text>
+<text x='18.000' y='77.900' font-size='2.35' font-family='Arial, Helvetica, sans-serif' text-anchor='start' fill='#111' font-weight='normal'>     electronics bay near the protoboard edge. 2x cable-tie anchors in channel at Y 25 and Y 79. Deburr all edges.</text>
+<text x='18.000' y='82.100' font-size='2.35' font-family='Arial, Helvetica, sans-serif' text-anchor='start' fill='#111' font-weight='normal'>12. No USB opening (spec §1). Right wall zone at the Uno DC jack (Y 64-75, Z 10-22) is RESERVED - do not place ribs there,</text>
+<text x='18.000' y='86.300' font-size='2.35' font-family='Arial, Helvetica, sans-serif' text-anchor='start' fill='#111' font-weight='normal'>     so an optional DC/USB opening can be cut later. Never connect an external supply in parallel with the 9 V battery.</text>
+<text x='18.000' y='90.500' font-size='2.35' font-family='Arial, Helvetica, sans-serif' text-anchor='start' fill='#111' font-weight='normal'>13. No parts taller than 3 mm on the protoboard inside the LED keep-out (X 121-135, Y 20-84) unless re-checked.</text>
+<text x='18.000' y='94.700' font-size='2.35' font-family='Arial, Helvetica, sans-serif' text-anchor='start' fill='#111' font-weight='normal'>14. Add 4x Ø10 x 1.0 deep recesses on the underside at (12,12) (139,12) (12,92) (139,92) for rubber feet.</text>
+<text x='222.000' y='22.000' font-size='3.0' font-family='Arial, Helvetica, sans-serif' text-anchor='start' fill='#111' font-weight='bold'>TABLE 3 - CLEARANCE CHECKS (computed from model)</text>
+<line x1='222.000' y1='25.000' x2='405.000' y2='25.000' stroke='#111' stroke-width='0.35' stroke-linecap='round'/>
+<text x='223.000' y='28.500' font-size='2.3' font-family='Arial, Helvetica, sans-serif' text-anchor='start' fill='#111' font-weight='bold'>CHECK</text>
+<text x='313.000' y='28.500' font-size='2.3' font-family='Arial, Helvetica, sans-serif' text-anchor='start' fill='#111' font-weight='bold'>ACTUAL</text>
+<text x='341.000' y='28.500' font-size='2.3' font-family='Arial, Helvetica, sans-serif' text-anchor='start' fill='#111' font-weight='bold'>MIN</text>
+<text x='369.000' y='28.500' font-size='2.3' font-family='Arial, Helvetica, sans-serif' text-anchor='start' fill='#111' font-weight='bold'>RESULT</text>
+<line x1='222.000' y1='29.800' x2='405.000' y2='29.800' stroke='#111' stroke-width='0.25' stroke-linecap='round'/>
+<text x='223.000' y='33.200' font-size='2.15' font-family='Arial, Helvetica, sans-serif' text-anchor='start' fill='#111' font-weight='normal'>Button body -&gt; battery holder (Z)</text>
+<text x='313.000' y='33.200' font-size='2.15' font-family='Arial, Helvetica, sans-serif' text-anchor='start' fill='#111' font-weight='normal'>5.5</text>
+<text x='341.000' y='33.200' font-size='2.15' font-family='Arial, Helvetica, sans-serif' text-anchor='start' fill='#111' font-weight='normal'>5</text>
+<text x='369.000' y='33.200' font-size='2.15' font-family='Arial, Helvetica, sans-serif' text-anchor='start' fill='#1b7a33' font-weight='bold'>OK</text>
+<line x1='222.000' y1='34.400' x2='405.000' y2='34.400' stroke='#111' stroke-width='0.12' stroke-linecap='round'/>
+<text x='223.000' y='37.800' font-size='2.15' font-family='Arial, Helvetica, sans-serif' text-anchor='start' fill='#111' font-weight='normal'>LED rear -&gt; protoboard parts (Z)</text>
+<text x='313.000' y='37.800' font-size='2.15' font-family='Arial, Helvetica, sans-serif' text-anchor='start' fill='#111' font-weight='normal'>9.4</text>
+<text x='341.000' y='37.800' font-size='2.15' font-family='Arial, Helvetica, sans-serif' text-anchor='start' fill='#111' font-weight='normal'>5</text>
+<text x='369.000' y='37.800' font-size='2.15' font-family='Arial, Helvetica, sans-serif' text-anchor='start' fill='#1b7a33' font-weight='bold'>OK</text>
+<line x1='222.000' y1='39.000' x2='405.000' y2='39.000' stroke='#111' stroke-width='0.12' stroke-linecap='round'/>
+<text x='223.000' y='42.400' font-size='2.15' font-family='Arial, Helvetica, sans-serif' text-anchor='start' fill='#111' font-weight='normal'>Uno tallest part -&gt; protoboard (Z)</text>
+<text x='313.000' y='42.400' font-size='2.15' font-family='Arial, Helvetica, sans-serif' text-anchor='start' fill='#111' font-weight='normal'>3</text>
+<text x='341.000' y='42.400' font-size='2.15' font-family='Arial, Helvetica, sans-serif' text-anchor='start' fill='#111' font-weight='normal'>2.5</text>
+<text x='369.000' y='42.400' font-size='2.15' font-family='Arial, Helvetica, sans-serif' text-anchor='start' fill='#1b7a33' font-weight='bold'>OK</text>
+<line x1='222.000' y1='43.600' x2='405.000' y2='43.600' stroke='#111' stroke-width='0.12' stroke-linecap='round'/>
+<text x='223.000' y='47.000' font-size='2.15' font-family='Arial, Helvetica, sans-serif' text-anchor='start' fill='#111' font-weight='normal'>Protoboard edge -&gt; right wall (X)</text>
+<text x='313.000' y='47.000' font-size='2.15' font-family='Arial, Helvetica, sans-serif' text-anchor='start' fill='#111' font-weight='normal'>6.13</text>
+<text x='341.000' y='47.000' font-size='2.15' font-family='Arial, Helvetica, sans-serif' text-anchor='start' fill='#111' font-weight='normal'>5</text>
+<text x='369.000' y='47.000' font-size='2.15' font-family='Arial, Helvetica, sans-serif' text-anchor='start' fill='#1b7a33' font-weight='bold'>OK</text>
+<line x1='222.000' y1='48.200' x2='405.000' y2='48.200' stroke='#111' stroke-width='0.12' stroke-linecap='round'/>
+<text x='223.000' y='51.600' font-size='2.15' font-family='Arial, Helvetica, sans-serif' text-anchor='start' fill='#111' font-weight='normal'>Protoboard edge -&gt; channel (X)</text>
+<text x='313.000' y='51.600' font-size='2.15' font-family='Arial, Helvetica, sans-serif' text-anchor='start' fill='#111' font-weight='normal'>6.13</text>
+<text x='341.000' y='51.600' font-size='2.15' font-family='Arial, Helvetica, sans-serif' text-anchor='start' fill='#111' font-weight='normal'>5</text>
+<text x='369.000' y='51.600' font-size='2.15' font-family='Arial, Helvetica, sans-serif' text-anchor='start' fill='#1b7a33' font-weight='bold'>OK</text>
+<line x1='222.000' y1='52.800' x2='405.000' y2='52.800' stroke='#111' stroke-width='0.12' stroke-linecap='round'/>
+<text x='223.000' y='56.200' font-size='2.15' font-family='Arial, Helvetica, sans-serif' text-anchor='start' fill='#111' font-weight='normal'>Protoboard edge -&gt; front/back wall (Y)</text>
+<text x='313.000' y='56.200' font-size='2.15' font-family='Arial, Helvetica, sans-serif' text-anchor='start' fill='#111' font-weight='normal'>6.32</text>
+<text x='341.000' y='56.200' font-size='2.15' font-family='Arial, Helvetica, sans-serif' text-anchor='start' fill='#111' font-weight='normal'>5</text>
+<text x='369.000' y='56.200' font-size='2.15' font-family='Arial, Helvetica, sans-serif' text-anchor='start' fill='#1b7a33' font-weight='bold'>OK</text>
+<line x1='222.000' y1='57.400' x2='405.000' y2='57.400' stroke='#111' stroke-width='0.12' stroke-linecap='round'/>
+<text x='223.000' y='60.800' font-size='2.15' font-family='Arial, Helvetica, sans-serif' text-anchor='start' fill='#111' font-weight='normal'>Uno USB tip -&gt; right wall (X)</text>
+<text x='313.000' y='60.800' font-size='2.15' font-family='Arial, Helvetica, sans-serif' text-anchor='start' fill='#111' font-weight='normal'>3.57</text>
+<text x='341.000' y='60.800' font-size='2.15' font-family='Arial, Helvetica, sans-serif' text-anchor='start' fill='#111' font-weight='normal'>2</text>
+<text x='369.000' y='60.800' font-size='2.15' font-family='Arial, Helvetica, sans-serif' text-anchor='start' fill='#1b7a33' font-weight='bold'>OK</text>
+<line x1='222.000' y1='62.000' x2='405.000' y2='62.000' stroke='#111' stroke-width='0.12' stroke-linecap='round'/>
+<text x='223.000' y='65.400' font-size='2.15' font-family='Arial, Helvetica, sans-serif' text-anchor='start' fill='#111' font-weight='normal'>Selector body -&gt; channel side (X)</text>
+<text x='313.000' y='65.400' font-size='2.15' font-family='Arial, Helvetica, sans-serif' text-anchor='start' fill='#111' font-weight='normal'>2.1</text>
+<text x='341.000' y='65.400' font-size='2.15' font-family='Arial, Helvetica, sans-serif' text-anchor='start' fill='#111' font-weight='normal'>1.5</text>
+<text x='369.000' y='65.400' font-size='2.15' font-family='Arial, Helvetica, sans-serif' text-anchor='start' fill='#1b7a33' font-weight='bold'>OK</text>
+<line x1='222.000' y1='66.600' x2='405.000' y2='66.600' stroke='#111' stroke-width='0.12' stroke-linecap='round'/>
+<text x='223.000' y='70.000' font-size='2.15' font-family='Arial, Helvetica, sans-serif' text-anchor='start' fill='#111' font-weight='normal'>Button bezel -&gt; bezel (Y)</text>
+<text x='313.000' y='70.000' font-size='2.15' font-family='Arial, Helvetica, sans-serif' text-anchor='start' fill='#111' font-weight='normal'>7</text>
+<text x='341.000' y='70.000' font-size='2.15' font-family='Arial, Helvetica, sans-serif' text-anchor='start' fill='#111' font-weight='normal'>5</text>
+<text x='369.000' y='70.000' font-size='2.15' font-family='Arial, Helvetica, sans-serif' text-anchor='start' fill='#1b7a33' font-weight='bold'>OK</text>
+<line x1='222.000' y1='71.200' x2='405.000' y2='71.200' stroke='#111' stroke-width='0.12' stroke-linecap='round'/>
+<text x='223.000' y='74.600' font-size='2.15' font-family='Arial, Helvetica, sans-serif' text-anchor='start' fill='#111' font-weight='normal'>Corner boss -&gt; protoboard corner</text>
+<text x='313.000' y='74.600' font-size='2.15' font-family='Arial, Helvetica, sans-serif' text-anchor='start' fill='#111' font-weight='normal'>1.06</text>
+<text x='341.000' y='74.600' font-size='2.15' font-family='Arial, Helvetica, sans-serif' text-anchor='start' fill='#111' font-weight='normal'>0.5</text>
+<text x='369.000' y='74.600' font-size='2.15' font-family='Arial, Helvetica, sans-serif' text-anchor='start' fill='#1b7a33' font-weight='bold'>OK</text>
+<line x1='222.000' y1='75.800' x2='405.000' y2='75.800' stroke='#111' stroke-width='0.12' stroke-linecap='round'/>
+<line x1='312.000' y1='25.000' x2='312.000' y2='75.800' stroke='#111' stroke-width='0.15' stroke-linecap='round'/>
+<line x1='340.000' y1='25.000' x2='340.000' y2='75.800' stroke='#111' stroke-width='0.15' stroke-linecap='round'/>
+<line x1='368.000' y1='25.000' x2='368.000' y2='75.800' stroke='#111' stroke-width='0.15' stroke-linecap='round'/>
+<text x='18.000' y='112.000' font-size='3.0' font-family='Arial, Helvetica, sans-serif' text-anchor='start' fill='#111' font-weight='bold'>TABLE 4 - ASSUMPTIONS REGISTER  (* values: the spec lists these as TBC/approx. - measure with calipers and update the parameters)</text>
+<line x1='18.000' y1='115.000' x2='405.000' y2='115.000' stroke='#111' stroke-width='0.35' stroke-linecap='round'/>
+<text x='19.000' y='118.500' font-size='2.3' font-family='Arial, Helvetica, sans-serif' text-anchor='start' fill='#111' font-weight='bold'>ITEM</text>
+<text x='63.000' y='118.500' font-size='2.3' font-family='Arial, Helvetica, sans-serif' text-anchor='start' fill='#111' font-weight='bold'>VALUE USED</text>
+<text x='113.000' y='118.500' font-size='2.3' font-family='Arial, Helvetica, sans-serif' text-anchor='start' fill='#111' font-weight='bold'>BASIS / SOURCE</text>
+<text x='301.000' y='118.500' font-size='2.3' font-family='Arial, Helvetica, sans-serif' text-anchor='start' fill='#111' font-weight='bold'>ACTION</text>
+<line x1='18.000' y1='119.800' x2='405.000' y2='119.800' stroke='#111' stroke-width='0.25' stroke-linecap='round'/>
+<text x='19.000' y='123.200' font-size='2.15' font-family='Arial, Helvetica, sans-serif' text-anchor='start' fill='#111' font-weight='normal'>Protoboard outline</text>
+<text x='63.000' y='123.200' font-size='2.15' font-family='Arial, Helvetica, sans-serif' text-anchor='start' fill='#111' font-weight='normal'>78.74 x 86.36 x 1.6</text>
+<text x='113.000' y='123.200' font-size='2.15' font-family='Arial, Helvetica, sans-serif' text-anchor='start' fill='#111' font-weight='normal'>Hole span 73.66 x 81.28 (spec §4) + 2.54 edge margin each side</text>
+<text x='301.000' y='123.200' font-size='2.15' font-family='Arial, Helvetica, sans-serif' text-anchor='start' fill='#111' font-weight='normal'>Measure edge-to-edge</text>
+<line x1='18.000' y1='124.400' x2='405.000' y2='124.400' stroke='#111' stroke-width='0.12' stroke-linecap='round'/>
+<text x='19.000' y='127.800' font-size='2.15' font-family='Arial, Helvetica, sans-serif' text-anchor='start' fill='#111' font-weight='normal'>Protoboard part height</text>
+<text x='63.000' y='127.800' font-size='2.15' font-family='Arial, Helvetica, sans-serif' text-anchor='start' fill='#111' font-weight='normal'>12 max above board</text>
+<text x='113.000' y='127.800' font-size='2.15' font-family='Arial, Helvetica, sans-serif' text-anchor='start' fill='#111' font-weight='normal'>Typical radial electrolytic / terminal block</text>
+<text x='301.000' y='127.800' font-size='2.15' font-family='Arial, Helvetica, sans-serif' text-anchor='start' fill='#111' font-weight='normal'>Measure tallest part</text>
+<line x1='18.000' y1='129.000' x2='405.000' y2='129.000' stroke='#111' stroke-width='0.12' stroke-linecap='round'/>
+<text x='19.000' y='132.400' font-size='2.15' font-family='Arial, Helvetica, sans-serif' text-anchor='start' fill='#111' font-weight='normal'>Arduino Uno R3</text>
+<text x='63.000' y='132.400' font-size='2.15' font-family='Arial, Helvetica, sans-serif' text-anchor='start' fill='#111' font-weight='normal'>68.58 x 53.34 x 1.6</text>
+<text x='113.000' y='132.400' font-size='2.15' font-family='Arial, Helvetica, sans-serif' text-anchor='start' fill='#111' font-weight='normal'>Arduino reference design; holes (13.97,2.54) (15.24,50.80) (66.04,7.62) (66.04,35.56)</text>
+<text x='301.000' y='132.400' font-size='2.15' font-family='Arial, Helvetica, sans-serif' text-anchor='start' fill='#111' font-weight='normal'>Verify on board</text>
+<line x1='18.000' y1='133.600' x2='405.000' y2='133.600' stroke='#111' stroke-width='0.12' stroke-linecap='round'/>
+<text x='19.000' y='137.000' font-size='2.15' font-family='Arial, Helvetica, sans-serif' text-anchor='start' fill='#111' font-weight='normal'>Uno part height</text>
+<text x='63.000' y='137.000' font-size='2.15' font-family='Arial, Helvetica, sans-serif' text-anchor='start' fill='#111' font-weight='normal'>10.9 (USB-B / DC jack)</text>
+<text x='113.000' y='137.000' font-size='2.15' font-family='Arial, Helvetica, sans-serif' text-anchor='start' fill='#111' font-weight='normal'>Reference design; headers 8.5</text>
+<text x='301.000' y='137.000' font-size='2.15' font-family='Arial, Helvetica, sans-serif' text-anchor='start' fill='#111' font-weight='normal'>Verify</text>
+<line x1='18.000' y1='138.200' x2='405.000' y2='138.200' stroke='#111' stroke-width='0.12' stroke-linecap='round'/>
+<text x='19.000' y='141.600' font-size='2.15' font-family='Arial, Helvetica, sans-serif' text-anchor='start' fill='#111' font-weight='normal'>9 V battery holder</text>
+<text x='63.000' y='141.600' font-size='2.15' font-family='Arial, Helvetica, sans-serif' text-anchor='start' fill='#111' font-weight='normal'>31 x 55 x 21</text>
+<text x='113.000' y='141.600' font-size='2.15' font-family='Arial, Helvetica, sans-serif' text-anchor='start' fill='#111' font-weight='normal'>Spec §4 'approx. 55 x 31 x 21' - not verified</text>
+<text x='301.000' y='141.600' font-size='2.15' font-family='Arial, Helvetica, sans-serif' text-anchor='start' fill='#111' font-weight='normal'>Measure + wire exit</text>
+<line x1='18.000' y1='142.800' x2='405.000' y2='142.800' stroke='#111' stroke-width='0.12' stroke-linecap='round'/>
+<text x='19.000' y='146.200' font-size='2.15' font-family='Arial, Helvetica, sans-serif' text-anchor='start' fill='#111' font-weight='normal'>Battery bay reserve</text>
+<text x='63.000' y='146.200' font-size='2.15' font-family='Arial, Helvetica, sans-serif' text-anchor='start' fill='#111' font-weight='normal'>41 x 65</text>
+<text x='113.000' y='146.200' font-size='2.15' font-family='Arial, Helvetica, sans-serif' text-anchor='start' fill='#111' font-weight='normal'>Spec §4 provisional planning reserve</text>
+<text x='301.000' y='146.200' font-size='2.15' font-family='Arial, Helvetica, sans-serif' text-anchor='start' fill='#111' font-weight='normal'>Re-check after holder</text>
+<line x1='18.000' y1='147.400' x2='405.000' y2='147.400' stroke='#111' stroke-width='0.12' stroke-linecap='round'/>
+<text x='19.000' y='150.800' font-size='2.15' font-family='Arial, Helvetica, sans-serif' text-anchor='start' fill='#111' font-weight='normal'>Adafruit 1439 button</text>
+<text x='63.000' y='150.800' font-size='2.15' font-family='Arial, Helvetica, sans-serif' text-anchor='start' fill='#111' font-weight='normal'>Ø16 mount, Ø18 bezel, 30 below panel</text>
+<text x='113.000' y='150.800' font-size='2.15' font-family='Arial, Helvetica, sans-serif' text-anchor='start' fill='#111' font-weight='normal'>16 mm nominal (spec); depth incl. 2.8 mm QC terminal + wire bend ASSUMED</text>
+<text x='301.000' y='150.800' font-size='2.15' font-family='Arial, Helvetica, sans-serif' text-anchor='start' fill='#b00020' font-weight='bold'>CRITICAL: sets height</text>
+<line x1='18.000' y1='152.000' x2='405.000' y2='152.000' stroke='#111' stroke-width='0.12' stroke-linecap='round'/>
+<text x='19.000' y='155.400' font-size='2.15' font-family='Arial, Helvetica, sans-serif' text-anchor='start' fill='#111' font-weight='normal'>Miyama MS-500E</text>
+<text x='63.000' y='155.400' font-size='2.15' font-family='Arial, Helvetica, sans-serif' text-anchor='start' fill='#111' font-weight='normal'>Ø6.2 bore, body 7.8 x 13, 22 below panel</text>
+<text x='113.000' y='155.400' font-size='2.15' font-family='Arial, Helvetica, sans-serif' text-anchor='start' fill='#111' font-weight='normal'>Spec §4 listing; depth below panel ASSUMED</text>
+<text x='301.000' y='155.400' font-size='2.15' font-family='Arial, Helvetica, sans-serif' text-anchor='start' fill='#111' font-weight='normal'>Check mfr. drawing</text>
+<line x1='18.000' y1='156.600' x2='405.000' y2='156.600' stroke='#111' stroke-width='0.12' stroke-linecap='round'/>
+<text x='19.000' y='160.000' font-size='2.15' font-family='Arial, Helvetica, sans-serif' text-anchor='start' fill='#111' font-weight='normal'>LED indicator</text>
+<text x='63.000' y='160.000' font-size='2.15' font-family='Arial, Helvetica, sans-serif' text-anchor='start' fill='#111' font-weight='normal'>Ø8.2 cut-out, 12 rear depth</text>
+<text x='113.000' y='160.000' font-size='2.15' font-family='Arial, Helvetica, sans-serif' text-anchor='start' fill='#111' font-weight='normal'>Generic 5 mm LED in 8 mm panel holder - model not chosen</text>
+<text x='301.000' y='160.000' font-size='2.15' font-family='Arial, Helvetica, sans-serif' text-anchor='start' fill='#111' font-weight='normal'>Select model</text>
+<line x1='18.000' y1='161.200' x2='405.000' y2='161.200' stroke='#111' stroke-width='0.12' stroke-linecap='round'/>
+<text x='19.000' y='164.600' font-size='2.15' font-family='Arial, Helvetica, sans-serif' text-anchor='start' fill='#111' font-weight='normal'>Panel thickness</text>
+<text x='63.000' y='164.600' font-size='2.15' font-family='Arial, Helvetica, sans-serif' text-anchor='start' fill='#111' font-weight='normal'>3.0 lid</text>
+<text x='113.000' y='164.600' font-size='2.15' font-family='Arial, Helvetica, sans-serif' text-anchor='start' fill='#111' font-weight='normal'>Within typical max panel thickness for M6 bushing / 16 mm button</text>
+<text x='301.000' y='164.600' font-size='2.15' font-family='Arial, Helvetica, sans-serif' text-anchor='start' fill='#111' font-weight='normal'>Check both parts</text>
+<line x1='18.000' y1='165.800' x2='405.000' y2='165.800' stroke='#111' stroke-width='0.12' stroke-linecap='round'/>
+<text x='19.000' y='169.200' font-size='2.15' font-family='Arial, Helvetica, sans-serif' text-anchor='start' fill='#111' font-weight='normal'>Clearance allowance</text>
+<text x='63.000' y='169.200' font-size='2.15' font-family='Arial, Helvetica, sans-serif' text-anchor='start' fill='#111' font-weight='normal'>&gt;= 5 (6 at electronics bay)</text>
+<text x='113.000' y='169.200' font-size='2.15' font-family='Arial, Helvetica, sans-serif' text-anchor='start' fill='#111' font-weight='normal'>Spec §6 preliminary allowance; 6 used so corner bosses clear the board</text>
+<text x='301.000' y='169.200' font-size='2.15' font-family='Arial, Helvetica, sans-serif' text-anchor='start' fill='#111' font-weight='normal'>-</text>
+<line x1='18.000' y1='170.400' x2='405.000' y2='170.400' stroke='#111' stroke-width='0.12' stroke-linecap='round'/>
+<line x1='62.000' y1='115.000' x2='62.000' y2='170.400' stroke='#111' stroke-width='0.15' stroke-linecap='round'/>
+<line x1='112.000' y1='115.000' x2='112.000' y2='170.400' stroke='#111' stroke-width='0.15' stroke-linecap='round'/>
+<line x1='300.000' y1='115.000' x2='300.000' y2='170.400' stroke='#111' stroke-width='0.15' stroke-linecap='round'/>
+<text x='18.000' y='180.400' font-size='3.0' font-family='Arial, Helvetica, sans-serif' text-anchor='start' fill='#111' font-weight='bold'>HOW TO UPDATE AFTER MEASURING</text>
+<text x='18.000' y='185.900' font-size='2.35' font-family='Arial, Helvetica, sans-serif' text-anchor='start' fill='#111' font-weight='normal'>a) Edit the parameter block at the top of cad/power_grid_box_enclosure.scad (and tools/gen_drawing.py for this drawing set).</text>
+<text x='18.000' y='190.000' font-size='2.35' font-family='Arial, Helvetica, sans-serif' text-anchor='start' fill='#111' font-weight='normal'>b) Overall size follows automatically: width = walls + battery bay + rib + channel + (2 x 6 + protoboard width);</text>
+<text x='18.000' y='194.100' font-size='2.35' font-family='Arial, Helvetica, sans-serif' text-anchor='start' fill='#111' font-weight='normal'>    depth = walls + 2 x 6 + protoboard depth; height = floor + holder + 5 + button depth + lid (re-check Table 3).</text>
+<text x='18.000' y='198.200' font-size='2.35' font-family='Arial, Helvetica, sans-serif' text-anchor='start' fill='#111' font-weight='normal'>c) Re-run tools/gen_drawing.py - the clearance table (Table 3) and the asserts fail if any check drops below its minimum.</text>
+<text x='18.000' y='202.300' font-size='2.35' font-family='Arial, Helvetica, sans-serif' text-anchor='start' fill='#111' font-weight='normal'>d) Before the full print: print the lid only (approx. 1.5 h) and trial-fit PB1-3, SW1 and L1-3.</text>
+<text x='222.000' y='82.000' font-size='3.0' font-family='Arial, Helvetica, sans-serif' text-anchor='start' fill='#111' font-weight='bold'>OPEN ITEMS (spec §1, §7)</text>
+<text x='222.000' y='87.500' font-size='2.35' font-family='Arial, Helvetica, sans-serif' text-anchor='start' fill='#111' font-weight='normal'>- External DC barrel input: OPEN, not modelled (zone reserved).</text>
+<text x='222.000' y='91.600' font-size='2.35' font-family='Arial, Helvetica, sans-serif' text-anchor='start' fill='#111' font-weight='normal'>- Confirm button quantity (3) and LED model / quantity (3).</text>
+<text x='222.000' y='95.700' font-size='2.35' font-family='Arial, Helvetica, sans-serif' text-anchor='start' fill='#111' font-weight='normal'>- Confirm 2.8 x 0.5 QC receptacle fit on button blades.</text>
+<text x='222.000' y='99.800' font-size='2.35' font-family='Arial, Helvetica, sans-serif' text-anchor='start' fill='#111' font-weight='normal'>- Verify SW1 terminal arrangement with continuity meter.</text>
+</svg>
