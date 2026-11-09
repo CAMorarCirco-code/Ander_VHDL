@@ -15,66 +15,86 @@ os.makedirs(OUT, exist_ok=True)
 
 # ---------------------------------------------------------------- parameters
 T_WALL, T_FLOOR, T_LID = 2.5, 2.5, 3.0
-W, D = 151.0, 104.0                  # external footprint
+D = 104.0
 BASE_H = 59.0                       # base tub height (lid sits on top)
 H = BASE_H + T_LID                  # 62 overall
-IX0, IX1, IY0, IY1 = T_WALL, W - T_WALL, T_WALL, D - T_WALL
+IX0, IY0 = T_WALL, T_WALL
+IY1 = D - T_WALL
 CY = D / 2                          # 52 - common centre line of all three columns
 
-# battery zone
+# battery zone (left)
 BAY_B = (IX0, 43.5, 19.5, 84.5)     # planning reserve 41 x 65
 HOLDER = (7.5, 38.5, 24.5, 79.5, T_FLOOR, T_FLOOR + 21.0)  # 31 x 55 x 21 (approx.)
 RIB = (43.5, 45.5, IY0, IY1, T_FLOOR, T_FLOOR + 15.0)
 NOTCH = (CY - 4, CY + 4, RIB[5] - 8, RIB[5])  # 8 x 8 wire notch in rib
-CHAN = (45.5, 57.5)                  # 12 mm clear wiring channel
-TIE_Y = (25.0, 79.0)                 # cable-tie anchors in channel
 
-# electronics zone
-EBAY = (57.5, IX1)
+# Arduino Uno R3 - orientation per user photo: USB-B and DC jack face LEFT (towards the
+# battery); the battery holder lead ends in a DC barrel plug in the Uno jack.
+PLUG_L = 30.0                       # * plug + strain relief length out of the jack
+PLUG_D = 10.0                       # * plug body diameter
+PLUG_BEND = 8.0                     # * room for the cable to turn 90 deg
+CHAN = (RIB[1], RIB[1] + PLUG_L + PLUG_BEND)   # plug / cable zone (38 wide)
+TIE_Y = (25.0, 79.0)                # cable-tie anchors in plug/cable zone
+UNO_L, UNO_W = 68.58, 53.34
+UNO_DCJ_PROJ, UNO_USB_PROJ = 1.8, 6.35
+UNO_X0 = CHAN[1] + UNO_DCJ_PROJ
+UNO = (UNO_X0, UNO_X0 + UNO_L, CY - UNO_W / 2, CY + UNO_W / 2)
+UNO_Z0, UNO_T = 8.5, 1.6
+UNO_COMP = 10.9                     # USB-B / DC jack height above PCB
+UNO_HDR = 8.5                       # female header height above PCB
+# Uno R3 reference holes, connector edge = local x0 (standard orientation, as in photo)
+_uno_ref = [(13.97, 2.54), (15.24, 50.80), (66.04, 7.62), (66.04, 35.56)]
+UNO_HOLES = [(round(UNO[0] + hx, 2), round(UNO[2] + hy, 2)) for hx, hy in _uno_ref]
+UNO_USB = (UNO[0] - UNO_USB_PROJ, UNO[0] + 9.65, UNO[2] + 32.0, UNO[2] + 44.0)
+UNO_DCJ = (UNO[0] - UNO_DCJ_PROJ, UNO[0] + 12.0, UNO[2] + 3.3, UNO[2] + 12.3)
+JACK_Y = (UNO_DCJ[2] + UNO_DCJ[3]) / 2
+JACK_Z = UNO_Z0 + UNO_T + 6.5       # * jack pin centre height
+PLUG = (UNO_DCJ[0] - PLUG_L, UNO_DCJ[0], JACK_Y - PLUG_D / 2, JACK_Y + PLUG_D / 2, JACK_Z - PLUG_D / 2, JACK_Z + PLUG_D / 2)
+
+# overall width follows from the Uno position (3 mm to the right wall)
+W = float(math.ceil(UNO[1] + 3.0 + T_WALL))
+IX1 = W - T_WALL
+EBAY = (CHAN[0], IX1)
+
+# protoboard above, on its own pillars; may overhang the plug zone (it sits above the plug)
 PB_SPAN = (29 * 2.54, 32 * 2.54)     # 73.66 x 81.28 hole-centre span (from spec)
 PB_EDGE = 2.54                       # ASSUMED edge margin (one pitch) each side
 PB_W, PB_D = PB_SPAN[0] + 2 * PB_EDGE, PB_SPAN[1] + 2 * PB_EDGE  # 78.74 x 86.36
-PB_CX = 103.0
-PB = (PB_CX - PB_W / 2, PB_CX + PB_W / 2, CY - PB_D / 2, CY + PB_D / 2)
-PB_Z0, PB_T = 24.0, 1.6
+PB = (IX1 - 6.0 - PB_W, IX1 - 6.0, CY - PB_D / 2, CY + PB_D / 2)
+PB_CX = (PB[0] + PB[1]) / 2
+PB_Z0, PB_T = 25.0, 1.6
 PB_COMP_MAX = 12.0                   # ASSUMED tallest part on protoboard
 PB_PILLARS = [(PB[0] + 2.54, PB[2] + 2.54), (PB[1] - 2.54, PB[2] + 2.54),
               (PB[0] + 2.54, PB[3] - 2.54), (PB[1] - 2.54, PB[3] - 2.54)]
-UNO_L, UNO_W = 68.58, 53.34
-UNO = (70.0, 70.0 + UNO_L, CY - UNO_W / 2, CY + UNO_W / 2)
-UNO_Z0, UNO_T = 8.5, 1.6
-UNO_COMP = 10.9                      # USB-B / DC jack height above PCB
-UNO_HDR = 8.5                        # female header height above PCB
-UNO_USB_PROJ = 6.35
-# Uno R3 reference holes (connector edge = local x0), rotated 180 deg so the
-# connector edge faces the right wall.
-_uno_ref = [(13.97, 2.54), (15.24, 50.80), (66.04, 7.62), (66.04, 35.56)]
-UNO_HOLES = [(round(UNO[1] - hx, 2), round(UNO[3] - hy, 2)) for hx, hy in _uno_ref]
-UNO_USB = (UNO[1] - 9.65, UNO[1] + UNO_USB_PROJ, UNO[3] - 44.0, UNO[3] - 32.0)  # 12 wide
-UNO_DCJ = (UNO[1] - 12.0, UNO[1] + 1.8, UNO[3] - 12.3, UNO[3] - 3.3)            # 9 wide
 
 BOSSES = [(IX0 + 3, IY0 + 3), (IX1 - 3, IY0 + 3), (IX0 + 3, IY1 - 3), (IX1 - 3, IY1 - 3)]
 FEET = [(12, 12), (W - 12, 12), (12, D - 12), (W - 12, D - 12)]
 
 # top panel controls (x, y)
-BTN_X, SEL_X, LED_X = 23.0, 91.0, 128.0
+BTN_X = 23.0
+LED_X = W - BTN_X                    # mirrors the button column
+SEL_X = LED_X - 37.0
 ROWS = (27.0, 52.0, 77.0)
 # SW1 position follows the top layout of draft v6 (position only, no dimensions taken):
 # right of centre, between the L2 and L3 rows.
 SEL_Y = (ROWS[0] + ROWS[1]) / 2       # 39.5
 SEL_KO = (SEL_X - 11.5, SEL_X + 11.5, SEL_Y - 11.5, SEL_Y + 11.5)  # protoboard keep-out under SW1
+LED_KO = (LED_X - 7, LED_X + 7, ROWS[0] - 7, ROWS[2] + 7)
 BTN_CUT, BTN_BEZEL, BTN_BODY, BTN_DEPTH = 16.2, 18.0, 16.0, 30.0   # depth ASSUMED
 SEL_CUT, SEL_BODY, SEL_DEPTH = 6.2, (7.8, 13.0), 22.0             # depth ASSUMED
 LED_CUT, LED_BEZEL, LED_DEPTH = 8.2, 10.0, 12.0                    # ASSUMED 8 mm holder
 LIP_W, LIP_H, LIP_GAP = 1.5, 3.0, 0.3
-SEL_KO_H = 6.0                       # max part height on protoboard under SW1
+SEL_KO_H = 5.0                       # max part height on protoboard under SW1
+PILLAR_H = PB_Z0 - T_FLOOR
 
 # derived checks ----------------------------------------------------------
 gap_btn_batt = (BASE_H - BTN_DEPTH) - HOLDER[5]
 gap_led_pb = (BASE_H - LED_DEPTH) - (PB_Z0 + PB_T + PB_COMP_MAX)
 gap_pb_uno = PB_Z0 - (UNO_Z0 + UNO_T + max(UNO_COMP, UNO_HDR))
 gap_sel_pb = (BASE_H - SEL_DEPTH) - (PB_Z0 + PB_T + SEL_KO_H)
-assert gap_sel_pb >= 5 and gap_btn_batt >= 5 and gap_led_pb >= 5 and gap_pb_uno >= 2.5, (gap_btn_batt, gap_led_pb, gap_pb_uno)
+gap_plug_pb = PB_Z0 - PLUG[5]
+gap_plug_rib = PLUG[0] - RIB[1]
+assert gap_sel_pb >= 5 and gap_btn_batt >= 5 and gap_led_pb >= 5 and gap_pb_uno >= 2.5 and gap_plug_pb >= 2.5 and gap_plug_rib >= PLUG_BEND, (gap_btn_batt, gap_led_pb, gap_pb_uno)
 for bx, by in BOSSES:
     for cx, cy in [(PB[0], PB[2]), (PB[1], PB[2]), (PB[0], PB[3]), (PB[1], PB[3])]:
         assert math.hypot(bx - cx, by - cy) > 3.5 + 0.5
@@ -188,7 +208,7 @@ class Sheet:
         self.text(x0 + 2, y0 + 15.5, self.title, 3.0, weight="bold")
         self.text(x0 + 112, y0 + 11, "SHEET", 1.7, c="#555")
         self.text(x0 + 112, y0 + 15.5, f"{self.n} OF 3", 3.0, weight="bold")
-        cells = [(x0, "UNITS / SCALE", "mm   1:1 @ A3"), (x0 + 60, "REV", "B - PRELIM."),
+        cells = [(x0, "UNITS / SCALE", "mm   1:1 @ A3"), (x0 + 60, "REV", "C - PRELIM."),
                  (x0 + 100, "DATE", "2026-11-09"), (x0 + 130, "PROJECTION", "")]
         for cx, k, v in cells:
             self.text(cx + 2, y0 + 20, k, 1.7, c="#555"); self.text(cx + 2, y0 + 24.5, v, 2.6)
@@ -207,8 +227,8 @@ class Sheet:
         self.text(167, 256, "REVISION HISTORY", 1.9, c="#555", weight="bold")
         self.line(165, 258, 250, 258, 0.3)
         self.text(167, 262, "A  2026-11-09  First issue from spec (9 Nov 2026).", 2.2)
-        self.text(167, 265.5, "B  2026-11-09  SW1 moved to layout-v6 position;", 2.2)
-        self.text(167, 269, "    PB/L numbered from back. * = assumed value.", 2.2)
+        self.text(167, 265.5, "B  2026-11-09  SW1 to layout-v6 position.", 2.2)
+        self.text(167, 269, "C  2026-11-09  Uno + 9 V plug per photo. * = assumed.", 2.2)
         self.text(167, 276, "Drawn: Claude Code     Checked: ________", 2.2)
         self.text(167, 280.5, "Approved: ________", 2.2)
 
@@ -241,7 +261,7 @@ s1 = Sheet(1, "GENERAL ARRANGEMENT - PLAN VIEWS")
 s1.frame()
 
 # ---- View 1: top view of lid / control panel
-v = View(s1, 42, 152)
+v = View(s1, 38, 152)
 v.rect(0, W, 0, D, sw=0.6, rx=0)
 # lid lip (hidden)
 v.rect(IX0 + LIP_GAP, IX1 - LIP_GAP, IY0 + LIP_GAP, IY1 - LIP_GAP, sw=0.25, dash="1.5 0.8")
@@ -297,10 +317,10 @@ s1.leader(*v.p(BTN_X - BTN_CUT / 2 * 0.7, ROWS[2] + BTN_CUT / 2 * 0.7), *v.p(BTN
 s1.leader(*v.p(SEL_X + 2.2, SEL_Y + 2.2), *v.p(SEL_X - 3, D + 7), "Ø6.2 THRU - SELECTOR SW1 (M6x0.75)", anchor="end")
 s1.leader(*v.p(LED_X + 2.9, ROWS[2] + 2.9), *v.p(LED_X - 5, D + 14), "3x  Ø8.2 THRU - LED HOLDER *", anchor="start")
 s1.leader(*v.p(BOSSES[1][0], BOSSES[1][1]), *v.p(W + 3, -7), "4x Ø3.4, CSK Ø6.5x90°", anchor="start")
-s1.label_view(42 + W / 2, 20, "VIEW 1 - TOP (CONTROL PANEL / LID)", "Lid 3.0 thick. Hidden: lid locating lip. Phantom: bays below.")
+s1.label_view(38 + W / 2, 20, "VIEW 1 - TOP (CONTROL PANEL / LID)", "Lid 3.0 thick. Hidden: lid locating lip. Phantom: bays below.")
 
 # ---- View 2: plan view with lid removed
-v2 = View(s1, 236, 152)
+v2 = View(s1, 230, 152)
 v2.rect(0, W, 0, D, sw=0.6)
 v2.rect(IX0, IX1, IY0, IY1, sw=0.45)
 # rib
@@ -315,10 +335,13 @@ s1.text(x, y - 2, "9 V BATTERY", 2.4, "middle", weight="bold"); s1.text(x, y + 1
 s1.text(x, y + 5, "31 x 55 x 21", 2.2, "middle")
 # channel / ties
 for ty in TIE_Y:
-    v2.rect(CHAN[0] + 2, CHAN[1] - 2, ty - 2, ty + 2, sw=0.3)
-    v2.line(CHAN[0] + 2, ty, CHAN[1] - 2, ty, w=0.2)
+    v2.rect(CHAN[0] + 2, CHAN[0] + 10, ty - 2, ty + 2, sw=0.3)
+    v2.line(CHAN[0] + 2, ty, CHAN[0] + 10, ty, w=0.2)
 x, y = v2.p((CHAN[0] + CHAN[1]) / 2, CY)
-s1.text(x, y, "WIRING CHANNEL", 2.0, "middle", rot=-90)
+s1.text(x - 9, y, "DC PLUG / CABLE ZONE", 2.0, "middle", rot=-90)
+v2.rect(PLUG[0], PLUG[1], PLUG[2], PLUG[3], sw=0.45, fill="#333", op=0.85)
+v2.rect(PLUG[0] - 6, PLUG[0], JACK_Y - 1.5, JACK_Y + 1.5, sw=0.3, fill="#b00020", op=0.6)
+x, y = v2.p((PLUG[0] + PLUG[1]) / 2, PLUG[2] - 3.5); s1.text(x, y, "DC PLUG *", 1.9, "middle")
 # electronics bay
 v2.rect(PB[0], PB[1], PB[2], PB[3], sw=0.55, fill="#eef3fb")
 v2.rect(UNO[0], UNO[1], UNO[2], UNO[3], sw=0.3, dash="2 0.8")
@@ -331,7 +354,7 @@ for px, py in PB_PILLARS:
 # hole-centre span frame
 v2.rect(PB[0] + PB_EDGE, PB[1] - PB_EDGE, PB[2] + PB_EDGE, PB[3] - PB_EDGE, sw=0.2, c=BLUE, dash="0.6 0.8")
 # LED keep-out
-v2.rect(LED_X - 7, LED_X + 7, ROWS[0] - 7, ROWS[2] + 7, sw=0.3, c="#b00020", dash="2 1")
+v2.rect(*LED_KO, sw=0.3, c="#b00020", dash="2 1")
 x, y = v2.p(LED_X, ROWS[2] + 9); s1.text(x, y, "LED KEEP-OUT", 1.9, "middle", c="#b00020")
 v2.rect(*SEL_KO, sw=0.3, c="#b00020", dash="2 1")
 x, y = v2.p(SEL_X, SEL_KO[3] + 1.5); s1.text(x, y, "SW1 KEEP-OUT (parts <= 6)", 1.9, "middle", c="#b00020")
@@ -340,13 +363,12 @@ x, y = v2.p(PB_CX - 12, CY - 33); s1.text(x, y, "ARDUINO UNO R3 (BELOW, hidden)"
 for bx, by in BOSSES:
     v2.circle(bx, by, 7, sw=0.45); v2.circle(bx, by, 4.0, sw=0.3)
 # reserved DC jack zone on right wall
-v2.rect(IX1, W, UNO_DCJ[2] - 1, UNO_DCJ[3] + 1, sw=0.25, c="#b00020", dash="1.5 0.8")
 # dims
 x0, yb0 = v2.p(0, 0)
 pts = [0, IX0, BAY_B[1], CHAN[0], CHAN[1], PB[0], PB[1], IX1, W]
 labels_ok = {(BAY_B[1], CHAN[0]): "2", }
 row_y = yb0 + 12
-for a0, a1 in ((IX0, BAY_B[1]), (BAY_B[1], CHAN[1]), (CHAN[1], PB[0]), (PB[0], PB[1]), (PB[1], IX1)):
+for a0, a1 in ((IX0, BAY_B[1]), (BAY_B[1], RIB[1]), (RIB[1], UNO_DCJ[0]), (UNO_DCJ[0], UNO[1]), (UNO[1], IX1)):
     s1.hdim(v2.p(a0, 0)[0], v2.p(a1, 0)[0], yb0 - T_WALL, yb0 - T_WALL, row_y, f(a1 - a0))
 s1.hdim(v2.p(IX0, 0)[0], v2.p(IX1, 0)[0], yb0 - T_WALL, yb0 - T_WALL, yb0 + 21, f"{f(IX1 - IX0)} INSIDE")
 xr = v2.p(W, 0)[0]
@@ -355,12 +377,12 @@ for b0, b1 in ((IY0, PB[2]), (PB[2], PB[3]), (PB[3], IY1)):
 s1.vdim(v2.p(0, IY0)[1], v2.p(0, IY1)[1], xr - T_WALL, xr - T_WALL, xr + 15, f"{f(IY1 - IY0)} INSIDE")
 xl = v2.p(0, 0)[0]
 s1.vdim(v2.p(0, BAY_B[2])[1], v2.p(0, BAY_B[3])[1], xl + 2.5, xl + 2.5, xl - 8, "65 BAY *")
-s1.leader(*v2.p(PB_PILLARS[2][0], PB_PILLARS[2][1]), *v2.p(70, D + 8), "4x PILLAR Ø7, H 21.5, PILOT Ø2.5 (M3 self-tap) / Ø4 INSERT", anchor="start")
+s1.leader(*v2.p(PB_PILLARS[2][0], PB_PILLARS[2][1]), *v2.p(70, D + 8), f"4x PILLAR Ø7, H {f(PILLAR_H)}, PILOT Ø2.5 (M3 self-tap) / Ø4 INSERT", anchor="start")
 s1.leader(*v2.p(*UNO_HOLES[0]), *v2.p(W, D + 15), "4x STANDOFF Ø6, H 6.0 at Uno R3 holes", anchor="end")
 s1.leader(*v2.p(BOSSES[2][0], BOSSES[2][1]), *v2.p(-3, D + 8), "4x BOSS Ø7 x 56.5, M3 HEAT-SET INSERT", anchor="start")
 s1.leader(*v2.p(RIB[0] + 1, NOTCH[1]), *v2.p(-3, D + 15), "RIB 2.0 x 15 HIGH, 8x8 WIRE NOTCH", anchor="start")
-s1.leader(*v2.p(W - 0.5, UNO_DCJ[3]), *v2.p(W - 12, -7), "RESERVED: optional DC/USB", anchor="end")
-s1.label_view(236 + W / 2, 20, "VIEW 2 - PLAN, LID REMOVED", "Battery bay LEFT under buttons  |  electronics bay RIGHT under LEDs")
+s1.leader(*v2.p(PLUG[0] + 4, PLUG[2]), *v2.p(PLUG[0] + 30, -7), "9 V lead -> DC plug into Uno jack (per photo)", anchor="start")
+s1.label_view(230 + W / 2, 20, "VIEW 2 - PLAN, LID REMOVED", "Battery bay LEFT under buttons  |  electronics bay RIGHT under LEDs")
 
 # ---- coordinate table (sheet 1, bottom-left)
 tx, ty = 15, 188
@@ -371,11 +393,11 @@ rows = [
     ("PB1/PB2/PB3", f(BTN_X), "77 / 52 / 27", "Ø16.2", "Adafruit 1439, 16 mm illum. momentary *"),
     ("SW1 selector", f(SEL_X), f(SEL_Y), "Ø6.2", "Miyama MS-500E (ON)-OFF-(ON), M6x0.75"),
     ("L1/L2/L3", f(LED_X), "77 / 52 / 27", "Ø8.2", "LED + 8 mm panel holder (model TBC) *"),
-    ("Lid screws", "5.5 / 145.5", "5.5 / 98.5", "Ø3.4", "4x M3 x 10 countersunk into inserts"),
+    ("Lid screws", f"{f(BOSSES[0][0])} / {f(BOSSES[1][0])}", f"{f(BOSSES[0][1])} / {f(BOSSES[2][1])}", "Ø3.4", "4x M3 x 10 countersunk into inserts"),
     ("Battery holder", f"{f(HOLDER[0])}-{f(HOLDER[1])}", f"{f(HOLDER[2])}-{f(HOLDER[3])}", "31x55x21", "on floor; VHB tape or 2x M3 *"),
-    ("Protoboard", f"{f(PB[0])}-{f(PB[1])}", f"{f(PB[2])}-{f(PB[3])}", "78.74x86.36", "underside Z 24.0 *"),
-    ("PB pillars", f"{f(PB_PILLARS[0][0])} / {f(PB_PILLARS[1][0])}", f"{f(PB_PILLARS[0][1])} / {f(PB_PILLARS[2][1])}", "Ø7 x 21.5", "corner holes drilled to Ø3.2"),
-    ("Arduino Uno R3", f"{f(UNO[0])}-{f(UNO[1])}", f"{f(UNO[2])}-{f(UNO[3])}", "68.58x53.34", "underside Z 8.5, jacks face +X"),
+    ("Protoboard", f"{f(PB[0])}-{f(PB[1])}", f"{f(PB[2])}-{f(PB[3])}", "78.74x86.36", f"underside Z {f(PB_Z0)} *"),
+    ("PB pillars", f"{f(PB_PILLARS[0][0])} / {f(PB_PILLARS[1][0])}", f"{f(PB_PILLARS[0][1])} / {f(PB_PILLARS[2][1])}", f"Ø7 x {f(PILLAR_H)}", "corner holes drilled to Ø3.2"),
+    ("Arduino Uno R3", f"{f(UNO[0])}-{f(UNO[1])}", f"{f(UNO[2])}-{f(UNO[3])}", "68.58x53.34", "underside Z 8.5, USB/DC jack face LEFT"),
     ("Uno standoffs", " / ".join(f(h[0]) for h in UNO_HOLES), " / ".join(f(h[1]) for h in UNO_HOLES), "Ø6 x 6.0", "4 holes, ref. Uno R3 drawing"),
 ]
 yy = ty + 4
@@ -401,8 +423,8 @@ for i, (w_, d_, c_, t_) in enumerate(items):
     s1.line(lx, yy, lx + 18, yy, float(w_) + 0.1, c_, d_); s1.text(lx + 22, yy + 0.9, t_, 2.3)
 s1.text(lx + 85, ly, "KEY DECISIONS (spec §1)", 2.6, weight="bold")
 for i, t_ in enumerate(["LEFT: 9 V battery under button column", "RIGHT: protoboard above Uno R3, under LEDs",
-                        "SW1 right of centre, between L2/L3 rows (v6)", "CENTRE: protected wiring channel; no USB hole",
-                        "Envelope minimised: 151 x 104 x 62 (was 200x120x75)"]):
+                        "SW1 right of centre, between L2/L3 rows (v6)", "Uno jacks face battery (photo); no USB hole",
+                        f"Envelope: {f(W)} x {f(D)} x {f(H)} (was 200x120x75)"]):
     s1.text(lx + 85, ly + 5.9 + i * 5, "- " + t_, 2.2)
 sheets.append(s1)
 
@@ -477,7 +499,8 @@ va.rect(SEL_KO[0], SEL_KO[1], PB_Z0 + PB_T, PB_Z0 + PB_T + SEL_KO_H, sw=0.3, c="
 s2.vdim(va.p(0, PB_Z0 + PB_T + SEL_KO_H)[1], va.p(0, BASE_H - SEL_DEPTH)[1], va.p(SEL_KO[1], 0)[0], va.p(SEL_X + 4, 0)[0], va.p(SEL_KO[1] + 4, 0)[0], f(gap_sel_pb))
 va.rect(PB[0] + 3, PB[1] - 3, PB_Z0 - 2.5, PB_Z0, sw=0.25, c=PHANTOM, dash="1 0.6")
 # wire path through notch (phantom)
-xs_ = [(HOLDER[1], 12), (RIB[0], 13.5), (CHAN[0] + 3, 13.5), (CHAN[1] - 2, 6), (PB[0] + 2, 5), (PB[0] + 4, PB_Z0)]
+xs_ = [(HOLDER[1], 12), (RIB[0], 13.5), (CHAN[0] + 4, 13.5), (PLUG[0] - 4, JACK_Z), (PLUG[0], JACK_Z)]
+va.rect(PLUG[0], PLUG[1], PLUG[4], PLUG[5], sw=0.35, dash="1.5 0.8")
 s2.poly([va.p(a, b) for a, b in xs_], sw=0.45, c="#b00020", close=False)
 # dims
 xL, yB = va.p(0, 0)
@@ -493,9 +516,9 @@ s2.vdim(va.p(0, BASE_H - BTN_DEPTH)[1], va.p(0, BASE_H)[1], xL, xL, xL - 7, f"{f
 s2.leader(*va.p(BTN_X + 8, BASE_H - 15), *va.p(BTN_X + 34, H + 20), "PB2 - body depth below lid 30 * (governs height)", anchor="start")
 s2.leader(*va.p(HOLDER[0] + 5, 12), *va.p(-4, -16), "9 V holder (section)", anchor="start")
 s2.leader(*va.p(LED_X + 3, BASE_H - 8), *va.p(LED_X + 8, H + 13), "L2 - rear depth 12 *", anchor="start")
-s2.leader(*va.p(PB[1] - 10, PB_Z0 + 1), *va.p(W - 6, -22), "Protoboard Z 24.0 - 25.6", anchor="end")
+s2.leader(*va.p(PB[1] - 10, PB_Z0 + 1), *va.p(W - 6, -22), f"Protoboard Z {f(PB_Z0)} - {f(PB_Z0 + PB_T)}", anchor="end")
 s2.leader(*va.p(UNO[0] + 30, UNO_Z0 + 1), *va.p(UNO[0] + 18, -16), "Uno R3 Z 8.5 - 10.1", anchor="end")
-s2.leader(*va.p(CHAN[0] + 3, 13.5), *va.p(CHAN[0] - 12, -22), "Battery leads via rib notch + channel", anchor="start", c="#b00020")
+s2.leader(*va.p(CHAN[0] + 3, 13.5), *va.p(CHAN[0] - 12, -22), "9 V lead via rib notch to DC plug (hidden, Y 33)", anchor="start", c="#b00020")
 s2.label_view(45 + W / 2, 18, "SECTION A-A  (stepped, viewed from front)", "Stepped section: Y = 52 (PB2, L2), jog to Y = 39.5 through SW1")
 
 # ---- Section B-B (side, cut at X = 128 through LED column; +Y to the right)
@@ -520,7 +543,7 @@ s2.vdim(vb.p(0, PB_Z0 + PB_T + PB_COMP_MAX)[1], vb.p(0, BASE_H - LED_DEPTH)[1], 
 s2.vdim(vb.p(0, BASE_H - LED_DEPTH)[1], vb.p(0, BASE_H)[1], xR, xR, xR + 7, "12 *")
 s2.vdim(vb.p(0, UNO_Z0 + UNO_T + UNO_COMP)[1], vb.p(0, PB_Z0)[1], xL, xL, xL - 7, f"{f(gap_pb_uno)} MIN")
 s2.leader(*vb.p(ROWS[2] + 5, 40), *vb.p(4, H + 13), "LED keep-out: no protoboard parts here", anchor="start", c="#b00020")
-s2.label_view(265 + D / 2, 18, "SECTION B-B  (X = 128, viewed from right)", "Through LED column L1-L3 and the board stack")
+s2.label_view(265 + D / 2, 18, f"SECTION B-B  (X = {f(LED_X)}, viewed from right)", "Through LED column L1-L3 and the board stack")
 
 # ---- isometric (exploded lid)
 COS, SIN = math.cos(math.radians(30)), math.sin(math.radians(30))
@@ -551,6 +574,7 @@ for px, py in sorted(PB_PILLARS, key=lambda p: -(p[0] + p[1])):
     box(px - 3.5, px + 3.5, py - 3.5, py + 3.5, T_FLOOR, PB_Z0, "#cfd4db")
 box(UNO[0], UNO[1], UNO[2], UNO[3], UNO_Z0, UNO_Z0 + UNO_T, "#2a7f8f")
 box(PB[0], PB[1], PB[2], PB[3], PB_Z0, PB_Z0 + PB_T, "#c8a24a")
+box(PLUG[0], PLUG[1], PLUG[2], PLUG[3], PLUG[4], PLUG[5], "#333333")
 box(HOLDER[0], HOLDER[1], HOLDER[2], HOLDER[3], HOLDER[4], HOLDER[5], "#555b66")
 # front + left walls, transparent
 box(0, W, 0, T_WALL, 0, BASE_H, "#9fb3cc", op=0.28, faces=("front", "top"))
@@ -579,10 +603,10 @@ stack = [
     ("Uno standoffs", "2.5 - 8.5", "6.0 high, Ø6"),
     ("Uno R3 PCB", "8.5 - 10.1", "1.6 PCB"),
     ("Uno parts / headers", "10.1 - 21.0", "DC jack/USB 10.9, headers 8.5"),
-    ("Clearance", "21.0 - 24.0", f"{f(gap_pb_uno)} (solder tails of protoboard)"),
-    ("Protoboard", "24.0 - 25.6", "on 4 floor pillars, H 21.5"),
-    ("Protoboard parts", "25.6 - 37.6", "max 12 * (keep-out under LEDs)"),
-    ("LED rear", "47.0 - 59.0", f"12 *; {f(gap_led_pb)} clear to parts"),
+    ("Clearance", f"21.0 - {f(PB_Z0)}", f"{f(gap_pb_uno)} to Uno parts, {f(gap_plug_pb)} to DC plug"),
+    ("Protoboard", f"{f(PB_Z0)} - {f(PB_Z0 + PB_T)}", f"on 4 floor pillars, H {f(PILLAR_H)}"),
+    ("Protoboard parts", f"{f(PB_Z0 + PB_T)} - {f(PB_Z0 + PB_T + PB_COMP_MAX)}", "max 12 * (keep-out under LEDs)"),
+    ("LED rear", f"{f(BASE_H - LED_DEPTH)} - {f(BASE_H)}", f"12 *; {f(gap_led_pb)} clear to parts"),
     ("Battery holder", "2.5 - 23.5", "21 * high, on floor"),
     ("Selector rear", f"{f(BASE_H - SEL_DEPTH)} - {f(BASE_H)}", f"22 *; parts under SW1 <= {f(SEL_KO_H)}"),
     ("Button rear", "29.0 - 59.0", f"30 *; {f(gap_btn_batt)} clear to holder"),
@@ -617,16 +641,16 @@ y = para(s3, 18, 22, "GENERAL NOTES", [
     "5.  Lid lip 1.5 wide x 3.0 deep, 0.3 clearance per side to inner wall; notch lip 8 x 8 around each corner boss.",
     "6.  Panel holes are printed at +0.2 over nominal (Ø16.2 / Ø6.2 / Ø8.2). Ream to fit after a test print of a 30 x 30 coupon.",
     "7.  SW1 anti-rotation: add a Ø2.5 x 1.5 deep key hole at 8 mm from SW1 centre once the switch's tab washer is confirmed.",
-    "8.  Protoboard on 4 floor pillars (Ø7 x 21.5) at its corner hole positions, drilled to Ø3.2; M3 self-tapping or insert.",
-    "9.  Uno R3 on 4 standoffs Ø6 x 6.0 (Ø2.5 pilot for M3 self-tap / nylon M3). Jacks face the right wall (+X).",
+    f"8.  Protoboard on 4 floor pillars (Ø7 x {f(PILLAR_H)}) at its corner hole positions, drilled to Ø3.2; M3 self-tapping or insert.",
+    "9.  Uno R3 on 4 standoffs Ø6 x 6.0 (Ø2.5 pilot for M3 self-tap / nylon M3). USB/DC jack face LEFT (photo).",
     "10. Battery service: remove 4 lid screws, fold lid over to the LEFT on a 150 mm wire service loop; holder is directly",
     "     accessible. The protoboard / Uno stack is NOT disturbed (spec §6).",
-    "11. Wiring: battery snap leads exit the bay through the 8 x 8 rib notch (Y 48-56), run in the 12 mm channel, enter the",
-    "     electronics bay near the protoboard edge. 2x cable-tie anchors in channel at Y 25 and Y 79. Deburr all edges.",
-    "12. No USB opening (spec §1). Right wall zone at the Uno DC jack (Y 64-75, Z 10-22) is RESERVED - do not place ribs there,",
-    "     so an optional DC/USB opening can be cut later. Never connect an external supply in parallel with the 9 V battery.",
-    f"13. Protoboard keep-outs: LED column (X 121-135, Y 20-84) parts <= 3; SW1 (X {f(SEL_KO[0])}-{f(SEL_KO[1])}, Y {f(SEL_KO[2])}-{f(SEL_KO[3])}) parts <= {f(SEL_KO_H)}.",
-    "14. Add 4x Ø10 x 1.0 deep recesses on the underside at (12,12) (139,12) (12,92) (139,92) for rubber feet.",
+    "11. Wiring: the 9 V lead exits the bay through the 8 x 8 rib notch (Y 48-56), turns along the plug zone floor (tie anchors",
+    f"     at Y 25 / 79) and enters the plug, which goes straight into the Uno DC jack at Y {f(JACK_Y)}. Deburr all edges.",
+    f"12. Power per photo: 9 V holder lead ends in a DC barrel plug in the Uno jack. Keep the {f(CHAN[1] - CHAN[0])} mm zone left of the jack",
+    "     free for the plug and its cable bend. No USB opening (spec §1). Fit the plug before mounting the protoboard.",
+    f"13. Protoboard keep-outs: LED column (X {f(LED_KO[0])}-{f(LED_KO[1])}, Y {f(LED_KO[2])}-{f(LED_KO[3])}) parts <= 3; SW1 (X {f(SEL_KO[0])}-{f(SEL_KO[1])}, Y {f(SEL_KO[2])}-{f(SEL_KO[3])}) parts <= {f(SEL_KO_H)}.",
+    f"14. Add 4x Ø10 x 1.0 deep recesses on the underside at (12,12) ({f(W-12)},12) (12,92) ({f(W-12)},92) for rubber feet.",
     "15. SW1 position follows the top layout of draft v6 (position only; no v6 dimensions used): right of centre, midway",
     "     between the L2 and L3 rows. Mount the toggle so the lever throws along Y (back = towards L2, front = towards L3).",
 ])
@@ -637,9 +661,10 @@ checks = [("Button body -> battery holder (Z)", gap_btn_batt, 5.0),
           ("LED rear -> protoboard parts (Z)", gap_led_pb, 5.0),
           ("Uno tallest part -> protoboard (Z)", gap_pb_uno, 2.5),
           ("Protoboard edge -> right wall (X)", IX1 - PB[1], 5.0),
-          ("Protoboard edge -> channel (X)", PB[0] - CHAN[1], 5.0),
+          ("DC plug end -> rib (cable bend) (X)", gap_plug_rib, PLUG_BEND),
+          ("DC plug top -> protoboard (Z)", gap_plug_pb, 2.5),
           ("Protoboard edge -> front/back wall (Y)", PB[2] - IY0, 5.0),
-          ("Uno USB tip -> right wall (X)", IX1 - UNO_USB[1], 2.0),
+          ("Uno edge -> right wall (X)", IX1 - UNO[1], 3.0),
           ("Selector rear -> protoboard parts (Z)", gap_sel_pb, 5.0),
           ("Button bezel -> bezel (Y)", ROWS[1] - ROWS[0] - BTN_BEZEL, 5.0),
           ("Corner boss -> protoboard corner", min(math.hypot(bx - cx, by - cy) for bx, by in BOSSES for cx, cy in [(PB[0], PB[2]), (PB[1], PB[2]), (PB[0], PB[3]), (PB[1], PB[3])]) - 3.5, 0.5)]
@@ -655,7 +680,7 @@ for name, act, mn in checks:
     yy += 4.6; s3.line(222, yy, 405, yy, 0.12)
 for c_ in cols[1:]: s3.line(c_, y + 3, c_, yy, 0.15)
 
-y = 112
+y = 122
 s3.text(18, y, "TABLE 4 - ASSUMPTIONS REGISTER  (* values: the spec lists these as TBC/approx. - measure with calipers and update the parameters)", 3.0, weight="bold")
 reg = [
     ("Protoboard outline", "78.74 x 86.36 x 1.6", "Hole span 73.66 x 81.28 (spec §4) + 2.54 edge margin each side", "Measure edge-to-edge"),
@@ -668,6 +693,7 @@ reg = [
     ("Miyama MS-500E", "Ø6.2 bore, body 7.8 x 13, 22 below panel", "Spec §4 listing; depth below panel ASSUMED", "Check mfr. drawing"),
     ("LED indicator", "Ø8.2 cut-out, 12 rear depth", "Generic 5 mm LED in 8 mm panel holder - model not chosen", "Select model"),
     ("Panel thickness", "3.0 lid", "Within typical max panel thickness for M6 bushing / 16 mm button", "Check both parts"),
+    ("DC plug (9 V lead)", f"{f(PLUG_L)} long, Ø{f(PLUG_D)}, +{f(PLUG_BEND)} bend", "Arrangement from user photo; size estimated - photo not used as a measurement", "Measure plug + boot"),
     ("Clearance allowance", ">= 5 (6 at electronics bay)", "Spec §6 preliminary allowance; 6 used so corner bosses clear the board", "-"),
 ]
 cols = [18, 62, 112, 300]
@@ -684,16 +710,18 @@ for c_ in cols[1:]: s3.line(c_, y + 3, c_, yy, 0.15)
 y = yy + 10
 y = para(s3, 18, y, "HOW TO UPDATE AFTER MEASURING", [
     "a) Edit the parameter block at the top of cad/power_grid_box_enclosure.scad (and tools/gen_drawing.py for this drawing set).",
-    "b) Overall size follows automatically: width = walls + battery bay + rib + channel + (2 x 6 + protoboard width);",
+    "b) Overall size follows automatically: width = wall + battery bay + rib + DC plug zone (plug + bend) + Uno + 3 + wall;",
     "    depth = walls + 2 x 6 + protoboard depth; height = floor + holder + 5 + button depth + lid (re-check Table 3).",
     "c) Re-run tools/gen_drawing.py - the clearance table (Table 3) and the asserts fail if any check drops below its minimum.",
     "d) Before the full print: print the lid only (approx. 1.5 h) and trial-fit PB1-3, SW1 and L1-3.",
 ], gap=4.1)
-y = para(s3, 222, 82 - 0, "OPEN ITEMS (spec §1, §7)", [
-    "- External DC barrel input: OPEN, not modelled (zone reserved).",
+y = para(s3, 222, 87, "OPEN ITEMS (spec §1, §7)", [
+    "- External DC input: OPEN, not modelled. No USB opening.",
     "- Confirm button quantity (3) and LED model / quantity (3).",
     "- Confirm 2.8 x 0.5 QC receptacle fit on button blades.",
     "- Verify SW1 terminal arrangement with continuity meter.",
+    "- Spec §5 says snap connector; photo shows a DC barrel plug. Drawn per photo.",
+    "  A right-angle DC plug would cut about 20 mm from the width.",
 ], gap=4.1)
 sheets.append(s3)
 

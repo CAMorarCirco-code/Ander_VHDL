@@ -35,37 +35,41 @@ led_cut  = 8;    led_depth = 12;  // * LED in 8 mm holder
 min_gap  = 5;
 
 // ---------------- derived layout
+// Uno orientation per user photo: USB-B and DC jack face LEFT towards the battery;
+// the 9 V holder lead ends in a DC barrel plug in the Uno jack.
+plug_l = 30; plug_d = 10; plug_bend = 8;     // * DC plug + boot, cable bend room
 rib_w  = 2.0;   rib_h = 15;   notch = 8;
-chan_w = 12.0;
 pb     = [pb_span[0] + 2 * pb_edge, pb_span[1] + 2 * pb_edge];
-ebay_w = pb[0] + 2 * clear_e;
-in_w   = bay_b[0] + rib_w + chan_w + ebay_w;
+ix0 = t_wall; iy0 = t_wall;
+bay_x1  = ix0 + bay_b[0];
+chan_x0 = bay_x1 + rib_w;                    // plug / cable zone
+chan_x1 = chan_x0 + plug_l + plug_bend;      // = DC jack face
+uno_x0  = chan_x1 + 1.8;
 in_d   = max(pb[1] + 2 * clear_e, bay_b[1]);
-W = ceil(in_w + 2 * t_wall);                 // 151
+W = ceil(uno_x0 + uno[0] + 3 + t_wall);      // 160
 D = ceil(in_d + 2 * t_wall);                 // 104
+ix1 = W - t_wall; iy1 = D - t_wall;
+in_w = ix1 - ix0;
 uno_z  = t_floor + 6;                        // Uno underside (6 mm standoffs)
-pb_z   = uno_z + uno_t + uno_comp + 3;       // protoboard underside (24.0)
+jack_z = uno_z + uno_t + 6.5;                // * DC jack pin centre
+pb_z   = max(uno_z + uno_t + uno_comp + 3, jack_z + plug_d / 2 + 3.4);   // protoboard underside (25)
 base_h = ceil(max(t_floor + holder[2] + min_gap + btn_depth,
              pb_z + pb_t + pb_comp + min_gap + led_depth));   // 59 (rounded up)
 H = base_h + t_lid;                          // 62
 cy = D / 2;
-
-ix0 = t_wall; ix1 = W - t_wall; iy0 = t_wall; iy1 = D - t_wall;
-bay_x1  = ix0 + bay_b[0];
-chan_x0 = bay_x1 + rib_w;  chan_x1 = chan_x0 + chan_w;
-pb_cx   = (chan_x1 + ix1) / 2;
-pb_x0   = pb_cx - pb[0] / 2;  pb_y0 = cy - pb[1] / 2;
-uno_x0  = 70.0;  uno_y0 = cy - uno[1] / 2;
-uno_holes = [for (h = uno_ref_holes) [uno_x0 + uno[0] - h[0], uno_y0 + uno[1] - h[1]]];
+pb_x0   = ix1 - clear_e - pb[0];  pb_y0 = cy - pb[1] / 2;
+uno_y0  = cy - uno[1] / 2;
+uno_holes = [for (h = uno_ref_holes) [uno_x0 + h[0], uno_y0 + h[1]]];
+jack_y  = uno_y0 + 7.8;
 pb_pillars = [for (x = [pb_x0 + 2.54, pb_x0 + pb[0] - 2.54]) for (y = [pb_y0 + 2.54, pb_y0 + pb[1] - 2.54]) [x, y]];
 bosses = [for (x = [ix0 + 3, ix1 - 3]) for (y = [iy0 + 3, iy1 - 3]) [x, y]];
 feet   = [for (x = [12, W - 12]) for (y = [12, D - 12]) [x, y]];
 
-btn_x = ix0 + bay_b[0] / 2 - 0.0;   // 23
-led_x = W - btn_x;                  // 128 (mirrors button column)
+btn_x = ix0 + bay_b[0] / 2;         // 23
+led_x = W - btn_x;                  // 137 (mirrors button column)
 rows  = [cy - 25, cy, cy + 25];
 // SW1 per top layout of draft v6 (position only): right of centre, midway L2/L3 rows
-sel_x = 91;                         // 37 left of LED column
+sel_x = led_x - 37;                 // 100
 sel_y = (rows[0] + rows[1]) / 2;    // 39.5
 lip_w = 1.5; lip_h = 3; lip_gap = 0.3;
 
@@ -91,8 +95,8 @@ module base() {
     }
     // cable-tie anchors in channel
     for (y = [25, 79]) translate([chan_x0 + 2, y - 2, t_floor]) difference() {
-        cube([chan_w - 4, 4, 4]);
-        translate([-1, 0.75, 1]) cube([chan_w - 2, 2.5, 1.8]);
+        cube([8, 4, 4]);
+        translate([-1, 0.75, 1]) cube([10, 2.5, 1.8]);
     }
     // protoboard pillars
     for (p = pb_pillars) translate([p[0], p[1], 0]) difference() {
@@ -135,6 +139,7 @@ module lid() {
 module components() {
     color("dimgray") translate([ix0 + (bay_b[0] - holder[0]) / 2, cy - holder[1] / 2, t_floor]) cube(holder);
     color("teal")    translate([uno_x0, uno_y0, uno_z]) cube([uno[0], uno[1], uno_t]);
+    color("black")   translate([chan_x1 - plug_l, jack_y, jack_z]) rotate([0, 90, 0]) cylinder(d = plug_d, h = plug_l);
     color("goldenrod", 0.9) translate([pb_x0, pb_y0, pb_z]) cube([pb[0], pb[1], pb_t]);
     for (y = rows) {
         color("red")   translate([btn_x, y, base_h - btn_depth]) cylinder(d = 16, h = btn_depth);
