@@ -1,0 +1,145 @@
+<svg xmlns='http://www.w3.org/2000/svg' width='420mm' height='297mm' viewBox='0 0 420 297'>
+<defs><pattern id='hatch' patternUnits='userSpaceOnUse' width='1.6' height='1.6' patternTransform='rotate(45)'><line x1='0' y1='0' x2='0' y2='1.6' stroke='#111' stroke-width='0.22'/></pattern><pattern id='hatch2' patternUnits='userSpaceOnUse' width='1.6' height='1.6' patternTransform='rotate(-45)'><line x1='0' y1='0' x2='0' y2='1.6' stroke='#555' stroke-width='0.2'/></pattern></defs>
+<rect x='0' y='0' width='420' height='297' fill='#fff'/>
+<rect x='10.000' y='10.000' width='400.000' height='277.000' rx='0' fill='none' stroke='#111' stroke-width='0.7'/>
+<text x='35.000' y='8.600' font-size='2.4' font-family='Arial, Helvetica, sans-serif' text-anchor='middle' fill='#111' font-weight='normal'>1</text>
+<text x='35.000' y='291.200' font-size='2.4' font-family='Arial, Helvetica, sans-serif' text-anchor='middle' fill='#111' font-weight='normal'>1</text>
+<text x='85.000' y='8.600' font-size='2.4' font-family='Arial, Helvetica, sans-serif' text-anchor='middle' fill='#111' font-weight='normal'>2</text>
+<text x='85.000' y='291.200' font-size='2.4' font-family='Arial, Helvetica, sans-serif' text-anchor='middle' fill='#111' font-weight='normal'>2</text>
+<line x1='60.000' y1='10.000' x2='60.000' y2='7.000' stroke='#111' stroke-width='0.25' stroke-linecap='round'/>
+<line x1='60.000' y1='287.000' x2='60.000' y2='290.000' stroke='#111' stroke-width='0.25' stroke-linecap='round'/>
+<text x='135.000' y='8.600' font-size='2.4' font-family='Arial, Helvetica, sans-serif' text-anchor='middle' fill='#111' font-weight='normal'>3</text>
+<text x='135.000' y='291.200' font-size='2.4' font-family='Arial, Helvetica, sans-serif' text-anchor='middle' fill='#111' font-weight='normal'>3</text>
+<line x1='110.000' y1='10.000' x2='110.000' y2='7.000' stroke='#111' stroke-width='0.25' stroke-linecap='round'/>
+<line x1='110.000' y1='287.000' x2='110.000' y2='290.000' stroke='#111' stroke-width='0.25' stroke-linecap='round'/>
+<text x='185.000' y='8.600' font-size='2.4' font-family='Arial, Helvetica, sans-serif' text-anchor='middle' fill='#111' font-weight='normal'>4</text>
+<text x='185.000' y='291.200' font-size='2.4' font-family='Arial, Helvetica, sans-serif' text-anchor='middle' fill='#111' font-weight='normal'>4</text>
+<line x1='160.000' y1='10.000' x2='160.000' y2='7.000' stroke='#111' stroke-width='0.25' stroke-linecap='round'/>
+<line x1='160.000' y1='287.000' x2='160.000' y2='290.000' stroke='#111' stroke-width='0.25' stroke-linecap='round'/>
+<text x='235.000' y='8.600' font-size='2.4' font-family='Arial, Helvetica, sans-serif' text-anchor='middle' fill='#111' font-weight='normal'>5</text>
+<text x='235.000' y='291.200' font-size='2.4' font-family='Arial, Helvetica, sans-serif' text-anchor='middle' fill='#111' font-weight='normal'>5</text>
+<line x1='210.000' y1='10.000' x2='210.000' y2='7.000' stroke='#111' stroke-width='0.25' stroke-linecap='round'/>
+<line x1='210.000' y1='287.000' x2='210.000' y2='290.000' stroke='#111' stroke-width='0.25' stroke-linecap='round'/>
+<text x='285.000' y='8.600' font-size='2.4' font-family='Arial, Helvetica, sans-serif' text-anchor='middle' fill='#111' font-weight='normal'>6</text>
+<text x='285.000' y='291.200' font-size='2.4' font-family='Arial, Helvetica, sans-serif' text-anchor='middle' fill='#111' font-weight='normal'>6</text>
+<line x1='260.000' y1='10.000' x2='260.000' y2='7.000' stroke='#111' stroke-width='0.25' stroke-linecap='round'/>
+<line x1='260.000' y1='287.000' x2='260.000' y2='290.000' stroke='#111' stroke-width='0.25' stroke-linecap='round'/>
+<text x='335.000' y='8.600' font-size='2.4' font-family='Arial, Helvetica, sans-serif' text-anchor='middle' fill='#111' font-weight='normal'>7</text>
+<text x='335.000' y='291.200' font-size='2.4' font-family='Arial, Helvetica, sans-serif' text-anchor='middle' fill='#111' font-weight='normal'>7</text>
+<line x1='310.000' y1='10.000' x2='310.000' y2='7.000' stroke='#111' stroke-width='0.25' stroke-linecap='round'/>
+<line x1='310.000' y1='287.000' x2='310.000' y2='290.000' stroke='#111' stroke-width='0.25' stroke-linecap='round'/>
+<text x='385.000' y='8.600' font-size='2.4' font-family='Arial, Helvetica, sans-serif' text-anchor='middle' fill='#111' font-weight='normal'>8</text>
+<text x='385.000' y='291.200' font-size='2.4' font-family='Arial, Helvetica, sans-serif' text-anchor='middle' fill='#111' font-weight='normal'>8</text>
+<line x1='360.000' y1='10.000' x2='360.000' y2='7.000' stroke='#111' stroke-width='0.25' stroke-linecap='round'/>
+<line x1='360.000' y1='287.000' x2='360.000' y2='290.000' stroke='#111' stroke-width='0.25' stroke-linecap='round'/>
+<text x='5.000' y='34.083' font-size='2.4' font-family='Arial, Helvetica, sans-serif' text-anchor='middle' fill='#111' font-weight='normal'>A</text>
+<text x='415.000' y='34.083' font-size='2.4' font-family='Arial, Helvetica, sans-serif' text-anchor='middle' fill='#111' font-weight='normal'>A</text>
+<text x='5.000' y='80.250' font-size='2.4' font-family='Arial, Helvetica, sans-serif' text-anchor='middle' fill='#111' font-weight='normal'>B</text>
+<text x='415.000' y='80.250' font-size='2.4' font-family='Arial, Helvetica, sans-serif' text-anchor='middle' fill='#111' font-weight='normal'>B</text>
+<text x='5.000' y='126.417' font-size='2.4' font-family='Arial, Helvetica, sans-serif' text-anchor='middle' fill='#111' font-weight='normal'>C</text>
+<text x='415.000' y='126.417' font-size='2.4' font-family='Arial, Helvetica, sans-serif' text-anchor='middle' fill='#111' font-weight='normal'>C</text>
+<text x='5.000' y='172.583' font-size='2.4' font-family='Arial, Helvetica, sans-serif' text-anchor='middle' fill='#111' font-weight='normal'>D</text>
+<text x='415.000' y='172.583' font-size='2.4' font-family='Arial, Helvetica, sans-serif' text-anchor='middle' fill='#111' font-weight='normal'>D</text>
+<text x='5.000' y='218.750' font-size='2.4' font-family='Arial, Helvetica, sans-serif' text-anchor='middle' fill='#111' font-weight='normal'>E</text>
+<text x='415.000' y='218.750' font-size='2.4' font-family='Arial, Helvetica, sans-serif' text-anchor='middle' fill='#111' font-weight='normal'>E</text>
+<text x='5.000' y='264.917' font-size='2.4' font-family='Arial, Helvetica, sans-serif' text-anchor='middle' fill='#111' font-weight='normal'>F</text>
+<text x='415.000' y='264.917' font-size='2.4' font-family='Arial, Helvetica, sans-serif' text-anchor='middle' fill='#111' font-weight='normal'>F</text>
+<rect x='250.000' y='252.000' width='160.000' height='35.000' rx='0' fill='none' stroke='#111' stroke-width='0.6'/>
+<line x1='250.000' y1='260.000' x2='410.000' y2='260.000' stroke='#111' stroke-width='0.3' stroke-linecap='round'/>
+<line x1='250.000' y1='269.000' x2='410.000' y2='269.000' stroke='#111' stroke-width='0.3' stroke-linecap='round'/>
+<line x1='250.000' y1='278.000' x2='410.000' y2='278.000' stroke='#111' stroke-width='0.3' stroke-linecap='round'/>
+<line x1='310.000' y1='269.000' x2='310.000' y2='287.000' stroke='#111' stroke-width='0.3' stroke-linecap='round'/>
+<line x1='350.000' y1='269.000' x2='350.000' y2='287.000' stroke='#111' stroke-width='0.3' stroke-linecap='round'/>
+<line x1='380.000' y1='269.000' x2='380.000' y2='278.000' stroke='#111' stroke-width='0.3' stroke-linecap='round'/>
+<line x1='360.000' y1='252.000' x2='360.000' y2='269.000' stroke='#111' stroke-width='0.3' stroke-linecap='round'/>
+<text x='252.000' y='255.000' font-size='1.7' font-family='Arial, Helvetica, sans-serif' text-anchor='start' fill='#555' font-weight='normal'>PROJECT</text>
+<text x='252.000' y='259.000' font-size='3.0' font-family='Arial, Helvetica, sans-serif' text-anchor='start' fill='#111' font-weight='bold'>POWER GRID BOX - 3D PRINTED ENCLOSURE</text>
+<text x='362.000' y='255.000' font-size='1.7' font-family='Arial, Helvetica, sans-serif' text-anchor='start' fill='#555' font-weight='normal'>DRAWING No.</text>
+<text x='362.000' y='259.200' font-size='3.4' font-family='Arial, Helvetica, sans-serif' text-anchor='start' fill='#111' font-weight='bold'>PGB-ENC-001</text>
+<text x='252.000' y='263.000' font-size='1.7' font-family='Arial, Helvetica, sans-serif' text-anchor='start' fill='#555' font-weight='normal'>TITLE</text>
+<text x='252.000' y='267.500' font-size='3.0' font-family='Arial, Helvetica, sans-serif' text-anchor='start' fill='#111' font-weight='bold'>COVER - ENCLOSURE OVERVIEW</text>
+<text x='362.000' y='263.000' font-size='1.7' font-family='Arial, Helvetica, sans-serif' text-anchor='start' fill='#555' font-weight='normal'>SHEET</text>
+<text x='362.000' y='267.500' font-size='3.0' font-family='Arial, Helvetica, sans-serif' text-anchor='start' fill='#111' font-weight='bold'>1 OF 3</text>
+<text x='252.000' y='272.000' font-size='1.7' font-family='Arial, Helvetica, sans-serif' text-anchor='start' fill='#555' font-weight='normal'>UNITS / SCALE</text>
+<text x='252.000' y='276.500' font-size='2.6' font-family='Arial, Helvetica, sans-serif' text-anchor='start' fill='#111' font-weight='normal'>mm   1:1 @ A3</text>
+<text x='312.000' y='272.000' font-size='1.7' font-family='Arial, Helvetica, sans-serif' text-anchor='start' fill='#555' font-weight='normal'>REV</text>
+<text x='312.000' y='276.500' font-size='2.6' font-family='Arial, Helvetica, sans-serif' text-anchor='start' fill='#111' font-weight='normal'>D - PRELIM.</text>
+<text x='352.000' y='272.000' font-size='1.7' font-family='Arial, Helvetica, sans-serif' text-anchor='start' fill='#555' font-weight='normal'>DATE</text>
+<text x='352.000' y='276.500' font-size='2.6' font-family='Arial, Helvetica, sans-serif' text-anchor='start' fill='#111' font-weight='normal'>2026-11-09</text>
+<text x='382.000' y='272.000' font-size='1.7' font-family='Arial, Helvetica, sans-serif' text-anchor='start' fill='#555' font-weight='normal'>PROJECTION</text>
+<text x='382.000' y='276.500' font-size='2.6' font-family='Arial, Helvetica, sans-serif' text-anchor='start' fill='#111' font-weight='normal'></text>
+<polygon points='393.000,273.200 397.000,272.000 397.000,277.200 393.000,276.000' fill='none' stroke='#111' stroke-width='0.3' stroke-linejoin='round'/>
+<circle cx='402.000' cy='274.600' r='2.600' fill='none' stroke='#111' stroke-width='0.3'/>
+<circle cx='402.000' cy='274.600' r='1.200' fill='none' stroke='#111' stroke-width='0.3'/>
+<text x='252.000' y='281.000' font-size='1.7' font-family='Arial, Helvetica, sans-serif' text-anchor='start' fill='#555' font-weight='normal'>MATERIAL / PROCESS</text>
+<text x='252.000' y='285.400' font-size='2.4' font-family='Arial, Helvetica, sans-serif' text-anchor='start' fill='#111' font-weight='normal'>PETG, FDM, 0.2 mm layers</text>
+<text x='312.000' y='281.000' font-size='1.7' font-family='Arial, Helvetica, sans-serif' text-anchor='start' fill='#555' font-weight='normal'>GENERAL TOL.</text>
+<text x='312.000' y='285.400' font-size='2.4' font-family='Arial, Helvetica, sans-serif' text-anchor='start' fill='#111' font-weight='normal'>+/-0.3 unless stated</text>
+<text x='352.000' y='281.000' font-size='1.7' font-family='Arial, Helvetica, sans-serif' text-anchor='start' fill='#555' font-weight='normal'>STATUS</text>
+<text x='352.000' y='285.400' font-size='2.4' font-family='Arial, Helvetica, sans-serif' text-anchor='start' fill='#111' font-weight='bold'>PRELIMINARY - FOR REVIEW</text>
+<text x='30.000' y='62.000' font-size='14' font-family='Arial, Helvetica, sans-serif' text-anchor='start' fill='#111' font-weight='bold'>POWER GRID BOX</text>
+<text x='30.000' y='76.000' font-size='7' font-family='Arial, Helvetica, sans-serif' text-anchor='start' fill='#111' font-weight='normal'>3D printed enclosure - layout sketches</text>
+<line x1='30.000' y1='82.000' x2='250.000' y2='82.000' stroke='#111' stroke-width='0.6' stroke-linecap='round'/>
+<text x='30.000' y='92.000' font-size='3.4' font-family='Arial, Helvetica, sans-serif' text-anchor='start' fill='#444' font-weight='normal'>Drawing PGB-ENC-001  |  2026-11-09  |  all dimensions in mm</text>
+<rect x='290.000' y='62.800' width='86.900' height='57.200' rx='0' fill='none' stroke='#111' stroke-width='0.6'/>
+<circle cx='302.650' cy='105.150' r='4.455' fill='none' stroke='#111' stroke-width='0.4'/>
+<circle cx='364.250' cy='105.150' r='2.255' fill='none' stroke='#111' stroke-width='0.4'/>
+<circle cx='302.650' cy='91.400' r='4.455' fill='none' stroke='#111' stroke-width='0.4'/>
+<circle cx='364.250' cy='91.400' r='2.255' fill='none' stroke='#111' stroke-width='0.4'/>
+<circle cx='302.650' cy='77.650' r='4.455' fill='none' stroke='#111' stroke-width='0.4'/>
+<circle cx='364.250' cy='77.650' r='2.255' fill='none' stroke='#111' stroke-width='0.4'/>
+<circle cx='343.900' cy='98.275' r='1.705' fill='none' stroke='#111' stroke-width='0.4'/>
+<line x1='290.000' y1='121.000' x2='290.000' y2='129.500' stroke='#111' stroke-width='0.18' stroke-linecap='round'/>
+<line x1='376.900' y1='121.000' x2='376.900' y2='129.500' stroke='#111' stroke-width='0.18' stroke-linecap='round'/>
+<line x1='290.000' y1='128.000' x2='376.900' y2='128.000' stroke='#111' stroke-width='0.18' stroke-linecap='round'/>
+<polygon points='290.000,128.000 292.200,127.300 292.200,128.700' fill='#111' stroke='#111' stroke-width='0.1' stroke-linejoin='round'/>
+<polygon points='376.900,128.000 374.700,128.700 374.700,127.300' fill='#111' stroke='#111' stroke-width='0.1' stroke-linejoin='round'/>
+<text x='333.450' y='127.100' font-size='2.5' font-family='Arial, Helvetica, sans-serif' text-anchor='middle' fill='#111' font-weight='normal'>158</text>
+<line x1='377.900' y1='62.800' x2='386.400' y2='62.800' stroke='#111' stroke-width='0.18' stroke-linecap='round'/>
+<line x1='377.900' y1='120.000' x2='386.400' y2='120.000' stroke='#111' stroke-width='0.18' stroke-linecap='round'/>
+<line x1='384.900' y1='62.800' x2='384.900' y2='120.000' stroke='#111' stroke-width='0.18' stroke-linecap='round'/>
+<polygon points='384.900,62.800 385.600,65.000 384.200,65.000' fill='#111' stroke='#111' stroke-width='0.1' stroke-linejoin='round'/>
+<polygon points='384.900,120.000 384.200,117.800 385.600,117.800' fill='#111' stroke='#111' stroke-width='0.1' stroke-linejoin='round'/>
+<text x='384.000' y='91.400' font-size='2.5' font-family='Arial, Helvetica, sans-serif' text-anchor='middle' fill='#111' font-weight='normal' transform='rotate(-90 384.000 91.400)'>104</text>
+<text x='333.450' y='58.800' font-size='2.6' font-family='Arial, Helvetica, sans-serif' text-anchor='middle' fill='#111' font-weight='normal'>Top view, overall height 62</text>
+<text x='30.000' y='120.000' font-size='4' font-family='Arial, Helvetica, sans-serif' text-anchor='start' fill='#111' font-weight='bold'>MAIN DIMENSIONS</text>
+<line x1='30.000' y1='124.000' x2='250.000' y2='124.000' stroke='#111' stroke-width='0.15' stroke-linecap='round'/>
+<text x='32.000' y='129.000' font-size='3.0' font-family='Arial, Helvetica, sans-serif' text-anchor='start' fill='#111' font-weight='normal'>External size (W x D x H)</text>
+<text x='110.000' y='129.000' font-size='3.0' font-family='Arial, Helvetica, sans-serif' text-anchor='start' fill='#111' font-weight='bold'>158 x 104 x 62 mm</text>
+<line x1='30.000' y1='131.500' x2='250.000' y2='131.500' stroke='#111' stroke-width='0.15' stroke-linecap='round'/>
+<text x='32.000' y='136.500' font-size='3.0' font-family='Arial, Helvetica, sans-serif' text-anchor='start' fill='#111' font-weight='normal'>Internal size (W x D)</text>
+<text x='110.000' y='136.500' font-size='3.0' font-family='Arial, Helvetica, sans-serif' text-anchor='start' fill='#111' font-weight='bold'>153 x 99 mm</text>
+<line x1='30.000' y1='139.000' x2='250.000' y2='139.000' stroke='#111' stroke-width='0.15' stroke-linecap='round'/>
+<text x='32.000' y='144.000' font-size='3.0' font-family='Arial, Helvetica, sans-serif' text-anchor='start' fill='#111' font-weight='normal'>Base height + lid</text>
+<text x='110.000' y='144.000' font-size='3.0' font-family='Arial, Helvetica, sans-serif' text-anchor='start' fill='#111' font-weight='bold'>59 + 3 mm</text>
+<line x1='30.000' y1='146.500' x2='250.000' y2='146.500' stroke='#111' stroke-width='0.15' stroke-linecap='round'/>
+<text x='32.000' y='151.500' font-size='3.0' font-family='Arial, Helvetica, sans-serif' text-anchor='start' fill='#111' font-weight='normal'>Wall / floor / lid thickness</text>
+<text x='110.000' y='151.500' font-size='3.0' font-family='Arial, Helvetica, sans-serif' text-anchor='start' fill='#111' font-weight='bold'>2.5 / 2.5 / 3 mm</text>
+<line x1='30.000' y1='154.000' x2='250.000' y2='154.000' stroke='#111' stroke-width='0.15' stroke-linecap='round'/>
+<text x='32.000' y='159.000' font-size='3.0' font-family='Arial, Helvetica, sans-serif' text-anchor='start' fill='#111' font-weight='normal'>Internal volume (approx.)</text>
+<text x='110.000' y='159.000' font-size='3.0' font-family='Arial, Helvetica, sans-serif' text-anchor='start' fill='#111' font-weight='bold'>0.86 L</text>
+<line x1='30.000' y1='161.500' x2='250.000' y2='161.500' stroke='#111' stroke-width='0.15' stroke-linecap='round'/>
+<text x='32.000' y='166.500' font-size='3.0' font-family='Arial, Helvetica, sans-serif' text-anchor='start' fill='#111' font-weight='normal'>Top panel</text>
+<text x='110.000' y='166.500' font-size='3.0' font-family='Arial, Helvetica, sans-serif' text-anchor='start' fill='#111' font-weight='bold'>3 pushbuttons (left), selector SW1, 3 LEDs (right)</text>
+<line x1='30.000' y1='169.000' x2='250.000' y2='169.000' stroke='#111' stroke-width='0.15' stroke-linecap='round'/>
+<text x='32.000' y='174.000' font-size='3.0' font-family='Arial, Helvetica, sans-serif' text-anchor='start' fill='#111' font-weight='normal'>Inside, left</text>
+<text x='110.000' y='174.000' font-size='3.0' font-family='Arial, Helvetica, sans-serif' text-anchor='start' fill='#111' font-weight='bold'>9 V battery holder, flat, long side left-right</text>
+<line x1='30.000' y1='176.500' x2='250.000' y2='176.500' stroke='#111' stroke-width='0.15' stroke-linecap='round'/>
+<text x='32.000' y='181.500' font-size='3.0' font-family='Arial, Helvetica, sans-serif' text-anchor='start' fill='#111' font-weight='normal'>Inside, right</text>
+<text x='110.000' y='181.500' font-size='3.0' font-family='Arial, Helvetica, sans-serif' text-anchor='start' fill='#111' font-weight='bold'>Protoboard 30 x 33 above Arduino Uno R3</text>
+<line x1='30.000' y1='184.000' x2='250.000' y2='184.000' stroke='#111' stroke-width='0.15' stroke-linecap='round'/>
+<text x='32.000' y='189.000' font-size='3.0' font-family='Arial, Helvetica, sans-serif' text-anchor='start' fill='#111' font-weight='normal'>Power</text>
+<text x='110.000' y='189.000' font-size='3.0' font-family='Arial, Helvetica, sans-serif' text-anchor='start' fill='#111' font-weight='bold'>9 V holder lead -&gt; DC plug into Uno jack</text>
+<line x1='30.000' y1='191.500' x2='250.000' y2='191.500' stroke='#111' stroke-width='0.35' stroke-linecap='round'/>
+<text x='30.000' y='205.500' font-size='4' font-family='Arial, Helvetica, sans-serif' text-anchor='start' fill='#111' font-weight='bold'>CONTENTS</text>
+<line x1='30.000' y1='209.500' x2='250.000' y2='209.500' stroke='#111' stroke-width='0.15' stroke-linecap='round'/>
+<text x='32.000' y='214.500' font-size='3.0' font-family='Arial, Helvetica, sans-serif' text-anchor='start' fill='#111' font-weight='bold'>Sheet 1</text>
+<text x='60.000' y='214.500' font-size='3.0' font-family='Arial, Helvetica, sans-serif' text-anchor='start' fill='#111' font-weight='normal'>Cover - enclosure overview</text>
+<line x1='30.000' y1='217.000' x2='250.000' y2='217.000' stroke='#111' stroke-width='0.15' stroke-linecap='round'/>
+<text x='32.000' y='222.000' font-size='3.0' font-family='Arial, Helvetica, sans-serif' text-anchor='start' fill='#111' font-weight='bold'>Sheet 2</text>
+<text x='60.000' y='222.000' font-size='3.0' font-family='Arial, Helvetica, sans-serif' text-anchor='start' fill='#111' font-weight='normal'>General arrangement - top panel, plan with lid removed, feature coordinates, legend</text>
+<line x1='30.000' y1='224.500' x2='250.000' y2='224.500' stroke='#111' stroke-width='0.15' stroke-linecap='round'/>
+<text x='32.000' y='229.500' font-size='3.0' font-family='Arial, Helvetica, sans-serif' text-anchor='start' fill='#111' font-weight='bold'>Sheet 3</text>
+<text x='60.000' y='229.500' font-size='3.0' font-family='Arial, Helvetica, sans-serif' text-anchor='start' fill='#111' font-weight='normal'>Sections A-A / B-B and vertical stack-up</text>
+<line x1='30.000' y1='232.000' x2='250.000' y2='232.000' stroke='#111' stroke-width='0.35' stroke-linecap='round'/>
+</svg>

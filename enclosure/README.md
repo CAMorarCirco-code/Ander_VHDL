@@ -6,6 +6,7 @@ Built from *Dimensions, component orientation & enclosure requirements* (9 Nov 2
 |---|---|
 | `drawings/PGB-ENC-001_enclosure_drawing.pdf` | 3 × A3 sheets: plan views, sections A-A/B-B, vertical stack-up, notes, assumptions register |
 | `drawings/PGB-ENC-001_sheet{1,2,3}.svg` | Same sheets as vector SVG |
+| `drawings/presentation/PGB-ENC-001_Power_Grid_Box_enclosure_presentation.pdf` | Presentation version: cover, plan sheet, section sheet, tables and legend (no notes or assumption markers) |
 | `tools/gen_drawing.py` | Regenerates the sheets from one parameter block and re-checks all clearances |
 
 **Envelope:** 158 × 104 × 62 mm.
@@ -16,4 +17,8 @@ Built from *Dimensions, component orientation & enclosure requirements* (9 Nov 2
 
 Values marked `*` are nominal or assumed (see Sheet 3, Table 4). Measure the button depth first, because it sets the overall height.
 
-Regenerate after updating the parameters: `python3 tools/gen_drawing.py drawings`. The PDF is rendered from the SVGs with headless Chromium (A3 landscape).
+Regenerate after updating the parameters:
+```
+python3 tools/gen_drawing.py drawings && node tools/render_pdf.js drawings drawings/PGB-ENC-001_enclosure_drawing.pdf
+python3 tools/gen_drawing.py drawings/presentation --present && node tools/render_pdf.js drawings/presentation drawings/presentation/PGB-ENC-001_Power_Grid_Box_enclosure_presentation.pdf
+```

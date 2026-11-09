@@ -473,7 +473,11 @@
 <line x1='250.000' y1='212.000' x2='268.000' y2='212.000' stroke='#7a7a7a' stroke-width='0.35' stroke-dasharray='5 1 1 1 1 1' stroke-linecap='round'/>
 <text x='272.000' y='212.900' font-size='2.3' font-family='Arial, Helvetica, sans-serif' text-anchor='start' fill='#111' font-weight='normal'>Zone / phantom (under lid)</text>
 <line x1='250.000' y1='217.000' x2='268.000' y2='217.000' stroke='#b00020' stroke-width='0.4' stroke-dasharray='2 1' stroke-linecap='round'/>
-<text x='272.000' y='217.900' font-size='2.3' font-family='Arial, Helvetica, sans-serif' text-anchor='start' fill='#111' font-weight='normal'>Keep-out / reserved</text>
+<text x='272.000' y='217.900' font-size='2.3' font-family='Arial, Helvetica, sans-serif' text-anchor='start' fill='#111' font-weight='normal'>Keep-out zone</text>
+<rect x='250.000' y='220.200' width='18.000' height='3.600' rx='0' fill='url(#hatch)' stroke='#111' stroke-width='0.3'/>
+<text x='272.000' y='222.900' font-size='2.3' font-family='Arial, Helvetica, sans-serif' text-anchor='start' fill='#111' font-weight='normal'>Cut material (sections)</text>
+<rect x='250.000' y='225.200' width='18.000' height='3.600' rx='0' fill='#eef3fb' stroke='#111' stroke-width='0.3'/>
+<text x='272.000' y='227.900' font-size='2.3' font-family='Arial, Helvetica, sans-serif' text-anchor='start' fill='#111' font-weight='normal'>Protoboard (upper level)</text>
 <text x='335.000' y='192.000' font-size='2.6' font-family='Arial, Helvetica, sans-serif' text-anchor='start' fill='#111' font-weight='bold'>KEY DECISIONS (spec §1)</text>
 <text x='335.000' y='197.900' font-size='2.2' font-family='Arial, Helvetica, sans-serif' text-anchor='start' fill='#111' font-weight='normal'>- LEFT: 9 V holder, long side left-right (photo)</text>
 <text x='335.000' y='202.900' font-size='2.2' font-family='Arial, Helvetica, sans-serif' text-anchor='start' fill='#111' font-weight='normal'>- RIGHT: protoboard above Uno R3, under LEDs</text>

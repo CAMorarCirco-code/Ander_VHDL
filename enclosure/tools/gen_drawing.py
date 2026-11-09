@@ -10,6 +10,17 @@ X = left -> right, Y = front -> back, Z = bottom -> top.
 import math, os, sys
 
 OUT = sys.argv[1] if len(sys.argv) > 1 else os.path.join(os.path.dirname(__file__), "..", "drawings")
+# Presentation mode: cover + plan sheet + section sheet, without notes, assumption
+# markers, revision history or the verification sheet.
+PRESENT = "--present" in sys.argv
+PAGE_OFFSET = 1 if PRESENT else 0
+_STRIP = [" (governs height)", " (per photo)", " (photo)", " *", "*"]
+
+def clean(s):
+    if PRESENT:
+        for k in _STRIP:
+            s = s.replace(k, "")
+    return s
 os.makedirs(OUT, exist_ok=True)
 
 # ---------------------------------------------------------------- parameters
@@ -134,7 +145,7 @@ class Sheet:
     def text(self, x, y, s, size=2.5, anchor="start", c=INK, weight="normal", rot=0, italic=False):
         r = f" transform='rotate({rot} {x:.3f} {y:.3f})'" if rot else ""
         it = " font-style='italic'" if italic else ""
-        s = s.replace("&", "&amp;").replace("<", "&lt;").replace(">", "&gt;")
+        s = clean(s).replace("&", "&amp;").replace("<", "&lt;").replace(">", "&gt;")
         self.add(f"<text x='{x:.3f}' y='{y:.3f}' font-size='{size}' {FONT} text-anchor='{anchor}' fill='{c}' font-weight='{weight}'{it}{r}>{s}</text>")
     def arrow(self, x, y, ang, c=INK):
         L, Wd = 2.2, 0.7
@@ -210,7 +221,7 @@ class Sheet:
         self.text(x0 + 2, y0 + 11, "TITLE", 1.7, c="#555")
         self.text(x0 + 2, y0 + 15.5, self.title, 3.0, weight="bold")
         self.text(x0 + 112, y0 + 11, "SHEET", 1.7, c="#555")
-        self.text(x0 + 112, y0 + 15.5, f"{self.n} OF 3", 3.0, weight="bold")
+        self.text(x0 + 112, y0 + 15.5, f"{self.n + PAGE_OFFSET} OF 3", 3.0, weight="bold")
         cells = [(x0, "UNITS / SCALE", "mm   1:1 @ A3"), (x0 + 60, "REV", "D - PRELIM."),
                  (x0 + 100, "DATE", "2026-11-09"), (x0 + 130, "PROJECTION", "")]
         for cx, k, v in cells:
@@ -224,6 +235,9 @@ class Sheet:
         self.text(x0 + 62, y0 + 29, "GENERAL TOL.", 1.7, c="#555")
         self.text(x0 + 62, y0 + 33.4, "+/-0.3 unless stated", 2.4)
         self.text(x0 + 102, y0 + 29, "STATUS", 1.7, c="#555")
+        if PRESENT:
+            self.text(x0 + 102, y0 + 33.4, "PRELIMINARY - FOR REVIEW", 2.4, weight="bold")
+            return
         self.text(x0 + 102, y0 + 33.4, "DESIGN BRIEF - NOT FOR PRODUCTION", 2.4, weight="bold", c="#b00020")
         # left block: revision note
         self.rect(165, 252, 85, 35, 0.6)
@@ -411,19 +425,29 @@ for r in rows:
     yy += 5
     s1.line(tx, yy, 235, yy, 0.15)
 for c_ in cols[1:]: s1.line(c_, ty + 4, c_, yy, 0.15)
-s1.text(tx, yy + 4.5, "* = nominal / assumed value - see Sheet 3, Table 4. Uno standoff X and Y are listed pairwise in the same order.", 2.1, italic=True)
+if not PRESENT: s1.text(tx, yy + 4.5, "* = nominal / assumed value - see Sheet 3, Table 4. Uno standoff X and Y are listed pairwise in the same order.", 2.1, italic=True)
 
 # legend (sheet 1 bottom-right above title block)
 lx, ly = 250, 192
 s1.text(lx, ly, "LINE LEGEND", 2.6, weight="bold")
 items = [("0.6", None, INK, "Visible outline"), ("0.25", "1.5 0.8", INK, "Hidden edge"),
          ("0.18", "6 1.2 1 1.2", BLUE, "Centre line"), ("0.25", "5 1 1 1 1 1", PHANTOM, "Zone / phantom (under lid)"),
-         ("0.3", "2 1", "#b00020", "Keep-out / reserved")]
+         ("0.3", "2 1", "#b00020", "Keep-out zone")]
 for i, (w_, d_, c_, t_) in enumerate(items):
     yy = ly + 5 + i * 5
     s1.line(lx, yy, lx + 18, yy, float(w_) + 0.1, c_, d_); s1.text(lx + 22, yy + 0.9, t_, 2.3)
-s1.text(lx + 85, ly, "KEY DECISIONS (spec §1)", 2.6, weight="bold")
-for i, t_ in enumerate(["LEFT: 9 V holder, long side left-right (photo)", "RIGHT: protoboard above Uno R3, under LEDs",
+yy = ly + 5 + len(items) * 5
+s1.rect(lx, yy - 1.8, 18, 3.6, 0.3, fill="url(#hatch)"); s1.text(lx + 22, yy + 0.9, "Cut material (sections)", 2.3)
+s1.rect(lx, yy + 3.2, 18, 3.6, 0.3, fill="#eef3fb"); s1.text(lx + 22, yy + 5.9, "Protoboard (upper level)", 2.3)
+if PRESENT:
+    s1.text(lx + 85, ly, "MAIN DIMENSIONS", 2.6, weight="bold")
+    md = [("External (W x D x H)", f"{f(W)} x {f(D)} x {f(H)}"), ("Internal (W x D)", f"{f(IX1 - IX0)} x {f(IY1 - IY0)}"),
+          ("Base height / lid", f"{f(BASE_H)} / {f(T_LID)}"), ("Wall / floor", f"{f(T_WALL)} / {f(T_FLOOR)}"),
+          ("Lid screws", "4x M3, corner bosses Ø7")]
+    for i, (k_, v_) in enumerate(md):
+        s1.text(lx + 85, ly + 5.9 + i * 5, k_, 2.3); s1.text(lx + 125, ly + 5.9 + i * 5, v_, 2.3, weight="bold")
+if not PRESENT: s1.text(lx + 85, ly, "KEY DECISIONS (spec §1)", 2.6, weight="bold")
+for i, t_ in enumerate([] if PRESENT else ["LEFT: 9 V holder, long side left-right (photo)", "RIGHT: protoboard above Uno R3, under LEDs",
                         "SW1 right of centre, between L2/L3 rows (v6)", "Uno jacks face battery (photo); no USB hole",
                         f"Envelope: {f(W)} x {f(D)} x {f(H)} (was 200x120x75)"]):
     s1.text(lx + 85, ly + 5.9 + i * 5, "- " + t_, 2.2)
@@ -568,8 +592,17 @@ for r in stack:
     for c_, val in zip(cols, r): s2.text(c_ + 1, yy + 3.4, val, 2.15)
     yy += 4.6; s2.line(tx, yy, 235, yy, 0.12)
 for c_ in cols[1:]: s2.line(c_, ty + 3, c_, yy, 0.15)
-s2.text(tx, yy + 4.5, "Overall height is set by: holder 21 + 5.5 gap + button 30 + lid 3 + floor 2.5 = 62.", 2.2, weight="bold")
-s2.text(tx, yy + 8.5, "Each 1 mm saved on the measured button depth reduces height by 1 mm.", 2.2, italic=True)
+lx2, ly2 = 250, 150
+s2.text(lx2, ly2, "LEGEND", 2.6, weight="bold")
+for i, (w_, d_, c_, t_) in enumerate(items):
+    yy2 = ly2 + 5 + i * 5
+    s2.line(lx2, yy2, lx2 + 18, yy2, float(w_) + 0.1, c_, d_); s2.text(lx2 + 22, yy2 + 0.9, t_, 2.3)
+yy2 = ly2 + 5 + len(items) * 5
+for j_, (fill_, t_) in enumerate([("url(#hatch)", "Cut material (wall, floor, lid)"), ("#f2f2f2", "9 V battery holder"),
+                                  ("#c8a24a", "Protoboard"), ("#2a7f8f", "Arduino Uno R3")]):
+    s2.rect(lx2, yy2 - 1.8 + j_ * 5, 18, 3.6, 0.3, fill=fill_); s2.text(lx2 + 22, yy2 + 0.9 + j_ * 5, t_, 2.3)
+if not PRESENT: s2.text(tx, yy + 4.5, "Overall height is set by: holder 21 + 5.5 gap + button 30 + lid 3 + floor 2.5 = 62.", 2.2, weight="bold")
+if not PRESENT: s2.text(tx, yy + 8.5, "Each 1 mm saved on the measured button depth reduces height by 1 mm.", 2.2, italic=True)
 sheets.append(s2)
 
 # =============================================================== SHEET 3
@@ -674,8 +707,51 @@ y = para(s3, 222, 98, "OPEN ITEMS (spec §1, §7)", [
 ], gap=4.1)
 sheets.append(s3)
 
+# =============================================================== COVER (presentation only)
+if PRESENT:
+    s0 = Sheet(0, "COVER - ENCLOSURE OVERVIEW")
+    s0.frame()
+    s0.text(30, 62, "POWER GRID BOX", 14, weight="bold")
+    s0.text(30, 76, "3D printed enclosure - layout sketches", 7)
+    s0.line(30, 82, 250, 82, 0.6)
+    s0.text(30, 92, f"Drawing PGB-ENC-001  |  2026-11-09  |  all dimensions in mm", 3.4, c="#444")
+    # overall envelope pictogram
+    ox, oy, sc = 290, 120, 0.55
+    s0.rect(ox, oy - D * sc, W * sc, D * sc, 0.6)
+    for y in ROWS:
+        s0.circle(ox + BTN_X * sc, oy - y * sc, BTN_CUT / 2 * sc, 0.4)
+        s0.circle(ox + LED_X * sc, oy - y * sc, LED_CUT / 2 * sc, 0.4)
+    s0.circle(ox + SEL_X * sc, oy - SEL_Y * sc, SEL_CUT / 2 * sc, 0.4)
+    s0.hdim(ox, ox + W * sc, oy, oy, oy + 8, f(W))
+    s0.vdim(oy - D * sc, oy, ox + W * sc, ox + W * sc, ox + W * sc + 8, f(D))
+    s0.text(ox + W * sc / 2, oy - D * sc - 4, f"Top view, overall height {f(H)}", 2.6, "middle")
+    y = 120
+    s0.text(30, y, "MAIN DIMENSIONS", 4, weight="bold"); y += 4
+    rows_ = [("External size (W x D x H)", f"{f(W)} x {f(D)} x {f(H)} mm"),
+             ("Internal size (W x D)", f"{f(IX1 - IX0)} x {f(IY1 - IY0)} mm"),
+             ("Base height + lid", f"{f(BASE_H)} + {f(T_LID)} mm"),
+             ("Wall / floor / lid thickness", f"{f(T_WALL)} / {f(T_FLOOR)} / {f(T_LID)} mm"),
+             ("Internal volume (approx.)", f"{(IX1 - IX0) * (IY1 - IY0) * (BASE_H - T_FLOOR) / 1e6:.2f} L"),
+             ("Top panel", "3 pushbuttons (left), selector SW1, 3 LEDs (right)"),
+             ("Inside, left", "9 V battery holder, flat, long side left-right"),
+             ("Inside, right", "Protoboard 30 x 33 above Arduino Uno R3"),
+             ("Power", "9 V holder lead -> DC plug into Uno jack")]
+    for k_, v_ in rows_:
+        s0.line(30, y, 250, y, 0.15)
+        s0.text(32, y + 5, k_, 3.0); s0.text(110, y + 5, v_, 3.0, weight="bold"); y += 7.5
+    s0.line(30, y, 250, y, 0.35)
+    y += 14
+    s0.text(30, y, "CONTENTS", 4, weight="bold"); y += 4
+    for n_, t_ in [("1", "Cover - enclosure overview"),
+                   ("2", "General arrangement - top panel, plan with lid removed, feature coordinates, legend"),
+                   ("3", "Sections A-A / B-B and vertical stack-up")]:
+        s0.line(30, y, 250, y, 0.15)
+        s0.text(32, y + 5, f"Sheet {n_}", 3.0, weight="bold"); s0.text(60, y + 5, t_, 3.0); y += 7.5
+    s0.line(30, y, 250, y, 0.35)
+    sheets = [s0, s1, s2]
+
 for sh in sheets:
-    with open(os.path.join(OUT, f"PGB-ENC-001_sheet{sh.n}.svg"), "w") as fh:
+    with open(os.path.join(OUT, f"PGB-ENC-001_sheet{sh.n + PAGE_OFFSET}.svg"), "w") as fh:
         fh.write(sh.svg())
 print("checks:", round(gap_btn_batt, 2), round(gap_led_pb, 2), round(gap_pb_uno, 2))
 print("Uno holes:", UNO_HOLES)
