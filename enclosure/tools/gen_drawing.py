@@ -57,18 +57,24 @@ BOSSES = [(IX0 + 3, IY0 + 3), (IX1 - 3, IY0 + 3), (IX0 + 3, IY1 - 3), (IX1 - 3, 
 FEET = [(12, 12), (W - 12, 12), (12, D - 12), (W - 12, D - 12)]
 
 # top panel controls (x, y)
-BTN_X, SEL_X, LED_X = 23.0, 51.5, 128.0
+BTN_X, SEL_X, LED_X = 23.0, 91.0, 128.0
 ROWS = (27.0, 52.0, 77.0)
+# SW1 position follows the top layout of draft v6 (position only, no dimensions taken):
+# right of centre, between the L2 and L3 rows.
+SEL_Y = (ROWS[0] + ROWS[1]) / 2       # 39.5
+SEL_KO = (SEL_X - 11.5, SEL_X + 11.5, SEL_Y - 11.5, SEL_Y + 11.5)  # protoboard keep-out under SW1
 BTN_CUT, BTN_BEZEL, BTN_BODY, BTN_DEPTH = 16.2, 18.0, 16.0, 30.0   # depth ASSUMED
 SEL_CUT, SEL_BODY, SEL_DEPTH = 6.2, (7.8, 13.0), 22.0             # depth ASSUMED
 LED_CUT, LED_BEZEL, LED_DEPTH = 8.2, 10.0, 12.0                    # ASSUMED 8 mm holder
 LIP_W, LIP_H, LIP_GAP = 1.5, 3.0, 0.3
+SEL_KO_H = 6.0                       # max part height on protoboard under SW1
 
 # derived checks ----------------------------------------------------------
 gap_btn_batt = (BASE_H - BTN_DEPTH) - HOLDER[5]
 gap_led_pb = (BASE_H - LED_DEPTH) - (PB_Z0 + PB_T + PB_COMP_MAX)
 gap_pb_uno = PB_Z0 - (UNO_Z0 + UNO_T + max(UNO_COMP, UNO_HDR))
-assert gap_btn_batt >= 5 and gap_led_pb >= 5 and gap_pb_uno >= 2.5, (gap_btn_batt, gap_led_pb, gap_pb_uno)
+gap_sel_pb = (BASE_H - SEL_DEPTH) - (PB_Z0 + PB_T + SEL_KO_H)
+assert gap_sel_pb >= 5 and gap_btn_batt >= 5 and gap_led_pb >= 5 and gap_pb_uno >= 2.5, (gap_btn_batt, gap_led_pb, gap_pb_uno)
 for bx, by in BOSSES:
     for cx, cy in [(PB[0], PB[2]), (PB[1], PB[2]), (PB[0], PB[3]), (PB[1], PB[3])]:
         assert math.hypot(bx - cx, by - cy) > 3.5 + 0.5
@@ -182,7 +188,7 @@ class Sheet:
         self.text(x0 + 2, y0 + 15.5, self.title, 3.0, weight="bold")
         self.text(x0 + 112, y0 + 11, "SHEET", 1.7, c="#555")
         self.text(x0 + 112, y0 + 15.5, f"{self.n} OF 3", 3.0, weight="bold")
-        cells = [(x0, "UNITS / SCALE", "mm   1:1 @ A3"), (x0 + 60, "REV", "A - PRELIM."),
+        cells = [(x0, "UNITS / SCALE", "mm   1:1 @ A3"), (x0 + 60, "REV", "B - PRELIM."),
                  (x0 + 100, "DATE", "2026-11-09"), (x0 + 130, "PROJECTION", "")]
         for cx, k, v in cells:
             self.text(cx + 2, y0 + 20, k, 1.7, c="#555"); self.text(cx + 2, y0 + 24.5, v, 2.6)
@@ -200,9 +206,9 @@ class Sheet:
         self.rect(165, 252, 85, 35, 0.6)
         self.text(167, 256, "REVISION HISTORY", 1.9, c="#555", weight="bold")
         self.line(165, 258, 250, 258, 0.3)
-        self.text(167, 262, "A   2026-11-09   First issue from consolidated", 2.2)
-        self.text(167, 265.5, "    spec (9 Nov 2026). Values marked * are", 2.2)
-        self.text(167, 269, "    nominal/assumed - verify before printing.", 2.2)
+        self.text(167, 262, "A  2026-11-09  First issue from spec (9 Nov 2026).", 2.2)
+        self.text(167, 265.5, "B  2026-11-09  SW1 moved to layout-v6 position;", 2.2)
+        self.text(167, 269, "    PB/L numbered from back. * = assumed value.", 2.2)
         self.text(167, 276, "Drawn: Claude Code     Checked: ________", 2.2)
         self.text(167, 280.5, "Approved: ________", 2.2)
 
@@ -249,16 +255,23 @@ for y in ROWS:
     v.cross(BTN_X, y, 11)
     v.circle(LED_X, y, LED_CUT, sw=0.6); v.circle(LED_X, y, LED_BEZEL, sw=0.25, c=PHANTOM, dash="1.2 0.7")
     v.cross(LED_X, y, 7)
-v.circle(SEL_X, CY, SEL_CUT, sw=0.6); v.cross(SEL_X, CY, 6)
-x, y = v.p(SEL_X, CY); s1.rect(x - 3.9, y - 6.5, 7.8, 13, 0.25, PHANTOM, dash="1.2 0.7")
+v.circle(SEL_X, SEL_Y, SEL_CUT, sw=0.6); v.cross(SEL_X, SEL_Y, 6)
+x, y = v.p(SEL_X, SEL_Y); s1.rect(x - 3.9, y - 6.5, 7.8, 13, 0.25, PHANTOM, dash="1.2 0.7")
 v.line(BTN_X, 5, BTN_X, D - 5, c=BLUE, w=0.18, dash="6 1.2 1 1.2")
 v.line(LED_X, 5, LED_X, D - 5, c=BLUE, w=0.18, dash="6 1.2 1 1.2")
 v.line(5, CY, W - 5, CY, c=BLUE, w=0.18, dash="6 1.2 1 1.2")
 # panel legends
 for i, y in enumerate(ROWS):
-    xx, yy = v.p(BTN_X + 13, y); s1.text(xx, yy + 0.9, f"PB{i+1}", 2.2, c=PHANTOM)
-    xx, yy = v.p(LED_X - 9, y); s1.text(xx, yy + 0.9, f"L{i+1}", 2.2, "end", c=PHANTOM)
-xx, yy = v.p(SEL_X, CY - 11); s1.text(xx, yy, "SW1", 2.2, "middle", c=PHANTOM)
+    xx, yy = v.p(BTN_X + 13, y); s1.text(xx, yy + 0.9, f"PB{3-i}", 2.2, c=PHANTOM)
+    xx, yy = v.p(LED_X - 9, y); s1.text(xx, yy + 0.9, f"L{3-i}", 2.2, "end", c=PHANTOM)
+xx, yy = v.p(SEL_X - 8, SEL_Y - 4); s1.text(xx, yy, "SW1", 2.2, "end", c=PHANTOM)
+xx, yy = v.p(SEL_X + 5, SEL_Y + 6.5); s1.text(xx, yy, "throw", 1.8, "start", c=PHANTOM)
+s1.line(*v.p(SEL_X + 5, SEL_Y + 4.5), *v.p(SEL_X + 5, SEL_Y - 4.5), 0.18, PHANTOM); s1.arrow(*v.p(SEL_X + 5, SEL_Y + 4.5), -90, PHANTOM); s1.arrow(*v.p(SEL_X + 5, SEL_Y - 4.5), 90, PHANTOM)
+xd = v.p(SEL_X + 16, 0)[0]
+s1.vdim(v.p(0, ROWS[0])[1], v.p(0, SEL_Y)[1], v.p(LED_X - 6, 0)[0], v.p(SEL_X + 7, 0)[0], xd, f(SEL_Y - ROWS[0]))
+s1.vdim(v.p(0, SEL_Y)[1], v.p(0, ROWS[1])[1], v.p(SEL_X + 7, 0)[0], v.p(LED_X - 6, 0)[0], xd, f(ROWS[1] - SEL_Y))
+# stepped cutting plane A-A
+s1.poly([v.p(-6, CY), v.p(SEL_X - 13, CY), v.p(SEL_X - 13, SEL_Y), v.p(SEL_X + 13, SEL_Y), v.p(SEL_X + 13, CY), v.p(W + 6, CY)], 0.35, INK, close=False)
 # section markers
 xa, ya = v.p(-6, CY); xb, yb = v.p(W + 6, CY)
 for xx in (xa, xb):
@@ -281,7 +294,7 @@ for b0, b1 in ((0, ROWS[0]), (ROWS[0], ROWS[1]), (ROWS[1], ROWS[2]), (ROWS[2], D
     s1.vdim(v.p(0, b0)[1], v.p(0, b1)[1], xl if b0 == 0 else v.p(BTN_X, 0)[0] - 9, xl if b1 == D else v.p(BTN_X, 0)[0] - 9, xl - 12, f(b1 - b0))
 # callouts
 s1.leader(*v.p(BTN_X - BTN_CUT / 2 * 0.7, ROWS[2] + BTN_CUT / 2 * 0.7), *v.p(BTN_X - 15, D + 14), "3x  Ø16.2 THRU - PUSHBUTTON PB1-3 *", anchor="start")
-s1.leader(*v.p(SEL_X + 2.2, CY + 2.2), *v.p(SEL_X + 10, D + 7), "Ø6.2 THRU - SELECTOR SW1 (M6x0.75)", anchor="start")
+s1.leader(*v.p(SEL_X + 2.2, SEL_Y + 2.2), *v.p(SEL_X - 3, D + 7), "Ø6.2 THRU - SELECTOR SW1 (M6x0.75)", anchor="end")
 s1.leader(*v.p(LED_X + 2.9, ROWS[2] + 2.9), *v.p(LED_X - 5, D + 14), "3x  Ø8.2 THRU - LED HOLDER *", anchor="start")
 s1.leader(*v.p(BOSSES[1][0], BOSSES[1][1]), *v.p(W + 3, -7), "4x Ø3.4, CSK Ø6.5x90°", anchor="start")
 s1.label_view(42 + W / 2, 20, "VIEW 1 - TOP (CONTROL PANEL / LID)", "Lid 3.0 thick. Hidden: lid locating lip. Phantom: bays below.")
@@ -320,6 +333,8 @@ v2.rect(PB[0] + PB_EDGE, PB[1] - PB_EDGE, PB[2] + PB_EDGE, PB[3] - PB_EDGE, sw=0
 # LED keep-out
 v2.rect(LED_X - 7, LED_X + 7, ROWS[0] - 7, ROWS[2] + 7, sw=0.3, c="#b00020", dash="2 1")
 x, y = v2.p(LED_X, ROWS[2] + 9); s1.text(x, y, "LED KEEP-OUT", 1.9, "middle", c="#b00020")
+v2.rect(*SEL_KO, sw=0.3, c="#b00020", dash="2 1")
+x, y = v2.p(SEL_X, SEL_KO[3] + 1.5); s1.text(x, y, "SW1 KEEP-OUT (parts <= 6)", 1.9, "middle", c="#b00020")
 x, y = v2.p(PB_CX - 12, CY + 30); s1.text(x, y, "PROTOBOARD 30x33 (UPPER)", 2.4, "middle", weight="bold")
 x, y = v2.p(PB_CX - 12, CY - 33); s1.text(x, y, "ARDUINO UNO R3 (BELOW, hidden)", 2.2, "middle")
 for bx, by in BOSSES:
@@ -353,9 +368,9 @@ s1.text(tx, ty, "TABLE 1 - FEATURE COORDINATES (origin: external front-left-bott
 cols = [tx, tx + 28, tx + 62, tx + 96, tx + 118]
 hdr = ["ITEM", "X", "Y", "SIZE", "NOTE"]
 rows = [
-    ("PB1/PB2/PB3", f(BTN_X), "27 / 52 / 77", "Ø16.2", "Adafruit 1439, 16 mm illum. momentary *"),
-    ("SW1 selector", f(SEL_X), "52", "Ø6.2", "Miyama MS-500E (ON)-OFF-(ON), M6x0.75"),
-    ("L1/L2/L3", f(LED_X), "27 / 52 / 77", "Ø8.2", "LED + 8 mm panel holder (model TBC) *"),
+    ("PB1/PB2/PB3", f(BTN_X), "77 / 52 / 27", "Ø16.2", "Adafruit 1439, 16 mm illum. momentary *"),
+    ("SW1 selector", f(SEL_X), f(SEL_Y), "Ø6.2", "Miyama MS-500E (ON)-OFF-(ON), M6x0.75"),
+    ("L1/L2/L3", f(LED_X), "77 / 52 / 27", "Ø8.2", "LED + 8 mm panel holder (model TBC) *"),
     ("Lid screws", "5.5 / 145.5", "5.5 / 98.5", "Ø3.4", "4x M3 x 10 countersunk into inserts"),
     ("Battery holder", f"{f(HOLDER[0])}-{f(HOLDER[1])}", f"{f(HOLDER[2])}-{f(HOLDER[3])}", "31x55x21", "on floor; VHB tape or 2x M3 *"),
     ("Protoboard", f"{f(PB[0])}-{f(PB[1])}", f"{f(PB[2])}-{f(PB[3])}", "78.74x86.36", "underside Z 24.0 *"),
@@ -386,7 +401,7 @@ for i, (w_, d_, c_, t_) in enumerate(items):
     s1.line(lx, yy, lx + 18, yy, float(w_) + 0.1, c_, d_); s1.text(lx + 22, yy + 0.9, t_, 2.3)
 s1.text(lx + 85, ly, "KEY DECISIONS (spec §1)", 2.6, weight="bold")
 for i, t_ in enumerate(["LEFT: 9 V battery under button column", "RIGHT: protoboard above Uno R3, under LEDs",
-                        "CENTRE: selector + protected wiring path", "No USB opening; lid removable for service",
+                        "SW1 right of centre, between L2/L3 rows (v6)", "CENTRE: protected wiring channel; no USB hole",
                         "Envelope minimised: 151 x 104 x 62 (was 200x120x75)"]):
     s1.text(lx + 85, ly + 5.9 + i * 5, "- " + t_, 2.2)
 sheets.append(s1)
@@ -456,7 +471,10 @@ va.rect(UNO[0], UNO[1], UNO_Z0, UNO_Z0 + UNO_T, sw=0.5, fill="#2a7f8f", op=0.85)
 va.rect(UNO[0] + 4, UNO[1] - 14, UNO_Z0 + UNO_T, UNO_Z0 + UNO_T + UNO_HDR, sw=0.3, dash="1.2 0.6")
 va.rect(UNO_DCJ[0], UNO_DCJ[1], UNO_Z0 + UNO_T, UNO_Z0 + UNO_T + UNO_COMP, sw=0.4)
 va.rect(PB[0], PB[1], PB_Z0, PB_Z0 + PB_T, sw=0.5, fill="#c8a24a", op=0.9)
-va.rect(PB[0] + 3, PB[1] - 3, PB_Z0 + PB_T, PB_Z0 + PB_T + PB_COMP_MAX, sw=0.3, c=PHANTOM, dash="5 1 1 1 1 1")
+va.rect(PB[0] + 3, SEL_KO[0], PB_Z0 + PB_T, PB_Z0 + PB_T + PB_COMP_MAX, sw=0.3, c=PHANTOM, dash="5 1 1 1 1 1")
+va.rect(SEL_KO[1], PB[1] - 3, PB_Z0 + PB_T, PB_Z0 + PB_T + PB_COMP_MAX, sw=0.3, c=PHANTOM, dash="5 1 1 1 1 1")
+va.rect(SEL_KO[0], SEL_KO[1], PB_Z0 + PB_T, PB_Z0 + PB_T + SEL_KO_H, sw=0.3, c="#b00020", dash="2 1")
+s2.vdim(va.p(0, PB_Z0 + PB_T + SEL_KO_H)[1], va.p(0, BASE_H - SEL_DEPTH)[1], va.p(SEL_KO[1], 0)[0], va.p(SEL_X + 4, 0)[0], va.p(SEL_KO[1] + 4, 0)[0], f(gap_sel_pb))
 va.rect(PB[0] + 3, PB[1] - 3, PB_Z0 - 2.5, PB_Z0, sw=0.25, c=PHANTOM, dash="1 0.6")
 # wire path through notch (phantom)
 xs_ = [(HOLDER[1], 12), (RIB[0], 13.5), (CHAN[0] + 3, 13.5), (CHAN[1] - 2, 6), (PB[0] + 2, 5), (PB[0] + 4, PB_Z0)]
@@ -472,13 +490,13 @@ s2.vdim(va.p(0, 0)[1], va.p(0, H)[1], xR, xR, xR + 16, f(H))
 s2.vdim(va.p(0, HOLDER[4])[1], va.p(0, HOLDER[5])[1], xL, xL, xL - 7, "21 *")
 s2.vdim(va.p(0, HOLDER[5])[1], va.p(0, BASE_H - BTN_DEPTH)[1], xL, xL, xL - 7, f"{f(gap_btn_batt)} MIN")
 s2.vdim(va.p(0, BASE_H - BTN_DEPTH)[1], va.p(0, BASE_H)[1], xL, xL, xL - 7, f"{f(BTN_DEPTH)} *")
-s2.leader(*va.p(BTN_X + 8, BASE_H - 15), *va.p(BTN_X + 34, H + 13), "PB2 - body depth below lid 30 * (governs height)", anchor="start")
+s2.leader(*va.p(BTN_X + 8, BASE_H - 15), *va.p(BTN_X + 34, H + 20), "PB2 - body depth below lid 30 * (governs height)", anchor="start")
 s2.leader(*va.p(HOLDER[0] + 5, 12), *va.p(-4, -16), "9 V holder (section)", anchor="start")
 s2.leader(*va.p(LED_X + 3, BASE_H - 8), *va.p(LED_X + 8, H + 13), "L2 - rear depth 12 *", anchor="start")
 s2.leader(*va.p(PB[1] - 10, PB_Z0 + 1), *va.p(W - 6, -22), "Protoboard Z 24.0 - 25.6", anchor="end")
 s2.leader(*va.p(UNO[0] + 30, UNO_Z0 + 1), *va.p(UNO[0] + 18, -16), "Uno R3 Z 8.5 - 10.1", anchor="end")
 s2.leader(*va.p(CHAN[0] + 3, 13.5), *va.p(CHAN[0] - 12, -22), "Battery leads via rib notch + channel", anchor="start", c="#b00020")
-s2.label_view(45 + W / 2, 18, "SECTION A-A  (Y = 52, viewed from front)", "Section through all three control rows' centre (PB2, SW1, L2)")
+s2.label_view(45 + W / 2, 18, "SECTION A-A  (stepped, viewed from front)", "Stepped section: Y = 52 (PB2, L2), jog to Y = 39.5 through SW1")
 
 # ---- Section B-B (side, cut at X = 128 through LED column; +Y to the right)
 vb = View(s2, 265, 112)
@@ -545,7 +563,7 @@ LZ = BASE_H + 32
 box(0, W, 0, D, LZ, LZ + T_LID, "#e8ecf2")
 for y in ROWS:
     iso_circle(BTN_X, y, LZ + T_LID, BTN_CUT); iso_circle(LED_X, y, LZ + T_LID, LED_CUT)
-iso_circle(SEL_X, CY, LZ + T_LID, SEL_CUT)
+iso_circle(SEL_X, SEL_Y, LZ + T_LID, SEL_CUT)
 for bx, by in BOSSES: iso_circle(bx, by, LZ + T_LID, 3.4)
 for bx, by in (BOSSES[0], BOSSES[1]):
     s2.line(*iso(bx, by, LZ), *iso(bx, by, BASE_H + 2), 0.18, BLUE, "6 1.2 1 1.2")
@@ -566,6 +584,7 @@ stack = [
     ("Protoboard parts", "25.6 - 37.6", "max 12 * (keep-out under LEDs)"),
     ("LED rear", "47.0 - 59.0", f"12 *; {f(gap_led_pb)} clear to parts"),
     ("Battery holder", "2.5 - 23.5", "21 * high, on floor"),
+    ("Selector rear", f"{f(BASE_H - SEL_DEPTH)} - {f(BASE_H)}", f"22 *; parts under SW1 <= {f(SEL_KO_H)}"),
     ("Button rear", "29.0 - 59.0", f"30 *; {f(gap_btn_batt)} clear to holder"),
     ("Base top / lid", "59.0 - 62.0", "3.0 lid, 1.5x3 lip, 0.3 gap"),
 ]
@@ -606,8 +625,10 @@ y = para(s3, 18, 22, "GENERAL NOTES", [
     "     electronics bay near the protoboard edge. 2x cable-tie anchors in channel at Y 25 and Y 79. Deburr all edges.",
     "12. No USB opening (spec §1). Right wall zone at the Uno DC jack (Y 64-75, Z 10-22) is RESERVED - do not place ribs there,",
     "     so an optional DC/USB opening can be cut later. Never connect an external supply in parallel with the 9 V battery.",
-    "13. No parts taller than 3 mm on the protoboard inside the LED keep-out (X 121-135, Y 20-84) unless re-checked.",
+    f"13. Protoboard keep-outs: LED column (X 121-135, Y 20-84) parts <= 3; SW1 (X {f(SEL_KO[0])}-{f(SEL_KO[1])}, Y {f(SEL_KO[2])}-{f(SEL_KO[3])}) parts <= {f(SEL_KO_H)}.",
     "14. Add 4x Ø10 x 1.0 deep recesses on the underside at (12,12) (139,12) (12,92) (139,92) for rubber feet.",
+    "15. SW1 position follows the top layout of draft v6 (position only; no v6 dimensions used): right of centre, midway",
+    "     between the L2 and L3 rows. Mount the toggle so the lever throws along Y (back = towards L2, front = towards L3).",
 ])
 
 y = 22
@@ -619,7 +640,7 @@ checks = [("Button body -> battery holder (Z)", gap_btn_batt, 5.0),
           ("Protoboard edge -> channel (X)", PB[0] - CHAN[1], 5.0),
           ("Protoboard edge -> front/back wall (Y)", PB[2] - IY0, 5.0),
           ("Uno USB tip -> right wall (X)", IX1 - UNO_USB[1], 2.0),
-          ("Selector body -> channel side (X)", (CHAN[1] - CHAN[0] - SEL_BODY[0]) / 2, 1.5),
+          ("Selector rear -> protoboard parts (Z)", gap_sel_pb, 5.0),
           ("Button bezel -> bezel (Y)", ROWS[1] - ROWS[0] - BTN_BEZEL, 5.0),
           ("Corner boss -> protoboard corner", min(math.hypot(bx - cx, by - cy) for bx, by in BOSSES for cx, cy in [(PB[0], PB[2]), (PB[1], PB[2]), (PB[0], PB[3]), (PB[1], PB[3])]) - 3.5, 0.5)]
 yy = y + 3

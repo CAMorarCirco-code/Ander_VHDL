@@ -63,7 +63,7 @@
 <text x='252.000' y='272.000' font-size='1.7' font-family='Arial, Helvetica, sans-serif' text-anchor='start' fill='#555' font-weight='normal'>UNITS / SCALE</text>
 <text x='252.000' y='276.500' font-size='2.6' font-family='Arial, Helvetica, sans-serif' text-anchor='start' fill='#111' font-weight='normal'>mm   1:1 @ A3</text>
 <text x='312.000' y='272.000' font-size='1.7' font-family='Arial, Helvetica, sans-serif' text-anchor='start' fill='#555' font-weight='normal'>REV</text>
-<text x='312.000' y='276.500' font-size='2.6' font-family='Arial, Helvetica, sans-serif' text-anchor='start' fill='#111' font-weight='normal'>A - PRELIM.</text>
+<text x='312.000' y='276.500' font-size='2.6' font-family='Arial, Helvetica, sans-serif' text-anchor='start' fill='#111' font-weight='normal'>B - PRELIM.</text>
 <text x='352.000' y='272.000' font-size='1.7' font-family='Arial, Helvetica, sans-serif' text-anchor='start' fill='#555' font-weight='normal'>DATE</text>
 <text x='352.000' y='276.500' font-size='2.6' font-family='Arial, Helvetica, sans-serif' text-anchor='start' fill='#111' font-weight='normal'>2026-11-09</text>
 <text x='382.000' y='272.000' font-size='1.7' font-family='Arial, Helvetica, sans-serif' text-anchor='start' fill='#555' font-weight='normal'>PROJECTION</text>
@@ -80,9 +80,9 @@
 <rect x='165.000' y='252.000' width='85.000' height='35.000' rx='0' fill='none' stroke='#111' stroke-width='0.6'/>
 <text x='167.000' y='256.000' font-size='1.9' font-family='Arial, Helvetica, sans-serif' text-anchor='start' fill='#555' font-weight='bold'>REVISION HISTORY</text>
 <line x1='165.000' y1='258.000' x2='250.000' y2='258.000' stroke='#111' stroke-width='0.3' stroke-linecap='round'/>
-<text x='167.000' y='262.000' font-size='2.2' font-family='Arial, Helvetica, sans-serif' text-anchor='start' fill='#111' font-weight='normal'>A   2026-11-09   First issue from consolidated</text>
-<text x='167.000' y='265.500' font-size='2.2' font-family='Arial, Helvetica, sans-serif' text-anchor='start' fill='#111' font-weight='normal'>    spec (9 Nov 2026). Values marked * are</text>
-<text x='167.000' y='269.000' font-size='2.2' font-family='Arial, Helvetica, sans-serif' text-anchor='start' fill='#111' font-weight='normal'>    nominal/assumed - verify before printing.</text>
+<text x='167.000' y='262.000' font-size='2.2' font-family='Arial, Helvetica, sans-serif' text-anchor='start' fill='#111' font-weight='normal'>A  2026-11-09  First issue from spec (9 Nov 2026).</text>
+<text x='167.000' y='265.500' font-size='2.2' font-family='Arial, Helvetica, sans-serif' text-anchor='start' fill='#111' font-weight='normal'>B  2026-11-09  SW1 moved to layout-v6 position;</text>
+<text x='167.000' y='269.000' font-size='2.2' font-family='Arial, Helvetica, sans-serif' text-anchor='start' fill='#111' font-weight='normal'>    PB/L numbered from back. * = assumed value.</text>
 <text x='167.000' y='276.000' font-size='2.2' font-family='Arial, Helvetica, sans-serif' text-anchor='start' fill='#111' font-weight='normal'>Drawn: Claude Code     Checked: ________</text>
 <text x='167.000' y='280.500' font-size='2.2' font-family='Arial, Helvetica, sans-serif' text-anchor='start' fill='#111' font-weight='normal'>Approved: ________</text>
 <rect x='45.000' y='109.500' width='151.000' height='2.500' rx='0' fill='url(#hatch)' stroke='#111' stroke-width='0.5'/>
@@ -94,9 +94,9 @@
 <rect x='59.900' y='50.000' width='16.200' height='3.000' rx='0' fill='#fff' stroke='#111' stroke-width='0.0'/>
 <line x1='59.900' y1='53.000' x2='59.900' y2='50.000' stroke='#111' stroke-width='0.5' stroke-linecap='round'/>
 <line x1='76.100' y1='53.000' x2='76.100' y2='50.000' stroke='#111' stroke-width='0.5' stroke-linecap='round'/>
-<rect x='93.400' y='50.000' width='6.200' height='3.000' rx='0' fill='#fff' stroke='#111' stroke-width='0.0'/>
-<line x1='93.400' y1='53.000' x2='93.400' y2='50.000' stroke='#111' stroke-width='0.5' stroke-linecap='round'/>
-<line x1='99.600' y1='53.000' x2='99.600' y2='50.000' stroke='#111' stroke-width='0.5' stroke-linecap='round'/>
+<rect x='132.900' y='50.000' width='6.200' height='3.000' rx='0' fill='#fff' stroke='#111' stroke-width='0.0'/>
+<line x1='132.900' y1='53.000' x2='132.900' y2='50.000' stroke='#111' stroke-width='0.5' stroke-linecap='round'/>
+<line x1='139.100' y1='53.000' x2='139.100' y2='50.000' stroke='#111' stroke-width='0.5' stroke-linecap='round'/>
 <rect x='168.900' y='50.000' width='8.200' height='3.000' rx='0' fill='#fff' stroke='#111' stroke-width='0.0'/>
 <line x1='168.900' y1='53.000' x2='168.900' y2='50.000' stroke='#111' stroke-width='0.5' stroke-linecap='round'/>
 <line x1='177.100' y1='53.000' x2='177.100' y2='50.000' stroke='#111' stroke-width='0.5' stroke-linecap='round'/>
@@ -117,14 +117,14 @@
 <line x1='68.000' y1='51.500' x2='68.000' y2='51.500' stroke='#1f4e9c' stroke-width='0.18' stroke-dasharray='6 1.2 1 1.2' stroke-linecap='round'/>
 <line x1='68.000' y1='51.500' x2='68.000' y2='51.500' stroke='#1f4e9c' stroke-width='0.18' stroke-dasharray='6 1.2 1 1.2' stroke-linecap='round'/>
 <line x1='68.000' y1='85.000' x2='68.000' y2='43.000' stroke='#1f4e9c' stroke-width='0.18' stroke-dasharray='6 1.2 1 1.2' stroke-linecap='round'/>
-<rect x='92.600' y='55.000' width='7.800' height='15.000' rx='0' fill='#fafafa' stroke='#111' stroke-width='0.4'/>
-<rect x='93.600' y='70.000' width='0.800' height='5.000' rx='0' fill='none' stroke='#111' stroke-width='0.25'/>
-<rect x='96.100' y='70.000' width='0.800' height='5.000' rx='0' fill='none' stroke='#111' stroke-width='0.25'/>
-<rect x='98.600' y='70.000' width='0.800' height='5.000' rx='0' fill='none' stroke='#111' stroke-width='0.25'/>
-<rect x='93.500' y='44.000' width='6.000' height='11.000' rx='0' fill='#fafafa' stroke='#111' stroke-width='0.4'/>
-<rect x='91.500' y='47.500' width='10.000' height='2.500' rx='0' fill='#ddd' stroke='#111' stroke-width='0.3'/>
-<line x1='96.500' y1='44.000' x2='99.500' y2='35.000' stroke='#444' stroke-width='1.6' stroke-linecap='round'/>
-<line x1='96.500' y1='77.000' x2='96.500' y2='33.000' stroke='#1f4e9c' stroke-width='0.18' stroke-dasharray='6 1.2 1 1.2' stroke-linecap='round'/>
+<rect x='132.100' y='55.000' width='7.800' height='15.000' rx='0' fill='#fafafa' stroke='#111' stroke-width='0.4'/>
+<rect x='133.100' y='70.000' width='0.800' height='5.000' rx='0' fill='none' stroke='#111' stroke-width='0.25'/>
+<rect x='135.600' y='70.000' width='0.800' height='5.000' rx='0' fill='none' stroke='#111' stroke-width='0.25'/>
+<rect x='138.100' y='70.000' width='0.800' height='5.000' rx='0' fill='none' stroke='#111' stroke-width='0.25'/>
+<rect x='133.000' y='44.000' width='6.000' height='11.000' rx='0' fill='#fafafa' stroke='#111' stroke-width='0.4'/>
+<rect x='131.000' y='47.500' width='10.000' height='2.500' rx='0' fill='#ddd' stroke='#111' stroke-width='0.3'/>
+<line x1='136.000' y1='44.000' x2='139.000' y2='35.000' stroke='#444' stroke-width='1.6' stroke-linecap='round'/>
+<line x1='136.000' y1='77.000' x2='136.000' y2='33.000' stroke='#1f4e9c' stroke-width='0.18' stroke-dasharray='6 1.2 1 1.2' stroke-linecap='round'/>
 <rect x='169.000' y='53.000' width='8.000' height='9.000' rx='0' fill='#fafafa' stroke='#111' stroke-width='0.4'/>
 <rect x='171.750' y='62.000' width='2.500' height='3.000' rx='0' fill='none' stroke='#111' stroke-width='0.3'/>
 <rect x='168.000' y='48.500' width='10.000' height='1.500' rx='0' fill='#fafafa' stroke='#111' stroke-width='0.4'/>
@@ -134,7 +134,17 @@
 <rect x='119.000' y='93.400' width='50.580' height='8.500' rx='0' fill='none' stroke='#111' stroke-width='0.3' stroke-dasharray='1.2 0.6'/>
 <rect x='171.580' y='91.000' width='13.800' height='10.900' rx='0' fill='none' stroke='#111' stroke-width='0.4'/>
 <rect x='108.630' y='86.400' width='78.740' height='1.600' rx='0' fill='#c8a24a' fill-opacity='0.9' stroke='#111' stroke-width='0.5'/>
-<rect x='111.630' y='74.400' width='72.740' height='12.000' rx='0' fill='none' stroke='#7a7a7a' stroke-width='0.3' stroke-dasharray='5 1 1 1 1 1'/>
+<rect x='111.630' y='74.400' width='12.870' height='12.000' rx='0' fill='none' stroke='#7a7a7a' stroke-width='0.3' stroke-dasharray='5 1 1 1 1 1'/>
+<rect x='147.500' y='74.400' width='36.870' height='12.000' rx='0' fill='none' stroke='#7a7a7a' stroke-width='0.3' stroke-dasharray='5 1 1 1 1 1'/>
+<rect x='124.500' y='80.400' width='23.000' height='6.000' rx='0' fill='none' stroke='#b00020' stroke-width='0.3' stroke-dasharray='2 1'/>
+<line x1='148.500' y1='80.400' x2='153.000' y2='80.400' stroke='#111' stroke-width='0.18' stroke-linecap='round'/>
+<line x1='141.000' y1='75.000' x2='153.000' y2='75.000' stroke='#111' stroke-width='0.18' stroke-linecap='round'/>
+<line x1='151.500' y1='80.400' x2='151.500' y2='75.000' stroke='#111' stroke-width='0.18' stroke-linecap='round'/>
+<polygon points='151.500,75.000 150.800,72.800 152.200,72.800' fill='#111' stroke='#111' stroke-width='0.1' stroke-linejoin='round'/>
+<polygon points='151.500,80.400 152.200,82.600 150.800,82.600' fill='#111' stroke='#111' stroke-width='0.1' stroke-linejoin='round'/>
+<line x1='151.500' y1='71.000' x2='151.500' y2='75.000' stroke='#111' stroke-width='0.18' stroke-linecap='round'/>
+<line x1='151.500' y1='80.400' x2='151.500' y2='84.400' stroke='#111' stroke-width='0.18' stroke-linecap='round'/>
+<text x='152.700' y='83.900' font-size='2.3' font-family='Arial, Helvetica, sans-serif' text-anchor='start' fill='#111' font-weight='normal'>5.4</text>
 <rect x='111.630' y='88.000' width='72.740' height='2.500' rx='0' fill='none' stroke='#7a7a7a' stroke-width='0.25' stroke-dasharray='1 0.6'/>
 <polyline points='83.500,100.000 88.500,98.500 93.500,98.500 100.500,106.000 110.630,107.000 112.630,88.000' fill='none' stroke='#b00020' stroke-width='0.45' stroke-linejoin='round'/>
 <line x1='45.000' y1='113.000' x2='45.000' y2='123.500' stroke='#111' stroke-width='0.18' stroke-linecap='round'/>
@@ -205,10 +215,10 @@
 <polygon points='38.000,53.000 38.700,55.200 37.300,55.200' fill='#111' stroke='#111' stroke-width='0.1' stroke-linejoin='round'/>
 <polygon points='38.000,83.000 37.300,80.800 38.700,80.800' fill='#111' stroke='#111' stroke-width='0.1' stroke-linejoin='round'/>
 <text x='37.100' y='68.000' font-size='2.5' font-family='Arial, Helvetica, sans-serif' text-anchor='middle' fill='#111' font-weight='normal' transform='rotate(-90 37.100 68.000)'>30 *</text>
-<line x1='76.000' y1='68.000' x2='102.000' y2='37.000' stroke='#111' stroke-width='0.18' stroke-linecap='round'/>
+<line x1='76.000' y1='68.000' x2='102.000' y2='30.000' stroke='#111' stroke-width='0.18' stroke-linecap='round'/>
 <circle cx='76.000' cy='68.000' r='0.350' fill='#111' stroke='#111' stroke-width='0.1'/>
-<line x1='102.000' y1='37.000' x2='110.000' y2='37.000' stroke='#111' stroke-width='0.18' stroke-linecap='round'/>
-<text x='103.000' y='36.200' font-size='2.4' font-family='Arial, Helvetica, sans-serif' text-anchor='start' fill='#111' font-weight='normal'>PB2 - body depth below lid 30 * (governs height)</text>
+<line x1='102.000' y1='30.000' x2='110.000' y2='30.000' stroke='#111' stroke-width='0.18' stroke-linecap='round'/>
+<text x='103.000' y='29.200' font-size='2.4' font-family='Arial, Helvetica, sans-serif' text-anchor='start' fill='#111' font-weight='normal'>PB2 - body depth below lid 30 * (governs height)</text>
 <line x1='57.500' y1='100.000' x2='41.000' y2='128.000' stroke='#111' stroke-width='0.18' stroke-linecap='round'/>
 <circle cx='57.500' cy='100.000' r='0.350' fill='#111' stroke='#111' stroke-width='0.1'/>
 <line x1='41.000' y1='128.000' x2='49.000' y2='128.000' stroke='#111' stroke-width='0.18' stroke-linecap='round'/>
@@ -229,9 +239,9 @@
 <circle cx='93.500' cy='98.500' r='0.350' fill='#b00020' stroke='#b00020' stroke-width='0.1'/>
 <line x1='78.500' y1='134.000' x2='86.500' y2='134.000' stroke='#b00020' stroke-width='0.18' stroke-linecap='round'/>
 <text x='79.500' y='133.200' font-size='2.4' font-family='Arial, Helvetica, sans-serif' text-anchor='start' fill='#b00020' font-weight='normal'>Battery leads via rib notch + channel</text>
-<text x='120.500' y='18.000' font-size='3.8' font-family='Arial, Helvetica, sans-serif' text-anchor='middle' fill='#111' font-weight='bold'>SECTION A-A  (Y = 52, viewed from front)</text>
-<line x1='74.500' y1='19.200' x2='166.500' y2='19.200' stroke='#111' stroke-width='0.35' stroke-linecap='round'/>
-<text x='120.500' y='23.000' font-size='2.4' font-family='Arial, Helvetica, sans-serif' text-anchor='middle' fill='#111' font-weight='normal'>Section through all three control rows' centre (PB2, SW1, L2)</text>
+<text x='120.500' y='18.000' font-size='3.8' font-family='Arial, Helvetica, sans-serif' text-anchor='middle' fill='#111' font-weight='bold'>SECTION A-A  (stepped, viewed from front)</text>
+<line x1='73.350' y1='19.200' x2='167.650' y2='19.200' stroke='#111' stroke-width='0.35' stroke-linecap='round'/>
+<text x='120.500' y='23.000' font-size='2.4' font-family='Arial, Helvetica, sans-serif' text-anchor='middle' fill='#111' font-weight='normal'>Stepped section: Y = 52 (PB2, L2), jog to Y = 39.5 through SW1</text>
 <rect x='265.000' y='109.500' width='104.000' height='2.500' rx='0' fill='url(#hatch)' stroke='#111' stroke-width='0.5'/>
 <rect x='265.000' y='53.000' width='2.500' height='56.500' rx='0' fill='url(#hatch)' stroke='#111' stroke-width='0.5'/>
 <rect x='366.500' y='53.000' width='2.500' height='56.500' rx='0' fill='url(#hatch)' stroke='#111' stroke-width='0.5'/>
@@ -469,7 +479,7 @@
 <polygon points='95.216,166.278 94.914,166.131 94.573,166.018 94.203,165.940 93.815,165.900 93.421,165.900 93.033,165.940 92.663,166.018 92.322,166.131 92.020,166.278 91.767,166.452 91.570,166.649 91.435,166.862 91.367,167.086 91.367,167.314 91.435,167.538 91.570,167.751 91.767,167.948 92.020,168.123 92.322,168.269 92.663,168.382 93.033,168.460 93.421,168.500 93.815,168.500 94.203,168.460 94.573,168.382 94.914,168.269 95.216,168.123 95.469,167.948 95.666,167.751 95.801,167.538 95.869,167.314 95.869,167.086 95.801,166.862 95.666,166.649 95.469,166.452' fill='#fff' stroke='#111' stroke-width='0.3' stroke-linejoin='round'/>
 <polygon points='46.112,183.377 45.516,183.089 44.842,182.864 44.111,182.710 43.345,182.632 42.567,182.632 41.800,182.710 41.069,182.864 40.395,183.089 39.799,183.377 39.299,183.722 38.910,184.111 38.644,184.533 38.508,184.975 38.508,185.425 38.644,185.867 38.910,186.289 39.299,186.678 39.799,187.023 40.395,187.311 41.069,187.536 41.800,187.690 42.567,187.768 43.345,187.768 44.111,187.690 44.842,187.536 45.516,187.311 46.112,187.023 46.612,186.678 47.002,186.289 47.268,185.867 47.403,185.425 47.403,184.975 47.268,184.533 47.002,184.111 46.612,183.722' fill='#fff' stroke='#111' stroke-width='0.3' stroke-linejoin='round'/>
 <polygon points='85.473,160.653 85.171,160.506 84.830,160.393 84.460,160.315 84.072,160.275 83.678,160.275 83.290,160.315 82.920,160.393 82.579,160.506 82.277,160.653 82.024,160.827 81.827,161.024 81.693,161.237 81.624,161.461 81.624,161.689 81.693,161.913 81.827,162.126 82.024,162.323 82.277,162.498 82.579,162.644 82.920,162.757 83.290,162.835 83.678,162.875 84.072,162.875 84.460,162.835 84.830,162.757 85.171,162.644 85.473,162.498 85.726,162.323 85.923,162.126 86.058,161.913 86.126,161.689 86.126,161.461 86.058,161.237 85.923,161.024 85.726,160.827' fill='#fff' stroke='#111' stroke-width='0.3' stroke-linejoin='round'/>
-<polygon points='65.013,183.715 64.785,183.604 64.527,183.519 64.247,183.460 63.954,183.430 63.656,183.430 63.363,183.460 63.083,183.519 62.825,183.604 62.597,183.715 62.406,183.847 62.257,183.996 62.155,184.157 62.103,184.327 62.103,184.498 62.155,184.668 62.257,184.829 62.406,184.978 62.597,185.110 62.825,185.221 63.083,185.306 63.363,185.365 63.656,185.395 63.954,185.395 64.247,185.365 64.527,185.306 64.785,185.221 65.013,185.110 65.205,184.978 65.354,184.829 65.455,184.668 65.507,184.498 65.507,184.327 65.455,184.157 65.354,183.996 65.205,183.847' fill='#fff' stroke='#111' stroke-width='0.3' stroke-linejoin='round'/>
+<polygon points='85.278,177.640 85.050,177.529 84.792,177.444 84.512,177.385 84.219,177.355 83.921,177.355 83.628,177.385 83.348,177.444 83.090,177.529 82.862,177.640 82.671,177.772 82.522,177.921 82.420,178.082 82.368,178.252 82.368,178.423 82.420,178.593 82.522,178.754 82.671,178.903 82.862,179.035 83.090,179.146 83.348,179.231 83.628,179.290 83.921,179.320 84.219,179.320 84.512,179.290 84.792,179.231 85.050,179.146 85.278,179.035 85.470,178.903 85.619,178.754 85.720,178.593 85.772,178.423 85.772,178.252 85.720,178.082 85.619,177.921 85.470,177.772' fill='#fff' stroke='#111' stroke-width='0.3' stroke-linejoin='round'/>
 <polygon points='64.663,204.843 64.537,204.782 64.396,204.735 64.242,204.702 64.082,204.686 63.918,204.686 63.758,204.702 63.604,204.735 63.463,204.782 63.337,204.843 63.233,204.915 63.151,204.996 63.095,205.085 63.067,205.178 63.067,205.272 63.095,205.365 63.151,205.454 63.233,205.535 63.337,205.607 63.463,205.668 63.604,205.715 63.758,205.748 63.918,205.764 64.082,205.764 64.242,205.748 64.396,205.715 64.537,205.668 64.663,205.607 64.767,205.535 64.849,205.454 64.905,205.365 64.933,205.272 64.933,205.178 64.905,205.085 64.849,204.996 64.767,204.915' fill='#fff' stroke='#111' stroke-width='0.3' stroke-linejoin='round'/>
 <polygon points='119.222,173.343 119.097,173.282 118.956,173.235 118.802,173.202 118.641,173.186 118.478,173.186 118.317,173.202 118.164,173.235 118.022,173.282 117.897,173.343 117.792,173.415 117.710,173.496 117.655,173.585 117.626,173.678 117.626,173.772 117.655,173.865 117.710,173.954 117.792,174.035 117.897,174.108 118.022,174.168 118.164,174.215 118.317,174.248 118.478,174.264 118.641,174.264 118.802,174.248 118.956,174.215 119.097,174.168 119.222,174.108 119.327,174.035 119.409,173.954 119.465,173.865 119.493,173.772 119.493,173.678 119.465,173.585 119.409,173.496 119.327,173.415' fill='#fff' stroke='#111' stroke-width='0.3' stroke-linejoin='round'/>
 <polygon points='28.419,183.918 28.294,183.857 28.153,183.810 27.999,183.777 27.838,183.761 27.675,183.761 27.514,183.777 27.361,183.810 27.219,183.857 27.094,183.918 26.989,183.990 26.908,184.071 26.852,184.160 26.823,184.253 26.823,184.347 26.852,184.440 26.908,184.529 26.989,184.610 27.094,184.683 27.219,184.743 27.361,184.790 27.514,184.823 27.675,184.839 27.838,184.839 27.999,184.823 28.153,184.790 28.294,184.743 28.419,184.683 28.524,184.610 28.606,184.529 28.662,184.440 28.690,184.347 28.690,184.253 28.662,184.160 28.606,184.071 28.524,183.990' fill='#fff' stroke='#111' stroke-width='0.3' stroke-linejoin='round'/>
@@ -521,16 +531,20 @@
 <text x='244.000' y='198.000' font-size='2.15' font-family='Arial, Helvetica, sans-serif' text-anchor='start' fill='#111' font-weight='normal'>2.5 - 23.5</text>
 <text x='268.000' y='198.000' font-size='2.15' font-family='Arial, Helvetica, sans-serif' text-anchor='start' fill='#111' font-weight='normal'>21 * high, on floor</text>
 <line x1='205.000' y1='199.200' x2='405.000' y2='199.200' stroke='#111' stroke-width='0.12' stroke-linecap='round'/>
-<text x='206.000' y='202.600' font-size='2.15' font-family='Arial, Helvetica, sans-serif' text-anchor='start' fill='#111' font-weight='normal'>Button rear</text>
-<text x='244.000' y='202.600' font-size='2.15' font-family='Arial, Helvetica, sans-serif' text-anchor='start' fill='#111' font-weight='normal'>29.0 - 59.0</text>
-<text x='268.000' y='202.600' font-size='2.15' font-family='Arial, Helvetica, sans-serif' text-anchor='start' fill='#111' font-weight='normal'>30 *; 5.5 clear to holder</text>
+<text x='206.000' y='202.600' font-size='2.15' font-family='Arial, Helvetica, sans-serif' text-anchor='start' fill='#111' font-weight='normal'>Selector rear</text>
+<text x='244.000' y='202.600' font-size='2.15' font-family='Arial, Helvetica, sans-serif' text-anchor='start' fill='#111' font-weight='normal'>37 - 59</text>
+<text x='268.000' y='202.600' font-size='2.15' font-family='Arial, Helvetica, sans-serif' text-anchor='start' fill='#111' font-weight='normal'>22 *; parts under SW1 &lt;= 6</text>
 <line x1='205.000' y1='203.800' x2='405.000' y2='203.800' stroke='#111' stroke-width='0.12' stroke-linecap='round'/>
-<text x='206.000' y='207.200' font-size='2.15' font-family='Arial, Helvetica, sans-serif' text-anchor='start' fill='#111' font-weight='normal'>Base top / lid</text>
-<text x='244.000' y='207.200' font-size='2.15' font-family='Arial, Helvetica, sans-serif' text-anchor='start' fill='#111' font-weight='normal'>59.0 - 62.0</text>
-<text x='268.000' y='207.200' font-size='2.15' font-family='Arial, Helvetica, sans-serif' text-anchor='start' fill='#111' font-weight='normal'>3.0 lid, 1.5x3 lip, 0.3 gap</text>
+<text x='206.000' y='207.200' font-size='2.15' font-family='Arial, Helvetica, sans-serif' text-anchor='start' fill='#111' font-weight='normal'>Button rear</text>
+<text x='244.000' y='207.200' font-size='2.15' font-family='Arial, Helvetica, sans-serif' text-anchor='start' fill='#111' font-weight='normal'>29.0 - 59.0</text>
+<text x='268.000' y='207.200' font-size='2.15' font-family='Arial, Helvetica, sans-serif' text-anchor='start' fill='#111' font-weight='normal'>30 *; 5.5 clear to holder</text>
 <line x1='205.000' y1='208.400' x2='405.000' y2='208.400' stroke='#111' stroke-width='0.12' stroke-linecap='round'/>
-<line x1='243.000' y1='153.000' x2='243.000' y2='208.400' stroke='#111' stroke-width='0.15' stroke-linecap='round'/>
-<line x1='267.000' y1='153.000' x2='267.000' y2='208.400' stroke='#111' stroke-width='0.15' stroke-linecap='round'/>
-<text x='205.000' y='212.900' font-size='2.2' font-family='Arial, Helvetica, sans-serif' text-anchor='start' fill='#111' font-weight='bold'>Overall height is set by: holder 21 + 5.5 gap + button 30 + lid 3 + floor 2.5 = 62.</text>
-<text x='205.000' y='216.900' font-size='2.2' font-family='Arial, Helvetica, sans-serif' text-anchor='start' fill='#111' font-weight='normal' font-style='italic'>Each 1 mm saved on the measured button depth reduces height by 1 mm.</text>
+<text x='206.000' y='211.800' font-size='2.15' font-family='Arial, Helvetica, sans-serif' text-anchor='start' fill='#111' font-weight='normal'>Base top / lid</text>
+<text x='244.000' y='211.800' font-size='2.15' font-family='Arial, Helvetica, sans-serif' text-anchor='start' fill='#111' font-weight='normal'>59.0 - 62.0</text>
+<text x='268.000' y='211.800' font-size='2.15' font-family='Arial, Helvetica, sans-serif' text-anchor='start' fill='#111' font-weight='normal'>3.0 lid, 1.5x3 lip, 0.3 gap</text>
+<line x1='205.000' y1='213.000' x2='405.000' y2='213.000' stroke='#111' stroke-width='0.12' stroke-linecap='round'/>
+<line x1='243.000' y1='153.000' x2='243.000' y2='213.000' stroke='#111' stroke-width='0.15' stroke-linecap='round'/>
+<line x1='267.000' y1='153.000' x2='267.000' y2='213.000' stroke='#111' stroke-width='0.15' stroke-linecap='round'/>
+<text x='205.000' y='217.500' font-size='2.2' font-family='Arial, Helvetica, sans-serif' text-anchor='start' fill='#111' font-weight='bold'>Overall height is set by: holder 21 + 5.5 gap + button 30 + lid 3 + floor 2.5 = 62.</text>
+<text x='205.000' y='221.500' font-size='2.2' font-family='Arial, Helvetica, sans-serif' text-anchor='start' fill='#111' font-weight='normal' font-style='italic'>Each 1 mm saved on the measured button depth reduces height by 1 mm.</text>
 </svg>

@@ -62,9 +62,11 @@ bosses = [for (x = [ix0 + 3, ix1 - 3]) for (y = [iy0 + 3, iy1 - 3]) [x, y]];
 feet   = [for (x = [12, W - 12]) for (y = [12, D - 12]) [x, y]];
 
 btn_x = ix0 + bay_b[0] / 2 - 0.0;   // 23
-sel_x = (chan_x0 + chan_x1) / 2;    // 51.5
 led_x = W - btn_x;                  // 128 (mirrors button column)
 rows  = [cy - 25, cy, cy + 25];
+// SW1 per top layout of draft v6 (position only): right of centre, midway L2/L3 rows
+sel_x = 91;                         // 37 left of LED column
+sel_y = (rows[0] + rows[1]) / 2;    // 39.5
 lip_w = 1.5; lip_h = 3; lip_gap = 0.3;
 
 echo(str("Envelope W x D x H = ", W, " x ", D, " x ", H, " mm"));
@@ -121,7 +123,7 @@ module lid() {
             translate([btn_x, y, base_h - 1]) cylinder(d = btn_cut + hole_tol, h = t_lid + 2);
             translate([led_x, y, base_h - 1]) cylinder(d = led_cut + hole_tol, h = t_lid + 2);
         }
-        translate([sel_x, cy, base_h - 1]) cylinder(d = sel_cut + hole_tol, h = t_lid + 2);
+        translate([sel_x, sel_y, base_h - 1]) cylinder(d = sel_cut + hole_tol, h = t_lid + 2);
         for (b = bosses) {
             translate([b[0], b[1], base_h - 1]) cylinder(d = 3.4, h = t_lid + 2);
             translate([b[0], b[1], H - 1.6]) cylinder(d1 = 3.4, d2 = 6.6, h = 1.61);   // 90 deg CSK
@@ -138,7 +140,7 @@ module components() {
         color("red")   translate([btn_x, y, base_h - btn_depth]) cylinder(d = 16, h = btn_depth);
         color("white") translate([led_x, y, base_h - led_depth]) cylinder(d = 8, h = led_depth);
     }
-    color("silver") translate([sel_x - 3.9, cy - 6.5, base_h - sel_depth]) cube([7.8, 13, sel_depth]);
+    color("silver") translate([sel_x - 3.9, sel_y - 6.5, base_h - sel_depth]) cube([7.8, 13, sel_depth]);
 }
 
 if (part == "base") base();

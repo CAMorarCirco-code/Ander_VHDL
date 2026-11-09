@@ -63,7 +63,7 @@
 <text x='252.000' y='272.000' font-size='1.7' font-family='Arial, Helvetica, sans-serif' text-anchor='start' fill='#555' font-weight='normal'>UNITS / SCALE</text>
 <text x='252.000' y='276.500' font-size='2.6' font-family='Arial, Helvetica, sans-serif' text-anchor='start' fill='#111' font-weight='normal'>mm   1:1 @ A3</text>
 <text x='312.000' y='272.000' font-size='1.7' font-family='Arial, Helvetica, sans-serif' text-anchor='start' fill='#555' font-weight='normal'>REV</text>
-<text x='312.000' y='276.500' font-size='2.6' font-family='Arial, Helvetica, sans-serif' text-anchor='start' fill='#111' font-weight='normal'>A - PRELIM.</text>
+<text x='312.000' y='276.500' font-size='2.6' font-family='Arial, Helvetica, sans-serif' text-anchor='start' fill='#111' font-weight='normal'>B - PRELIM.</text>
 <text x='352.000' y='272.000' font-size='1.7' font-family='Arial, Helvetica, sans-serif' text-anchor='start' fill='#555' font-weight='normal'>DATE</text>
 <text x='352.000' y='276.500' font-size='2.6' font-family='Arial, Helvetica, sans-serif' text-anchor='start' fill='#111' font-weight='normal'>2026-11-09</text>
 <text x='382.000' y='272.000' font-size='1.7' font-family='Arial, Helvetica, sans-serif' text-anchor='start' fill='#555' font-weight='normal'>PROJECTION</text>
@@ -80,9 +80,9 @@
 <rect x='165.000' y='252.000' width='85.000' height='35.000' rx='0' fill='none' stroke='#111' stroke-width='0.6'/>
 <text x='167.000' y='256.000' font-size='1.9' font-family='Arial, Helvetica, sans-serif' text-anchor='start' fill='#555' font-weight='bold'>REVISION HISTORY</text>
 <line x1='165.000' y1='258.000' x2='250.000' y2='258.000' stroke='#111' stroke-width='0.3' stroke-linecap='round'/>
-<text x='167.000' y='262.000' font-size='2.2' font-family='Arial, Helvetica, sans-serif' text-anchor='start' fill='#111' font-weight='normal'>A   2026-11-09   First issue from consolidated</text>
-<text x='167.000' y='265.500' font-size='2.2' font-family='Arial, Helvetica, sans-serif' text-anchor='start' fill='#111' font-weight='normal'>    spec (9 Nov 2026). Values marked * are</text>
-<text x='167.000' y='269.000' font-size='2.2' font-family='Arial, Helvetica, sans-serif' text-anchor='start' fill='#111' font-weight='normal'>    nominal/assumed - verify before printing.</text>
+<text x='167.000' y='262.000' font-size='2.2' font-family='Arial, Helvetica, sans-serif' text-anchor='start' fill='#111' font-weight='normal'>A  2026-11-09  First issue from spec (9 Nov 2026).</text>
+<text x='167.000' y='265.500' font-size='2.2' font-family='Arial, Helvetica, sans-serif' text-anchor='start' fill='#111' font-weight='normal'>B  2026-11-09  SW1 moved to layout-v6 position;</text>
+<text x='167.000' y='269.000' font-size='2.2' font-family='Arial, Helvetica, sans-serif' text-anchor='start' fill='#111' font-weight='normal'>    PB/L numbered from back. * = assumed value.</text>
 <text x='167.000' y='276.000' font-size='2.2' font-family='Arial, Helvetica, sans-serif' text-anchor='start' fill='#111' font-weight='normal'>Drawn: Claude Code     Checked: ________</text>
 <text x='167.000' y='280.500' font-size='2.2' font-family='Arial, Helvetica, sans-serif' text-anchor='start' fill='#111' font-weight='normal'>Approved: ________</text>
 <rect x='42.000' y='48.000' width='151.000' height='104.000' rx='0' fill='none' stroke='#111' stroke-width='0.6'/>
@@ -121,20 +121,37 @@
 <circle cx='170.000' cy='75.000' r='5.000' fill='none' stroke='#7a7a7a' stroke-width='0.25' stroke-dasharray='1.2 0.7'/>
 <line x1='163.000' y1='75.000' x2='177.000' y2='75.000' stroke='#1f4e9c' stroke-width='0.18' stroke-dasharray='6 1.2 1 1.2' stroke-linecap='round'/>
 <line x1='170.000' y1='68.000' x2='170.000' y2='82.000' stroke='#1f4e9c' stroke-width='0.18' stroke-dasharray='6 1.2 1 1.2' stroke-linecap='round'/>
-<circle cx='93.500' cy='100.000' r='3.100' fill='none' stroke='#111' stroke-width='0.6'/>
-<line x1='87.500' y1='100.000' x2='99.500' y2='100.000' stroke='#1f4e9c' stroke-width='0.18' stroke-dasharray='6 1.2 1 1.2' stroke-linecap='round'/>
-<line x1='93.500' y1='94.000' x2='93.500' y2='106.000' stroke='#1f4e9c' stroke-width='0.18' stroke-dasharray='6 1.2 1 1.2' stroke-linecap='round'/>
-<rect x='89.600' y='93.500' width='7.800' height='13.000' rx='0' fill='none' stroke='#7a7a7a' stroke-width='0.25' stroke-dasharray='1.2 0.7'/>
+<circle cx='133.000' cy='112.500' r='3.100' fill='none' stroke='#111' stroke-width='0.6'/>
+<line x1='127.000' y1='112.500' x2='139.000' y2='112.500' stroke='#1f4e9c' stroke-width='0.18' stroke-dasharray='6 1.2 1 1.2' stroke-linecap='round'/>
+<line x1='133.000' y1='106.500' x2='133.000' y2='118.500' stroke='#1f4e9c' stroke-width='0.18' stroke-dasharray='6 1.2 1 1.2' stroke-linecap='round'/>
+<rect x='129.100' y='106.000' width='7.800' height='13.000' rx='0' fill='none' stroke='#7a7a7a' stroke-width='0.25' stroke-dasharray='1.2 0.7'/>
 <line x1='65.000' y1='147.000' x2='65.000' y2='53.000' stroke='#1f4e9c' stroke-width='0.18' stroke-dasharray='6 1.2 1 1.2' stroke-linecap='round'/>
 <line x1='170.000' y1='147.000' x2='170.000' y2='53.000' stroke='#1f4e9c' stroke-width='0.18' stroke-dasharray='6 1.2 1 1.2' stroke-linecap='round'/>
 <line x1='47.000' y1='100.000' x2='188.000' y2='100.000' stroke='#1f4e9c' stroke-width='0.18' stroke-dasharray='6 1.2 1 1.2' stroke-linecap='round'/>
-<text x='78.000' y='125.900' font-size='2.2' font-family='Arial, Helvetica, sans-serif' text-anchor='start' fill='#7a7a7a' font-weight='normal'>PB1</text>
-<text x='161.000' y='125.900' font-size='2.2' font-family='Arial, Helvetica, sans-serif' text-anchor='end' fill='#7a7a7a' font-weight='normal'>L1</text>
+<text x='78.000' y='125.900' font-size='2.2' font-family='Arial, Helvetica, sans-serif' text-anchor='start' fill='#7a7a7a' font-weight='normal'>PB3</text>
+<text x='161.000' y='125.900' font-size='2.2' font-family='Arial, Helvetica, sans-serif' text-anchor='end' fill='#7a7a7a' font-weight='normal'>L3</text>
 <text x='78.000' y='100.900' font-size='2.2' font-family='Arial, Helvetica, sans-serif' text-anchor='start' fill='#7a7a7a' font-weight='normal'>PB2</text>
 <text x='161.000' y='100.900' font-size='2.2' font-family='Arial, Helvetica, sans-serif' text-anchor='end' fill='#7a7a7a' font-weight='normal'>L2</text>
-<text x='78.000' y='75.900' font-size='2.2' font-family='Arial, Helvetica, sans-serif' text-anchor='start' fill='#7a7a7a' font-weight='normal'>PB3</text>
-<text x='161.000' y='75.900' font-size='2.2' font-family='Arial, Helvetica, sans-serif' text-anchor='end' fill='#7a7a7a' font-weight='normal'>L3</text>
-<text x='93.500' y='111.000' font-size='2.2' font-family='Arial, Helvetica, sans-serif' text-anchor='middle' fill='#7a7a7a' font-weight='normal'>SW1</text>
+<text x='78.000' y='75.900' font-size='2.2' font-family='Arial, Helvetica, sans-serif' text-anchor='start' fill='#7a7a7a' font-weight='normal'>PB1</text>
+<text x='161.000' y='75.900' font-size='2.2' font-family='Arial, Helvetica, sans-serif' text-anchor='end' fill='#7a7a7a' font-weight='normal'>L1</text>
+<text x='125.000' y='116.500' font-size='2.2' font-family='Arial, Helvetica, sans-serif' text-anchor='end' fill='#7a7a7a' font-weight='normal'>SW1</text>
+<text x='138.000' y='106.000' font-size='1.8' font-family='Arial, Helvetica, sans-serif' text-anchor='start' fill='#7a7a7a' font-weight='normal'>throw</text>
+<line x1='138.000' y1='108.000' x2='138.000' y2='117.000' stroke='#7a7a7a' stroke-width='0.18' stroke-linecap='round'/>
+<polygon points='138.000,108.000 138.700,110.200 137.300,110.200' fill='#7a7a7a' stroke='#7a7a7a' stroke-width='0.1' stroke-linejoin='round'/>
+<polygon points='138.000,117.000 137.300,114.800 138.700,114.800' fill='#7a7a7a' stroke='#7a7a7a' stroke-width='0.1' stroke-linejoin='round'/>
+<line x1='163.000' y1='125.000' x2='147.500' y2='125.000' stroke='#111' stroke-width='0.18' stroke-linecap='round'/>
+<line x1='141.000' y1='112.500' x2='150.500' y2='112.500' stroke='#111' stroke-width='0.18' stroke-linecap='round'/>
+<line x1='149.000' y1='125.000' x2='149.000' y2='112.500' stroke='#111' stroke-width='0.18' stroke-linecap='round'/>
+<polygon points='149.000,112.500 149.700,114.700 148.300,114.700' fill='#111' stroke='#111' stroke-width='0.1' stroke-linejoin='round'/>
+<polygon points='149.000,125.000 148.300,122.800 149.700,122.800' fill='#111' stroke='#111' stroke-width='0.1' stroke-linejoin='round'/>
+<text x='148.100' y='118.750' font-size='2.5' font-family='Arial, Helvetica, sans-serif' text-anchor='middle' fill='#111' font-weight='normal' transform='rotate(-90 148.100 118.750)'>12.5</text>
+<line x1='141.000' y1='112.500' x2='150.500' y2='112.500' stroke='#111' stroke-width='0.18' stroke-linecap='round'/>
+<line x1='163.000' y1='100.000' x2='147.500' y2='100.000' stroke='#111' stroke-width='0.18' stroke-linecap='round'/>
+<line x1='149.000' y1='112.500' x2='149.000' y2='100.000' stroke='#111' stroke-width='0.18' stroke-linecap='round'/>
+<polygon points='149.000,100.000 149.700,102.200 148.300,102.200' fill='#111' stroke='#111' stroke-width='0.1' stroke-linejoin='round'/>
+<polygon points='149.000,112.500 148.300,110.300 149.700,110.300' fill='#111' stroke='#111' stroke-width='0.1' stroke-linejoin='round'/>
+<text x='148.100' y='106.250' font-size='2.5' font-family='Arial, Helvetica, sans-serif' text-anchor='middle' fill='#111' font-weight='normal' transform='rotate(-90 148.100 106.250)'>12.5</text>
+<polyline points='36.000,100.000 120.000,100.000 120.000,112.500 146.000,112.500 146.000,100.000 199.000,100.000' fill='none' stroke='#111' stroke-width='0.35' stroke-linejoin='round'/>
 <line x1='36.000' y1='100.000' x2='36.000' y2='94.000' stroke='#111' stroke-width='0.6' stroke-linecap='round'/>
 <polygon points='36.000,93.800 36.700,96.000 35.300,96.000' fill='#111' stroke='#111' stroke-width='0.1' stroke-linejoin='round'/>
 <text x='36.000' y='104.000' font-size='3.4' font-family='Arial, Helvetica, sans-serif' text-anchor='middle' fill='#111' font-weight='bold'>A</text>
@@ -160,17 +177,17 @@
 <polygon points='65.000,164.000 62.800,164.700 62.800,163.300' fill='#111' stroke='#111' stroke-width='0.1' stroke-linejoin='round'/>
 <text x='53.500' y='163.100' font-size='2.5' font-family='Arial, Helvetica, sans-serif' text-anchor='middle' fill='#111' font-weight='normal'>23</text>
 <line x1='65.000' y1='126.000' x2='65.000' y2='165.500' stroke='#111' stroke-width='0.18' stroke-linecap='round'/>
-<line x1='93.500' y1='126.000' x2='93.500' y2='165.500' stroke='#111' stroke-width='0.18' stroke-linecap='round'/>
-<line x1='65.000' y1='164.000' x2='93.500' y2='164.000' stroke='#111' stroke-width='0.18' stroke-linecap='round'/>
+<line x1='133.000' y1='126.000' x2='133.000' y2='165.500' stroke='#111' stroke-width='0.18' stroke-linecap='round'/>
+<line x1='65.000' y1='164.000' x2='133.000' y2='164.000' stroke='#111' stroke-width='0.18' stroke-linecap='round'/>
 <polygon points='65.000,164.000 67.200,163.300 67.200,164.700' fill='#111' stroke='#111' stroke-width='0.1' stroke-linejoin='round'/>
-<polygon points='93.500,164.000 91.300,164.700 91.300,163.300' fill='#111' stroke='#111' stroke-width='0.1' stroke-linejoin='round'/>
-<text x='79.250' y='163.100' font-size='2.5' font-family='Arial, Helvetica, sans-serif' text-anchor='middle' fill='#111' font-weight='normal'>28.5</text>
-<line x1='93.500' y1='126.000' x2='93.500' y2='165.500' stroke='#111' stroke-width='0.18' stroke-linecap='round'/>
+<polygon points='133.000,164.000 130.800,164.700 130.800,163.300' fill='#111' stroke='#111' stroke-width='0.1' stroke-linejoin='round'/>
+<text x='99.000' y='163.100' font-size='2.5' font-family='Arial, Helvetica, sans-serif' text-anchor='middle' fill='#111' font-weight='normal'>68</text>
+<line x1='133.000' y1='126.000' x2='133.000' y2='165.500' stroke='#111' stroke-width='0.18' stroke-linecap='round'/>
 <line x1='170.000' y1='126.000' x2='170.000' y2='165.500' stroke='#111' stroke-width='0.18' stroke-linecap='round'/>
-<line x1='93.500' y1='164.000' x2='170.000' y2='164.000' stroke='#111' stroke-width='0.18' stroke-linecap='round'/>
-<polygon points='93.500,164.000 95.700,163.300 95.700,164.700' fill='#111' stroke='#111' stroke-width='0.1' stroke-linejoin='round'/>
+<line x1='133.000' y1='164.000' x2='170.000' y2='164.000' stroke='#111' stroke-width='0.18' stroke-linecap='round'/>
+<polygon points='133.000,164.000 135.200,163.300 135.200,164.700' fill='#111' stroke='#111' stroke-width='0.1' stroke-linejoin='round'/>
 <polygon points='170.000,164.000 167.800,164.700 167.800,163.300' fill='#111' stroke='#111' stroke-width='0.1' stroke-linejoin='round'/>
-<text x='131.750' y='163.100' font-size='2.5' font-family='Arial, Helvetica, sans-serif' text-anchor='middle' fill='#111' font-weight='normal'>76.5</text>
+<text x='151.500' y='163.100' font-size='2.5' font-family='Arial, Helvetica, sans-serif' text-anchor='middle' fill='#111' font-weight='normal'>37</text>
 <line x1='170.000' y1='126.000' x2='170.000' y2='165.500' stroke='#111' stroke-width='0.18' stroke-linecap='round'/>
 <line x1='193.000' y1='153.000' x2='193.000' y2='165.500' stroke='#111' stroke-width='0.18' stroke-linecap='round'/>
 <line x1='170.000' y1='164.000' x2='193.000' y2='164.000' stroke='#111' stroke-width='0.18' stroke-linecap='round'/>
@@ -211,10 +228,10 @@
 <circle cx='59.330' cy='69.330' r='0.350' fill='#111' stroke='#111' stroke-width='0.1'/>
 <line x1='50.000' y1='34.000' x2='58.000' y2='34.000' stroke='#111' stroke-width='0.18' stroke-linecap='round'/>
 <text x='51.000' y='33.200' font-size='2.4' font-family='Arial, Helvetica, sans-serif' text-anchor='start' fill='#111' font-weight='normal'>3x  Ø16.2 THRU - PUSHBUTTON PB1-3 *</text>
-<line x1='95.700' y1='97.800' x2='103.500' y2='41.000' stroke='#111' stroke-width='0.18' stroke-linecap='round'/>
-<circle cx='95.700' cy='97.800' r='0.350' fill='#111' stroke='#111' stroke-width='0.1'/>
-<line x1='103.500' y1='41.000' x2='111.500' y2='41.000' stroke='#111' stroke-width='0.18' stroke-linecap='round'/>
-<text x='104.500' y='40.200' font-size='2.4' font-family='Arial, Helvetica, sans-serif' text-anchor='start' fill='#111' font-weight='normal'>Ø6.2 THRU - SELECTOR SW1 (M6x0.75)</text>
+<line x1='135.200' y1='110.300' x2='130.000' y2='41.000' stroke='#111' stroke-width='0.18' stroke-linecap='round'/>
+<circle cx='135.200' cy='110.300' r='0.350' fill='#111' stroke='#111' stroke-width='0.1'/>
+<line x1='130.000' y1='41.000' x2='122.000' y2='41.000' stroke='#111' stroke-width='0.18' stroke-linecap='round'/>
+<text x='129.000' y='40.200' font-size='2.4' font-family='Arial, Helvetica, sans-serif' text-anchor='end' fill='#111' font-weight='normal'>Ø6.2 THRU - SELECTOR SW1 (M6x0.75)</text>
 <line x1='172.900' y1='72.100' x2='165.000' y2='34.000' stroke='#111' stroke-width='0.18' stroke-linecap='round'/>
 <circle cx='172.900' cy='72.100' r='0.350' fill='#111' stroke='#111' stroke-width='0.1'/>
 <line x1='165.000' y1='34.000' x2='173.000' y2='34.000' stroke='#111' stroke-width='0.18' stroke-linecap='round'/>
@@ -276,6 +293,8 @@
 <rect x='302.170' y='59.360' width='73.660' height='81.280' rx='0' fill='none' stroke='#1f4e9c' stroke-width='0.2' stroke-dasharray='0.6 0.8'/>
 <rect x='357.000' y='68.000' width='14.000' height='64.000' rx='0' fill='none' stroke='#b00020' stroke-width='0.3' stroke-dasharray='2 1'/>
 <text x='364.000' y='66.000' font-size='1.9' font-family='Arial, Helvetica, sans-serif' text-anchor='middle' fill='#b00020' font-weight='normal'>LED KEEP-OUT</text>
+<rect x='315.500' y='101.000' width='23.000' height='23.000' rx='0' fill='none' stroke='#b00020' stroke-width='0.3' stroke-dasharray='2 1'/>
+<text x='327.000' y='99.500' font-size='1.9' font-family='Arial, Helvetica, sans-serif' text-anchor='middle' fill='#b00020' font-weight='normal'>SW1 KEEP-OUT (parts &lt;= 6)</text>
 <text x='327.000' y='70.000' font-size='2.4' font-family='Arial, Helvetica, sans-serif' text-anchor='middle' fill='#111' font-weight='bold'>PROTOBOARD 30x33 (UPPER)</text>
 <text x='327.000' y='133.000' font-size='2.2' font-family='Arial, Helvetica, sans-serif' text-anchor='middle' fill='#111' font-weight='normal'>ARDUINO UNO R3 (BELOW, hidden)</text>
 <circle cx='241.500' cy='146.500' r='3.500' fill='none' stroke='#111' stroke-width='0.45'/>
@@ -386,19 +405,19 @@
 <line x1='15.000' y1='197.000' x2='235.000' y2='197.000' stroke='#111' stroke-width='0.25' stroke-linecap='round'/>
 <text x='16.000' y='200.600' font-size='2.2' font-family='Arial, Helvetica, sans-serif' text-anchor='start' fill='#111' font-weight='normal'>PB1/PB2/PB3</text>
 <text x='44.000' y='200.600' font-size='2.2' font-family='Arial, Helvetica, sans-serif' text-anchor='start' fill='#111' font-weight='normal'>23</text>
-<text x='78.000' y='200.600' font-size='2.2' font-family='Arial, Helvetica, sans-serif' text-anchor='start' fill='#111' font-weight='normal'>27 / 52 / 77</text>
+<text x='78.000' y='200.600' font-size='2.2' font-family='Arial, Helvetica, sans-serif' text-anchor='start' fill='#111' font-weight='normal'>77 / 52 / 27</text>
 <text x='112.000' y='200.600' font-size='2.2' font-family='Arial, Helvetica, sans-serif' text-anchor='start' fill='#111' font-weight='normal'>Ø16.2</text>
 <text x='134.000' y='200.600' font-size='2.2' font-family='Arial, Helvetica, sans-serif' text-anchor='start' fill='#111' font-weight='normal'>Adafruit 1439, 16 mm illum. momentary *</text>
 <line x1='15.000' y1='202.000' x2='235.000' y2='202.000' stroke='#111' stroke-width='0.15' stroke-linecap='round'/>
 <text x='16.000' y='205.600' font-size='2.2' font-family='Arial, Helvetica, sans-serif' text-anchor='start' fill='#111' font-weight='normal'>SW1 selector</text>
-<text x='44.000' y='205.600' font-size='2.2' font-family='Arial, Helvetica, sans-serif' text-anchor='start' fill='#111' font-weight='normal'>51.5</text>
-<text x='78.000' y='205.600' font-size='2.2' font-family='Arial, Helvetica, sans-serif' text-anchor='start' fill='#111' font-weight='normal'>52</text>
+<text x='44.000' y='205.600' font-size='2.2' font-family='Arial, Helvetica, sans-serif' text-anchor='start' fill='#111' font-weight='normal'>91</text>
+<text x='78.000' y='205.600' font-size='2.2' font-family='Arial, Helvetica, sans-serif' text-anchor='start' fill='#111' font-weight='normal'>39.5</text>
 <text x='112.000' y='205.600' font-size='2.2' font-family='Arial, Helvetica, sans-serif' text-anchor='start' fill='#111' font-weight='normal'>Ø6.2</text>
 <text x='134.000' y='205.600' font-size='2.2' font-family='Arial, Helvetica, sans-serif' text-anchor='start' fill='#111' font-weight='normal'>Miyama MS-500E (ON)-OFF-(ON), M6x0.75</text>
 <line x1='15.000' y1='207.000' x2='235.000' y2='207.000' stroke='#111' stroke-width='0.15' stroke-linecap='round'/>
 <text x='16.000' y='210.600' font-size='2.2' font-family='Arial, Helvetica, sans-serif' text-anchor='start' fill='#111' font-weight='normal'>L1/L2/L3</text>
 <text x='44.000' y='210.600' font-size='2.2' font-family='Arial, Helvetica, sans-serif' text-anchor='start' fill='#111' font-weight='normal'>128</text>
-<text x='78.000' y='210.600' font-size='2.2' font-family='Arial, Helvetica, sans-serif' text-anchor='start' fill='#111' font-weight='normal'>27 / 52 / 77</text>
+<text x='78.000' y='210.600' font-size='2.2' font-family='Arial, Helvetica, sans-serif' text-anchor='start' fill='#111' font-weight='normal'>77 / 52 / 27</text>
 <text x='112.000' y='210.600' font-size='2.2' font-family='Arial, Helvetica, sans-serif' text-anchor='start' fill='#111' font-weight='normal'>Ø8.2</text>
 <text x='134.000' y='210.600' font-size='2.2' font-family='Arial, Helvetica, sans-serif' text-anchor='start' fill='#111' font-weight='normal'>LED + 8 mm panel holder (model TBC) *</text>
 <line x1='15.000' y1='212.000' x2='235.000' y2='212.000' stroke='#111' stroke-width='0.15' stroke-linecap='round'/>
@@ -457,7 +476,7 @@
 <text x='335.000' y='192.000' font-size='2.6' font-family='Arial, Helvetica, sans-serif' text-anchor='start' fill='#111' font-weight='bold'>KEY DECISIONS (spec §1)</text>
 <text x='335.000' y='197.900' font-size='2.2' font-family='Arial, Helvetica, sans-serif' text-anchor='start' fill='#111' font-weight='normal'>- LEFT: 9 V battery under button column</text>
 <text x='335.000' y='202.900' font-size='2.2' font-family='Arial, Helvetica, sans-serif' text-anchor='start' fill='#111' font-weight='normal'>- RIGHT: protoboard above Uno R3, under LEDs</text>
-<text x='335.000' y='207.900' font-size='2.2' font-family='Arial, Helvetica, sans-serif' text-anchor='start' fill='#111' font-weight='normal'>- CENTRE: selector + protected wiring path</text>
-<text x='335.000' y='212.900' font-size='2.2' font-family='Arial, Helvetica, sans-serif' text-anchor='start' fill='#111' font-weight='normal'>- No USB opening; lid removable for service</text>
+<text x='335.000' y='207.900' font-size='2.2' font-family='Arial, Helvetica, sans-serif' text-anchor='start' fill='#111' font-weight='normal'>- SW1 right of centre, between L2/L3 rows (v6)</text>
+<text x='335.000' y='212.900' font-size='2.2' font-family='Arial, Helvetica, sans-serif' text-anchor='start' fill='#111' font-weight='normal'>- CENTRE: protected wiring channel; no USB hole</text>
 <text x='335.000' y='217.900' font-size='2.2' font-family='Arial, Helvetica, sans-serif' text-anchor='start' fill='#111' font-weight='normal'>- Envelope minimised: 151 x 104 x 62 (was 200x120x75)</text>
 </svg>
